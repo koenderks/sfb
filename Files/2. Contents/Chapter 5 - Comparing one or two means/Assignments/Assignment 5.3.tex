@@ -1,0 +1,166 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 5.3: Independent two-sample t-test by hand and in R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\handassignment{Assignment 5.3: Independent two-sample t-test by hand and in R}
+
+To test the effect of caffeine on the respiratory exchange ratio (RER), 9 men get caffeine and 9 different men get a placebo, their RER is measured while doing sports\footnote{These data are taken from \url{http://learntech.uwe.ac.uk/da/Default.aspx?pageid=1438}}: \\
+\vspace*{0.5cm}
+\begin{center}
+\begin{tabular}{c|ccc}
+RER measurement & $n$ & Mean ($\bar{x}$) & Standard deviation ($s_x$) \tstrut\bstrut\\
+\hline
+Caffeine & 9 & 94.22 & 5.61 \tstrut\bstrut\\
+Placebo & 9 & 100.56 & 7.70 \tstrut\bstrut\\
+\end{tabular}
+\end{center}
+\vspace*{0.5cm}
+
+Researchers want to use this experiment to show with 95\% confidence that caffeine reduces the RER in men. They are going to evaluate the results by comparing the \concept{mean} RER using a \concept{two-sample t-test}. \\
+
+\question{
+    5.3 a
+}{
+    Why is this test also called an \concept{independent samples t-test}?
+}
+
+\twolineanswerbox{5.3a}
+
+\question{
+    5.3 a
+}{
+    Write down the \concept{null hypothesis} $H_0$ and the \concept{alternative hypothesis} $H_1$ for a one-sided test where the researchers want to show that the placebo \concept{mean} RER is higher than the caffeine \concept{mean} RER.
+}
+
+\hypothesesbox{5.3b}
+
+In the formula sheet on page~\pageref{formulasheet} you can see that for \concept{independent samples t-tests}:
+\vspace*{0.5cm}
+\begin{equation*}
+    t = \frac{(\bar{x}_1 - \bar{x}_2) - D_0}{\sqrt{s^2_p (\frac{1}{n_1} + \frac{1}{n_2})}}
+    \hspace*{3cm}
+    s^2_p = \frac{(n_1 - 1) s^2_1 + (n_2 - 1) s^2_2}{n_1 + n_2 - 2}
+\end{equation*}
+\vspace*{0.5cm}
+
+\question{
+    5.3 c
+}{
+    Using the formula provided calculate the \concept{pooled standard deviation} $s_p$.
+}
+
+\clearpage % Page break
+
+\emptyanswerbox{
+    5.3c
+}{
+    $s_p$: \shortanswerline
+    \answerskip
+    Calculation:
+    \answerskip
+    \rule{\textwidth}{0.4pt}
+}
+
+\question{
+    5.3 d
+}{
+    Using the formula provided calculate the \concept{t-score}.
+}
+
+\emptyanswerbox{
+    5.3c
+}{
+    t-score: \shortanswerline
+    \answerskip
+    Calculation:
+    \answerskip
+    \rule{\textwidth}{0.4pt}
+}
+
+The \concept{critical t-value} for 16 \concept{degrees of freedom} $(n_1 + n_2 - 2)$ for a one-sided test is 1.746. \\
+
+\question{
+    5.3 e
+}{
+    Draw the conclusion for this test. Include the following elements:
+        \begin{itemize}
+        \item[$\square$] Show how the calculated \concept{t-score} relates to the \concept{critical t-score}.
+    \item[$\square$] Discuss whether $H_0$ is rejected or not.
+    \item[$\square$] Describe what this tells us about $\mu$ and $\mu_0$.
+    \item[$\square$] Describe what type of error is relevant \textit{(type-I or type-II)}.
+\end{itemize}
+}
+
+\sixlineanswerbox{5.3e}
+
+\clearpage % Page break
+
+\begin{minipage}{0.8\textwidth}
+Now you will learn how to do the same independent t-test in \texttt{R}. \\
+
+Run the following code in \texttt{R}: \\
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.1\textwidth}
+\includegraphics[width=\linewidth]{Files/Images/displaycode.pdf}
+\end{minipage}
+\vspace*{.1cm}
+
+\codeblock{{\color{dataset}\# These are the values for the RER test data set}\\
+placebo <- c(105, 119, 100, 97, 96, 101, 94, 95, 98)\\
+caffeine <- c(96, 99, 94, 89, 96, 93, 88, 105, 88)}
+
+\question{
+    5.3 f
+}{
+    Calculate the \concept{mean} and \concept{standard deviation} for the \rcode{placebo} and \rcode{caffeine} variables, confirm that your results match with the previous assignment.
+}
+
+\rcodeanswermedium{5.3f}
+
+\emptyanswerbox{
+    5.3f
+}{
+    \rcode{placebo} \hspace*{6cm} \rcode{caffeine}
+    \answerskip
+    Mean: \hspace{90pt}\tinyanswerline \hspace*{2cm}Mean: \hspace{80pt}\tinyanswerline
+    \answerskip
+    Standard deviation: \tinyanswerline \hspace*{1.95cm}Standard deviation: \tinyanswerline
+}
+
+Run the following code in \texttt{R}: \\
+
+\codeblock{t.test(x = placebo, y = caffeine, alternative = \textquotesingle greater\textquotesingle, mu = 0, \\
+       \hspace*{40pt}paired = FALSE, var.equal = TRUE, conf.level = 0.95)}
+
+\question{
+    5.3 g
+}{
+    Interpret the \texttt{R} code above and check if the results match your conclusion for assignment 5.3e.
+}
+
+\twolineanswerbox{5.3g}
+
+The \concept{t-test} assumes equal \concept{variances}. In this case the \concept{standard deviations} are actually a bit different. \\
+
+\clearpage % Page break
+
+\question{
+    5.3 h
+}{
+    Change the \rcode{var.equal} argument in the \texttt{R} code above to do a \concept{Welch t-test} to account for unequal \concept{variances}. Check whether the results differ.
+}
+
+\rcodeanswertiny{5.3h}
+
+\twolineanswerbox{5.3h}
+
+\question{
+    5.3 i
+}{
+    How can you check if you need to do a \concept{Welch t-test} instead of a normal \concept{t-test}?
+}
+
+\twolineanswerbox{5.3i}
+
+\clearpage % Page break

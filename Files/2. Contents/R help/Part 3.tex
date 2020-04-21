@@ -1,0 +1,115 @@
+\subsection{Part III: If-statements, loops, and functions}
+
+\textit{3.1 If-statements} \\
+\\
+\rcode{If}-statements have the following structure: \\
+
+\codeblock{if (condition)\{ \\
+  \hspace*{20pt}{\color{dataset}\# Perform an action} \\
+\}
+}
+
+\begin{minipage}[t]{0.2\textwidth}
+Translation:
+\end{minipage}
+\begin{minipage}[t]{0.8\textwidth}
+If this \rcode{condition} is satisfied, then perform this action.
+\end{minipage} \\
+\\
+Note that \rcode{length(condition) == 1} must evaluate to \rcode{TRUE}. \\
+\\ 
+\textit{3.2 If-else-statements} \\
+\\
+\rcode{If-else}-statements have the following structure: \\
+
+\codeblock{if (condition)\{ \\
+  \hspace*{20pt}{\color{dataset}\# Perform an action} \\
+\} else \{ \\
+\hspace*{20pt}{\color{dataset}\# Perform a different action} \\
+\}
+}
+
+\begin{minipage}[t]{0.2\textwidth}
+Translation:
+\end{minipage}
+\begin{minipage}[t]{0.8\textwidth}
+If this \rcode{condition} is satisfied, then perform this action. If this condition is not satisfied, then perform a different action.
+\end{minipage} \\
+\\
+Another \rcode{condition} can be added by putting another \rcode{if (condition)} after \rcode{else}. \\
+
+\codeblock{if (condition)\{ \\
+  \hspace*{20pt}{\color{dataset}\# Perform an action} \\
+\} else if (other condition)\{ \\
+\hspace*{20pt}{\color{dataset}\# Perform a different action} \\
+\}
+}
+
+\begin{minipage}[t]{0.2\textwidth}
+Translation:
+\end{minipage}
+\begin{minipage}[t]{0.8\textwidth}
+If this \rcode{condition} is satisfied, then perform this action. If not, then check whether the \rcode{other condition} is satisfied. If the \rcode{other condition} is	satisfied, perform a different action. 
+\end{minipage} \\
+\\
+\clearpage % Page break
+
+\textit{3.3 For-loops} \\
+\\
+\rcode{for}-loops have the following structure: \\
+
+\codeblock{for(i in 1:4)\{ \\
+  \hspace*{20pt}{\color{dataset}\# Perform an action that needs to repeated } \\
+\}
+}
+
+\begin{minipage}[t]{0.2\textwidth}
+Translation:
+\end{minipage}
+\begin{minipage}[t]{0.8\textwidth}
+For a specified number of times (\rcode{1:4}), perform this action on each iteration (\rcode{i}).
+\end{minipage} \\
+\\
+
+\textit{3.4 While-loops} \\
+\\
+\rcode{while}-loops have the following structure: \\
+
+\codeblock{while(condition)\{ \\
+  \hspace*{20pt}{\color{dataset}\# Perform an action that needs to be repeated} \\
+\}
+}
+
+\begin{minipage}[t]{0.2\textwidth}
+Translation:
+\end{minipage}
+\begin{minipage}[t]{0.8\textwidth}
+For an unspecified number of times, perform this action as long as the \rcode{condition} is \rcode{TRUE}.
+\end{minipage} \\
+\\
+
+\textit{3.5 Functions} \\
+\\
+Functions have the following structure: \\
+
+\codeblock{myFunction <- function(x, ...)\{ \\
+  \\
+  \hspace*{20pt}{\color{dataset}\# Perform action on input x to get result } \\
+\\
+  \hspace*{20pt}return(result) \\
+\}
+
+}
+
+\begin{minipage}[t]{0.2\textwidth}
+Translation:
+\end{minipage}
+\begin{minipage}[t]{0.8\textwidth}
+Take the input \rcode{x}, perform some actions, and return the resulting \rcode{outcome}.
+\end{minipage} \\
+\\
+The function \rcode{myFunction} can then be called with the data in \rcode{x} using: \\
+\\
+\codeblock{myFunction(x)}
+
+\clearpage % Page break

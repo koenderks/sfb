@@ -1,0 +1,40 @@
+\subsection{Conditions}
+
+\question{
+57
+}{
+What does \rcode{(a < 0 | b < 0) & (a * b < 0)} mean? If this condition is \rcode{TRUE} and \rcode{a} is negative, what do you know about \rcode{b}?
+}
+
+\question{
+58
+}{
+Why does \rcode{!sum(is.na(c(1, 2, 3, 4, NA, 7))) <= 2} return \rcode{FALSE}? 
+}
+
+\question{
+B 59
+}{
+Run the following code in \texttt{R} and explain the result: \\
+\\
+\codeblock{x <- 1:24 \\
+which(24\%\%x == 0)}
+}
+
+\question{
+B 60
+}{
+Run the following code in \texttt{R}: \\
+\\
+\codeblock{x <- y <- 1:10\\
+sum(x==y) == length(x==y)\\
+\\
+x <- y <- 1:10\\
+y{[1]} <- 0\\
+sum(x==y) == length(x==y)
+}
+Explain the result of this code. Can you make a test whether \rcode{x} and \rcode{y} are identical using the \rcode{min()} function? And with the \rcode{mean()} or \rcode{prod()} function? Is there a special function to test whether two vectors are identical?
+}
+
+
+\clearpage

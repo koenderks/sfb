@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 3.5: Using R to inspect and test the homogeneity of variance
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rassignment{Assignment 3.5: Using R to inspect and test the homogeneity of variance}
+
+In this assignment, you will use the \rcode{iris} data set that is built into \texttt{R}. It is assumed that you have also installed the \rcode{car} package (from assignment 4.4). \\
+
+Run the following code in \texttt{R} to load the \rcode{car} library and load the \rcode{iris} data set into the environment. \\
+
+\codeblock{library(car)\\
+data(iris)}
+
+\question{
+    3.5 a
+}{
+    Use the following code to create a \concept{box plot} for the sepal length (\rcode{Sepal.Length}) per flower species (\rcode{Species}). Then rewrite the code to do the same for the sepal width (\rcode{Sepal.Width}) per flower species. 
+}
+
+\codeblock{plot(x = iris\$Species, y = iris\$Sepal.Length, \\
+     \hspace*{30pt}col = \textquotesingle grey\textquotesingle, main = \textquotesingle Sepal Length\textquotesingle)}
+     
+\rcodeanswersmall{3.5a}
+
+\question{
+    3.5 b
+}{
+    Visually inspect the graphs for \concept{homogeneity of variance}. What can you say about the spread of the sepal length within the different iris species?
+}
+
+\fourlineanswerbox{3.5b}
+
+\question{
+    3.5 c
+}{
+    Formulate the \concept{null hypothesis} $H_0$  and \concept{alternative hypothesis} $H_1$ to test for \concept{homogeneity of variance} in these samples.
+}
+
+\hypothesesbox{3.5c}
+
+\clearpage % Page break
+
+\question{
+    3.5 d
+}{
+    Use the (\rcode{car} package) function \rcode{leveneTest()} to test the \concept{homogeneity of variance} for the sepal length and width of the three species. Evaluate the hypotheses with a 90\% confidence. Include the following elements:
+    \begin{itemize}
+        \item[$\square$] Discuss what the \concept{p-value} is for this test.
+        \item[$\square$] Discuss whether $H_0$ is rejected or not.
+        \item[$\square$] Describe what this tells us about the homogeneity of the three variances.
+        \item[$\square$] Describe what type of error is relevant \textit{(type-I or type-II)}.
+    \end{itemize}
+}
+
+\hint{Hint 3.10: Look up \rcode{?leveneTest} in R’s help function (it is now also present because you have loaded the \rcode{car} package).}
+
+\rcodeanswertiny{3.5d}
+\sixlineanswerbox{3.5d}
+
+\clearpage % Page break

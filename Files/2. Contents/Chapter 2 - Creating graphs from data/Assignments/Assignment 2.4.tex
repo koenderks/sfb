@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 2.4: Creating and modifying a line plot in R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rassignment{Assignment 2.4: Creating and modifying a line plot in R}
+
+In this assignment, you are going to create a line plot of the daily closing prices of some major European stock indices: Germany DAX, Switzerland SMI, France CAC, and UK FTSE. \\
+
+You can load this data set by running the code below: \\
+
+\codeblock{data(EuStockMarkets) \\
+            stockData <- data.frame(EuStockMarkets)
+}
+
+The data is now loaded into the environment as the \rcode{EuStockMarkets} data set and immediately transformed to the \rcode{stockData} data set (this is because of technical reasons as the original data is in a time-series format). In this assignment, you will work with the \rcode{stockData} data set. \\
+
+\question{
+    2.4 a
+}{
+    Create a line plot where the closing price of the DAX stock is displayed over time. Give your plot appropriate \textit{x-axis} and \textit{y-axis} names.
+}
+
+\rcodeanswersmall{2.4a}
+
+\question{
+    2.4 b
+}{
+    Find a function to add a separate line for the closing price of the SMI stock in red. You may try to add the other stocks as well using this function, but remember to adjust the \textit{y-axis} accordingly so that all the lines are all displayed decently.
+}
+
+\hint{Hint 2.4: Do \underline{not} use the \rcode{plot()} function to add a line to an already existing plot.}
+
+\rcodeanswersmall{2.4 b}
+
+\clearpage % Page break

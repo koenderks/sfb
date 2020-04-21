@@ -1,0 +1,59 @@
+\documentclass[11pt,twoside,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+\usepackage{StatisticsForBusiness}
+
+\title{Statistics for Business with Applications in R and RStudio}
+\author{Koen Derks, Maurice Hoenderdos, Jacques de Swart, and Ruud Wetzels}
+
+\begin{document}
+
+% Front page
+\includepdf[scale=1]{Files/1. Front page/Front page.pdf}
+
+% Preface
+\input{Files/2. Contents/Preface/Disclaimer}                                    \clearpage
+\input{Files/2. Contents/Preface/Installation and setup}                        \clearpage
+\input{Files/2. Contents/Preface/Blank page}                                    \clearpage
+\fancypagestyle{plain}{\fancyhf[rh]{}}\pagestyle{plain}
+\tableofcontents                                                                \clearpage
+\fancypagestyle{plain}{\fancyhf[rh]{{\fontsize{12}{14}\selectfont\textit{\nouppercase{\rightmark}}}}}\pagestyle{plain}
+\input{Files/2. Contents/Preface/Introduction to the workbook}                  \clearpage
+
+% Chapters
+\input{Files/2. Contents/Chapter 1 - Descriptive statistics/Chapter 1}          \clearpage
+\input{Files/2. Contents/Chapter 2 - Creating graphs from data/Chapter 2}       \clearpage
+\input{Files/2. Contents/Chapter 3 - Confidence intervals and hypothesis testing/Chapter 3}  \clearpage
+\input{Files/2. Contents/Chapter 4 - Correlation and regression/Chapter 4}      \clearpage
+\input{Files/2. Contents/Chapter 5 - Comparing one or two means/Chapter 5}      \clearpage
+\input{Files/2. Contents/Chapter 6 - Comparing more than two means/Chapter 6}   \clearpage
+\input{Files/2. Contents/Chapter 7 - Comparing proportions and distributions/Chapter 7}   \clearpage
+
+% Formula sheet and tables
+\input{Files/2. Contents/Formula sheet and tables/Formula sheet}                \clearpage
+\input{Files/2. Contents/Formula sheet and tables/Table 1}                      \clearpage
+\input{Files/2. Contents/Formula sheet and tables/Table 2}                      \clearpage
+\input{Files/2. Contents/Formula sheet and tables/Table 3}                      \clearpage
+\input{Files/2. Contents/Formula sheet and tables/Table 4}                      \clearpage
+\input{Files/2. Contents/Formula sheet and tables/Table 5}                      \clearpage
+
+% R Help
+\input{Files/2. Contents/R help/Part 1}                                         \clearpage
+\input{Files/2. Contents/R help/Part 2}                                         \clearpage
+\input{Files/2. Contents/R help/Part 3}                                         \clearpage
+\input{Files/2. Contents/R help/Part 4}                                         \clearpage
+
+% R exercises
+\input{Files/2. Contents/R exercises/Beginner exercises}                        \clearpage
+\input{Files/2. Contents/R exercises/Advanced exercises}                        \clearpage
+
+% Answers
+\input{Files/2. Contents/Answers/Answers}                                       \clearpage  
+
+% Blank page
+\input{Files/2. Contents/Preface/Blank page}                                    \clearpage
+
+% Back page
+\includepdf[scale=1]{Files/3. Back page/Back page.pdf}
+
+\end{document}

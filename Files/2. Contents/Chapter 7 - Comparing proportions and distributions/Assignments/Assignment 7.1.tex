@@ -1,0 +1,181 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 7.1: Chi-square testing by hand
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\handassignment{Assignment 7.1: Chi-square testing by hand}
+
+A small bed and breakfast wants to know if the \concept{distribution} of the number of guests is changing. They compare their historical \concept{distribution} with the number of guests in 2019 and want to show, with 95\% confidence, that the shape of the  2019 \concept{distribution} has changed with respect to the past years. \\
+
+\question{
+    7.1 a
+}{
+    Formulate the \concept{null hypothesis} $H_0$ and the \concept{alternative hypothesis} $H_1$ for this test in words.
+}
+
+\emptyanswerbox{
+    7.1a
+}{
+    $H_0$: \rule{.9\textwidth}{0.4pt}
+    \answerbreak
+    $H_1$: \rule{.9\textwidth}{0.4pt}
+}
+
+The table below shows the historical \concept{distribution} of the bed and breakfast guests alongside the number of guests for 2019. 
+
+\begin{center}
+    \begin{tabular}{|r|c|c|c|c|c|}
+    \cline{2-6} 
+    \multicolumn{1}{c|}{} & Historical & Observed ($O$) & Expected ($E$) & $O - E$ & $\frac{(O - E)^2}{E}$ \tstrut\bstrut\\
+    \hline
+    Spring & 4.87 & 2.90 & & &  \tstrut\bstrut\\
+    \hline
+    Summer & 3.04 & 4.50 & & &  \tstrut\bstrut\\
+    \hline
+    Fall & 1.65 & 4.94 & & &  \tstrut\bstrut\\
+    \hline
+    Winter & 2.88 & 3.28 & & &  \tstrut\bstrut\\
+    \noalign{\hrule height 2pt}
+    Total & 2.31 & 4.73 & & &  \tstrut\bstrut\\
+    \cline{1-4} \cline{6-6}
+    \end{tabular}
+\end{center}
+\vspace*{0.5cm}
+\question{
+    7.1 b
+}{
+    Fill in the expected ($E$) column in the table and show how you calculated it below.
+}
+
+\twolineanswerbox{7.1b}
+
+\clearpage % Page break
+
+\question{
+    7.1 c
+}{
+    Are you allowed to do a \concept{chi-square test} using these data? Explain why.
+}
+
+\hint{Hint 7.1: Take into account the assumptions of a \concept{chi-square test}.}
+
+\twolineanswerbox{7.1 c}
+
+\question{
+    7.1 d
+}{
+    Fill in the rest of the table to calculate the \concept{chi-square value} ($X^2$) for this sample.
+}
+
+\emptyanswerbox{
+    7.1d
+}{
+    $X^2$: \shortanswerline
+}
+
+The critical \concept{chi-square value} using a confidence of 95\% and 3 \concept{degrees of freedom} is $X^2_{0.05}[df = 3] = 7.815$. \\
+
+\question{
+    7.1 e
+}{
+    What is your conclusion on the basis of these results? Include the following elements:
+            \begin{itemize}
+        \item[$\square$] Show how the calculated \concept{Chi-square value} relates to the \concept{critical Chi-square value}.
+    \item[$\square$] Discuss whether $H_0$ is rejected or not.
+    \item[$\square$] Describe what this tells us about the historical \concept{distribution} and the 2019 \concept{distribution}.
+    \item[$\square$] Describe what type of error is relevant \textit{(type-I or type-II)}.
+\end{itemize}
+}
+
+\sixlineanswerbox{7.1e}
+
+\clearpage % Page break
+
+\question{
+    7.1 f
+}{
+    Taking into account the confidence of our analysis, explain in what range the \concept{p-value} of this test must be.
+}
+
+\twolineanswerbox{7.1f}
+
+\begin{minipage}{0.8\textwidth}
+The bed and breakfast owner does not believe in your calculations and wants you to recalculate it in \texttt{R}. \\
+
+Run the following code in \texttt{R} to import the data: \\
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.1\textwidth}
+\includegraphics[width=\linewidth]{Files/Images/displaycode.pdf}
+\end{minipage}
+\vspace*{.1cm}
+
+\codeblock{Observed   <- c(37, 27, 12, 8)\\
+Historical <- c(0.3, 0.4, 0.15, 0.15)\\
+Expected   <- c(25.2, 33.6, 12.6, 12.6)}
+
+\question{
+    7.1 g
+}{
+    Calculate the \concept{Chi-square value} for these data using \texttt{R}.
+}
+
+\rcodeanswertiny{7.1g}
+
+\emptyanswerbox{
+    7.1g
+}{
+    $X^2$: \shortanswerline
+}
+
+Run the following code in \texttt{R} to find out the \concept{critical Chi-square value}: \\
+
+\codeblock{qchisq(p = 0.95, df = 3)}
+
+\question{
+    7.1 h
+}{
+    Does your conclusion hold up when you recalculate the \concept{Chi-square value} in \texttt{R}?
+}
+
+\emptyanswerbox{
+    7.1h
+}{
+    \vspace*{-15pt}
+    \begin{center}
+        YES / NO
+    \end{center}
+}
+
+Use the following code in \texttt{R} to perform a \concept{Chi-square test}: \\
+
+\codeblock{{\color{dataset}\# chi-square test: x = observations p = model distribution}\\ 
+{\color{dataset}\# rescale makes sure the model distribution adds up to 100\%}\\
+chisq.test(x = Observed, p = Historical, rescale.p = TRUE)}
+
+\clearpage % Page break
+
+\question{
+    7.1 i
+}{
+    Is the result what you expected?
+}
+
+\twolineanswerbox{7.1 i}
+
+As it turns out the function \rcode{chisq.test()} will always calculate the \concept{expected values} by itself. You therefore do not need to make sure your total amounts sum to one. Therefore, in the code after \rcode{p =} you can supply a distribution that adds up to one (and set \rcode{rescale.p = FALSE}), or expected amounts that \texttt{R} will recalculate into a distribution anyway. If you do not supply the \rcode{p} argument, \texttt{R} will test against the \concept{uniform distribution}. \\
+
+Run the following code in \texttt{R} to store the results of the \concept{Chi-square test} in an object called \rcode{chisq}: \\
+
+\codeblock{chisq <- chisq.test(x = Observed, p = Historical)}
+
+\question{
+    7.1 j
+}{
+    Find out how to extract the \concept{expected values} from the \rcode{chisq} object. Do they match the \concept{expected values} you wrote down in the table above?
+}
+
+\rcodeanswertiny{7.1 j}
+
+\twolineanswerbox{7.1j}
+
+\clearpage % Page break

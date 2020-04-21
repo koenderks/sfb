@@ -1,0 +1,51 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 2.3: Creating and modifying a scatter plot in R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rassignment{Assignment 2.3: Creating and modifying a scatter plot in R}
+
+In this assignment you are going to work with a data set that is built into \texttt{R}. \\
+
+The \rcode{data()} function gives you access to all the data sets that are built into \texttt{R}, or that are included with downloaded \texttt{R} packages. For example, you can load a data set called \rcode{swiss} into the environment by running the \texttt{R} code below: \\
+
+\codeblock{data(swiss)} 
+
+The data are imported as an object called \rcode{swiss}, which you can now also see in the environment. This particular data set contains some socio-economic indicators for each of 47 French-speaking provinces of Switzerland. In this assignment, you will focus on the column \rcode{Education} (the percentage education beyond primary school) and the column \rcode{Agriculture} (the percentage of males involved in agriculture as an occupation). \\
+
+\question{
+    2.3 a
+}{
+    Extract the values of the two columns using the \rcode{\$} sign and store them in two new variables called \rcode{education} and \rcode{agriculture}.
+}
+
+\hint{Hint 2.3: You can check the R environment to see the names of the objects that you have currently stored.}
+
+\rcodeanswertiny{2.3a}
+
+\question{
+    2.3 b
+}{
+    Use the \rcode{plot()} function to create a scatter plot of the two variables. Place the percentage of education beyond primary school on the \textit{x-axis} and the percentage of males involved in agriculture as an occupation on the \textit{y-axis}. Rename your axis labels to match the content of the graph.
+}
+
+\rcodeanswerlarge{2.3b}
+
+\clearpage % Page break
+
+\question{
+    2.3 c
+}{
+    Looking at the scatter plot, what can you globally say about the relation between the percentage of education beyond primary school and the percentage of males involved in agriculture as an occupation in the French-speaking provinces of Switzerland? 
+}
+
+\twolineanswerbox{2.3c}
+
+\question{
+    2.3 d
+}{
+    Give the points in your scatter plot a different color by changing the \rcode{col} argument after the comma. Improve the graph further by changing the main title, the rotation of the \textit{y-axis} labels, the shape of the points, and removing the outer lines.
+}
+
+\rcodeanswerlarge{2.3d}
+
+\clearpage % Page break

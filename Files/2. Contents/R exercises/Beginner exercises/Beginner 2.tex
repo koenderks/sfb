@@ -1,0 +1,55 @@
+\subsection{Working directory and help functionality}
+
+\question{
+B 8
+}{
+With the command \rcode{getwd()} you can find the current working directory of the \texttt{R} process. Explain what the working directory means and why it is important.
+}
+
+\question{
+B 9
+}{
+Change the working directory of the \texttt{R} session to a folder of your preference. What function do you use? How can you check whether your change has worked?
+}
+
+\question{
+B 10
+}{
+Run the following code in \texttt{R}: \\
+\\
+\codeblock{demo(package = .packages(all.available = TRUE))}
+What does this code do? How do you run the demo \rcode{persp} (in package \rcode{graphics})?
+}
+
+\question{
+B 11
+}{
+Run the following code in \texttt{R}: \\
+\\
+\codeblock{a <- c(1, 6, 7, 8, 9, NA) \\
+mean(a)}
+This gives \rcode{NA}, why? Check \rcode{?mean} to find out what arguments the \rcode{mean()} function takes as input. Can you find a way to compute the mean with the missing value removed?
+}
+
+\question{
+B 12
+}{
+According to Google there exists an R-function called \rcode{mvrnorm()}. Typing \rcode{mvrnorm} or \rcode{?mvrnorm}, however, gives an error. Why? Which library do you have to load first? How?
+}
+
+\question{
+B 13
+}{
+What does \rcode{\%\%} do? Can you ask help with \rcode{?\%\%}, like in \rcode{?mean}? If not, how? What is \rcode{\%\%} doing?
+}
+
+\question{
+B 14
+}{
+The \rcode{cor()} function computes correlations. As an example, run the following code in \texttt{R}: \\
+\\
+\codeblock{cor(c(1, 2, 3, 4), c(1, 4, 7, 15))}
+How can you find out (which function) whether this correlation is statistically significant? How can you find such a function? What is the confidence interval of the correlation? How can you find all functions that have 'cor' in their name? 
+}
+
+\clearpage

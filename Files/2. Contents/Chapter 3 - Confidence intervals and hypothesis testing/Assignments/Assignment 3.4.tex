@@ -1,0 +1,102 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 3.4: Inspect and test the normality of a sample in R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rassignment{Assignment 3.4: Inspecting and testing the normality of a sample in R}
+
+In this assignment you are going to work with an \texttt{R} package called \rcode{car}. Packages are extensions for \texttt{R} created by its community. They contain functions that are not available in the basic \texttt{R} version and can be really useful. There are many packages on the internet, so only use the one you really need and always make sure you use packages from a reliable source (like the official \rcode{CRAN} servers). For clarity, it will be indicated what functions come from what packages in the chapters. If there is no package mentioned, functions come from base \texttt{R}. \\
+
+A package has to be installed once. Run the following code in R to install the car package: \\
+
+\codeblock{install.packages(\textquotesingle car\textquotesingle)}
+
+A package needs to be loaded in \textbf{every script} that uses functions from this package. \\
+
+\codeblock{library(car)}
+
+This assignment assumes you have done assignment 3.3 and therefore have four $n = 90$ samples called \rcode{sample1} - \rcode{sample4} from populations \rcode{P1} - \rcode{P4} from \rcode{dataset5} and calculated the \concept{confidence intervals} for the population means. \\
+
+\question{
+    3.4 a
+}{
+    Create a histogram for each sample in \rcode{sample1} - \rcode{sample4}.
+}
+
+\rcodeanswermedium{3.4a}
+
+\question{
+    3.4 b
+}{ 
+    Which samples look like they could have been taken from a \concept{normal distribution}?
+}
+
+\threelineanswerbox{3.4b}
+
+\clearpage % Page break
+
+\question{
+    3.4 c
+}{
+    Use this \texttt{R} code (from the \rcode{car} package) to create four \concept{qq-plots} for the four \concept{samples}. 
+}
+
+\codeblock{qqPlot(sample1, distribution = \textquotesingle norm\textquotesingle) {\color{dataset}\# qqPlot for sample 1}}
+
+\rcodeanswermedium{3.4c}
+
+\question{
+    3.4 d
+}{
+    Evaluate each \concept{qq-plot} and explain the deviations from the diagonal by referencing features of the histograms. Do the \concept{qq-plots} confirm your answer for question 3.4b?
+}
+
+\fourlineanswerbox{3.4c and 3.4d}
+
+\question{
+    3.4 e
+}{
+    Formulate the \concept{null hypothesis} $H_0$  and \concept{alternative hypothesis} $H_1$ for a test of normality in these samples.
+}
+
+\hypothesesbox{3.4e}
+
+\question{
+    3.4 f
+}{
+    Use the following \texttt{R} code to perform a \concept{Shapiro-Wilk} normality test on the four samples. Use a confidence level of 99\% and write down the conclusion for each sample.
+}
+
+\codeblock{shapiro.test(sample1) {\color{dataset}\# Normality test for sample 1}}
+
+\hint{Hint 3.9: First think about what \concept{p-values} lead to rejecting the \concept{null hypothesis} $H_0$.}
+
+\clearpage % Page break
+
+\rcodeanswersmall{3.4f}
+\fourlineanswerbox{3.4f}
+
+In assignment 3.3 you used these \concept{samples} and the \concept{normal distribution} to estimate the \concept{confidence interval} for the \concept{population mean}. You also tested whether the actual population means were inside these intervals, which they almost always were. \\
+
+Now you found out that most of these samples are actually not normally distributed at all. \\
+
+\question{
+    3.4 g
+}{
+    If a sample is not normally distributed, does that mean you cannot use it to estimate the population mean? Explain your answer.
+}
+
+\emptyanswerbox{
+    3.4g
+}{
+    When the sample is not normally distributed, the sample \textbf{can} / \textbf{cannot} be used to estimate the population mean.
+    \answerskip
+    Explanation:
+    \answerskip
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+}
+
+\clearpage % Page break

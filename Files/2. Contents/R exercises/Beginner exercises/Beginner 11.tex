@@ -1,0 +1,45 @@
+\subsection{Sampling and simulating data}
+
+\question{
+B 61
+}{
+You can throw a die 100 times by typing the following code in \texttt{R}: \\
+\\
+\codeblock{throws <- sample(1:6, 100, TRUE)}
+How can you see how often each number shows up? How often did each number show up?
+}
+
+\question{
+B 62
+}{
+Sample, with replacement, 4 cards from the set \rcode{\textquotesingle jack\textquotesingle}, \rcode{\textquotesingle queen\textquotesingle}, \rcode{\textquotesingle king\textquotesingle} and \rcode{\textquotesingle ace\textquotesingle} with equal probabilities. 
+}
+
+\question{
+B 63
+}{
+Create 20 uniform random numbers between 0 and 100. Why is \rcode{sample(1:100, 20)} not correct?
+}
+
+\question{
+B 64
+}{
+Put 21 uniform random numbers in a vector. What is the median of this vector? Sort the vector from highest to lowest. What is the 11th element of the sorted vector?
+}
+
+\question{
+B 65
+}{
+Create 100 normally distributed numbers with \rcode{mean = 100} and \rcode{sd = 15}. What is the variance of these numbers? Run the code that you used for this again. Why is the variance not exactly the same the second time? What can you use so that, if you run your code again, the results are the same?
+}
+
+\question{
+B 66
+}{
+Run the following code in \texttt{R}: \\
+\\
+\codeblock{x <- matrix(rnorm(100), 25, 4)}
+Find out the covariance matrix of matrix \rcode{x}? Also find out the correlation matrix of matrix \rcode{x}?
+}
+
+\clearpage

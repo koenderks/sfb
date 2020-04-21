@@ -1,0 +1,405 @@
+% Define packages
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[margin=2.2cm]{geometry}
+
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{menukeys}
+\usepackage{tikz,lipsum,lmodern}
+\usepackage[most]{tcolorbox}
+\usepackage{bookmark}
+\usepackage{inconsolata}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+
+% Arial letter type
+\renewcommand{\familydefault}{\sfdefault}
+
+% Define links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdfauthor={Koen Derks, Maurice Hoenderdos, Jacques de Swart and Ruud Wetzels},
+    pdftitle={Statistics for Business with Applications in R and RStudio},
+    pdfsubject={Statistics for Business},
+    pdfkeywords={key, word},
+    pdfproducer={MiKTeX pdfTeX-1.40.13},
+    pdfcreator={PdfLaTeX},
+    bookmarksnumbered=true,
+    bookmarksopen=true,
+    bookmarksopenlevel=1,
+    pdfstartview=Fit,
+    unicode=true,
+    pdfpagemode=UseOutlines
+}
+\urlstyle{same}
+
+% Define colors 
+\definecolor{learningobjectives}{RGB}{255, 231, 120}
+\definecolor{dataset}{RGB}{24, 134, 45}
+\definecolor{rcode}{RGB}{25, 86, 204}
+\definecolor{codeblock}{RGB}{208, 231, 255}
+\definecolor{concept}{RGB}{198, 0, 0}
+\definecolor{answercode}{RGB}{241, 241, 241}
+
+% Define header and footer
+\fancyfoot[LE,RO]{\thepage} % Left side on Even pages; Right side on Odd pages
+\pagestyle{fancy}
+\fancypagestyle{plain}{%
+  \fancyhf[lh]{{\fontsize{12}{14}\selectfont\textit{Statistics for Business}}}%
+  \fancyhf[rh]{{\fontsize{12}{14}\selectfont\textit{\nouppercase{\rightmark}}}}%
+  \renewcommand{\headrulewidth}{1pt}%
+  \fancyhf[lef,rof]{\thepage}%
+  \fancyhf[cf]{}
+  %\renewcommand{\footrulewidth}{1pt}%
+}
+\pagestyle{plain}
+\setlength\parindent{0pt}
+
+% Define table of contents
+\setcounter{secnumdepth}{0}
+\renewcommand\cfttoctitlefont{\normalsize\itseries}
+\renewcommand\cftsecfont{\normalsize\itseries}
+\renewcommand\cftsubsecfont{\normalsize}
+
+\renewcommand\cftaftertoctitle{\hfill\llap{\textit{Page}}}
+\renewcommand\contentsname{\vspace{-1.5cm}\fontsize{16}{18}\selectfont\textit{Content}\vspace{-.5cm}}
+
+% Define chapter title
+\titleformat{\section}[hang]
+  {\fontsize{16}{18}\selectfont\textit}{}{}{}
+\titlespacing{\section}
+  {0cm}{0.75cm}{0.75cm}
+  
+% Define assignment title
+\titleformat{\subsection}[hang]
+  {\bfseries\textit}{}{}{}
+\titlespacing{\subsection}
+  {0cm}{0cm}{0.75cm}
+
+% Define statistical concept
+\newcommand{\concept}[1]
+{
+{\color{concept} \fontfamily{pcr}\selectfont \textbf{#1}}
+}
+
+% Define R code
+\newcommand{\rcode}[1]
+{
+{\color{rcode} \fontfamily{zi4}\selectfont \textbf{#1}}
+}
+
+% Define R comment
+\newcommand{\rcomment}[1]
+{
+{\color{dataset}\fontfamily{zi4}\selectfont\textbf{\# #1}}
+}
+
+% Define data set
+\newcommand{\dataset}[1]
+{
+{\color{dataset} \fontfamily{pcr}\selectfont \textbf{#1}}
+}
+
+% Define empty learning objectives box
+\newcommand{\emptylearningobjectives}{
+    \noindent\makebox[\textwidth][l]{%
+      \colorbox{learningobjectives}{%
+      \begin{minipage}{\textwidth}
+        \vspace*{0.2cm}
+        \textbf{\textit{Learning objectives of this chapter:}}
+        \vspace*{0.2cm}
+        \end{minipage}
+}}\vspace{0.75cm}}
+
+% Define R code answer box
+\newcommand{\rcodeanswertiny}[1]
+{
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code #1:]
+      \vspace*{.5cm}
+    \end{tcolorbox}
+    \vspace*{0.5cm}
+}
+
+\newcommand{\rcodeanswersmall}[1]
+{
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code #1:]
+      \vspace*{1.5cm}
+    \end{tcolorbox}
+    \vspace*{0.5cm}
+}
+
+\newcommand{\rcodeanswermedium}[1]
+{
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code #1:]
+      \vspace*{2cm}
+    \end{tcolorbox}
+    \vspace*{0.5cm}
+}
+
+\newcommand{\rcodeanswerlarge}[1]
+{
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code #1:]
+      \vspace*{4cm}
+    \end{tcolorbox}
+    \vspace*{0.5cm}
+}
+      
+% Define full learning objectives box
+\newcommand{\learningobjectives}[1]{
+    \noindent\makebox[\textwidth][l]{%
+      \colorbox{learningobjectives}{%
+      \begin{minipage}{\textwidth}
+        \vspace*{0.2cm}
+        \textbf{\textit{Learning objectives of this chapter:}}
+        \begin{itemize}
+            #1
+        \end{itemize}
+        \vspace*{0.02cm}
+        \end{minipage}}}
+        \vspace{0.75cm}
+}
+
+% Define answer
+\newcommand{\answer}[2]
+{
+\begin{minipage}[t]{0.08\textwidth}
+#1\hspace*{-3pt}) \hfill
+\end{minipage}%
+\begin{minipage}[t]{0.92\textwidth}
+\fontfamily{pcr}\selectfont 
+#2
+\normalfont
+\end{minipage}%
+\vspace*{0.5cm}
+}
+
+% Define answer boxes
+\newcommand{\emptyanswerbox}[2]
+{
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1\hspace*{-3pt}:]
+    \fontfamily{pcr}\selectfont 
+    \vspace*{.5cm}
+    #2
+    \normalfont
+    \end{tcolorbox}
+    \vspace*{0.5cm}
+}
+
+\newcommand{\onelineanswerbox}[1]
+{
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \fontfamily{pcr}\selectfont 
+    \vspace*{0.5cm}
+    \answerskip
+    \rule{\textwidth}{0.4pt}
+    \normalfont
+    \end{tcolorbox}
+    \vspace*{0.5cm}
+}
+
+\newcommand{\twolineanswerbox}[1]
+{
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \fontfamily{pcr}\selectfont 
+    \vspace*{0.5cm}
+    \answerskip
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \normalfont
+    \end{tcolorbox}
+    \vspace*{0.5cm}
+}
+
+\newcommand{\threelineanswerbox}[1]
+{
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \fontfamily{pcr}\selectfont 
+    \vspace*{0.5cm}
+    \answerskip
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \normalfont
+    \end{tcolorbox}
+    \vspace*{0.5cm}
+}
+
+\newcommand{\fourlineanswerbox}[1]
+{
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \fontfamily{pcr}\selectfont 
+    \vspace*{0.5cm}
+    \answerskip
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \normalfont
+    \end{tcolorbox}
+    \vspace*{0.5cm}
+}
+
+\newcommand{\sixlineanswerbox}[1]
+{
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \fontfamily{pcr}\selectfont 
+    \vspace*{0.5cm}
+    \answerskip
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \answerbreak
+    \rule{\textwidth}{0.4pt}
+    \normalfont
+    \end{tcolorbox}
+    \vspace*{0.5cm}
+}
+
+% Define answer lines
+\newcommand{\tinyanswerline}{
+    \rule{1cm}{0.4pt} 
+}
+
+\newcommand{\shortanswerline}{
+    \rule{3cm}{0.4pt} 
+}
+
+\newcommand{\mediumanswerline}{
+    \rule{6cm}{0.4pt} 
+}
+
+\newcommand{\longanswerline}{
+    \rule{9cm}{0.4pt} 
+}
+
+\newcommand{\answerbreakline}{
+    \hline
+    \vspace*{.5cm}
+}
+      
+% Define R code block
+\newcommand{\codeblock}[1]
+{
+    \makebox[\textwidth][l]{%
+      \colorbox{codeblock}{%
+      \begin{minipage}{\textwidth}
+        \vspace*{0.2cm}
+       {\color{rcode} \fontfamily{zi4}\selectfont \textbf{#1}} 
+        \vspace*{0.2cm}
+        \end{minipage}
+}}\vspace*{0.5cm}}
+
+\newcommand{\answercode}[1]
+{
+    \makebox[\textwidth][l]{%
+      \colorbox{answercode}{%
+      \begin{minipage}{\textwidth}
+        \vspace*{0.2cm}
+       {\color{rcode} \fontfamily{zi4}\selectfont \textbf{#1}} 
+        \vspace*{0.2cm}
+        \end{minipage}
+}}\vspace*{0.5cm}}
+
+% Define itemize space
+\let\olditemize\itemize
+\renewcommand\itemize{\olditemize\addtolength{\itemsep}{-.2cm}}
+
+\newcommand{\answerskip}{
+    \vspace*{.4cm} \\
+}
+
+\newcommand{\answerbreak}{
+    \vspace*{.1cm} \\
+}
+
+% Define question
+\newcommand{\question}[2]
+{
+\begin{minipage}[t]{0.08\textwidth}
+#1\hspace*{-3pt}) \hfill
+\end{minipage}%
+\begin{minipage}[t]{0.92\textwidth}
+#2
+\end{minipage}%
+\vspace*{0.5cm}
+}
+
+% Define hint
+\newcommand{\hint}[1]
+{
+\begin{minipage}{0.08\textwidth}
+\begin{center}
+    \includegraphics[width=.8\textwidth]{Files/Images/lightbulb.pdf}
+\end{center}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.92\textwidth}
+\textit{#1}
+\end{minipage}%
+\vspace*{0.5cm}
+}
+
+% Define R assignment
+\newcommand{\rassignment}[1]
+{
+\begin{minipage}{0.8\textwidth}
+\subsection{#1}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.1\textwidth}
+\includegraphics[width=\linewidth]{Files/Images/displaycode.pdf}
+\end{minipage}
+\vspace*{.1cm}
+}
+
+% Define hand assignment
+\newcommand{\handassignment}[1]
+{
+\begin{minipage}{0.8\textwidth}
+\subsection{#1}
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.1\textwidth}
+\includegraphics[width=\linewidth]{Files/Images/pencilhand.pdf}
+\end{minipage}
+\vspace*{.1cm}
+}
+
+% Define hypotheses answer box
+\newcommand{\hypothesesbox}[1]
+{
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \fontfamily{pcr}\selectfont 
+    \vspace*{0.5cm}
+    $H_0$: \shortanswerline \hspace{5cm} $H_1$: \shortanswerline
+    \normalfont
+    \end{tcolorbox}
+    \vspace*{0.5cm}
+}
+
+% Define struts
+\newcommand\tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut

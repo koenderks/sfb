@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 4.4: Testing hypotheses using linear regression in R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rassignment{Assignment 4.4: Testing hypotheses using linear regression in R}
+
+A manager from a local supermarket wants to increase the sustainability of her store. Since the supermarket is located in a farm village that has easy access to milk, many milk cartons are not sold, expire, and have to be thrown away. From common sense, the manager suspects that decreasing the price of milk will result in more sales, and thus fewer milk cartons that get thrown away. In order to increase her sustainability through this method, the manager sets out to find out if a decrease in the price per carton of milk will result in fewer milk cartons thrown away on an average day. She also wants to predict her decrease in waste when she lowers the price of a milk carton by 30 cents. \\
+
+The manager goes to the company headquarters and asks the prices of milk (they vary) in every branch of the supermarket chain in the Netherlands. She also asks the average number of milk cartons thrown away per day of each branch. \\
+
+For this assignment, you need the data file \dataset{nationalSupermarket.csv}, which contains the full \concept{population} of 200 stores of the supermarket chain in the Netherlands. \\
+
+\question{
+    4.4 a
+}{
+    Use the \rcode{read.csv()} function (and \rcode{setwd()} function if you prefer) to import the data set into a data frame called \rcode{dataset7}.
+}
+
+\rcodeanswertiny{4.4a}
+
+\question{
+    4.4 b
+}{
+    Create a scatter plot of the data. Put the price per milk carton (\rcode{Price}) on the \textit{x-axis} and the average number of milk cartons that was thrown away (\rcode{AvgWasted}) on the \textit{y-axis}.
+}
+
+\rcodeanswersmall{4.4b}
+
+The \rcode{lm()} function is used to fit a linear model (linear regression) in \texttt{R}. It requires that you specify a \rcode{formula} that tells the function what the \concept{regression equation} is. If you want to fit a \concept{model} where you predict an outcome variable \rcode{Y} on the basis of one predictor variable \rcode{X}, the formula is as follows: \\
+
+\begin{center}
+    \textbf{Formula on paper: }$Y = \beta_0 + \beta_1 \times X$ 
+    \hspace*{2cm}
+    \textbf{Formula in R: }\rcode{Y {\raise.17ex\hbox{$\scriptstyle\sim$}} 1 + X}
+\end{center}
+
+\question{
+    4.4 c
+}{
+    Write down the \concept{regression equation} for a linear model where you predict the average number of thrown away milk cartons per day (\rcode{AvgWasted}) on the basis of the price per milk carton (\rcode{Price}). 
+}
+
+\emptyanswerbox{
+    4.4c
+}{
+    AvgWasted = \longanswerline
+}
+
+\clearpage % Page break
+
+A linear \concept{model} with these variables can be fitted in \texttt{R} by calling the \rcode{lm()} function with the \rcode{formula} and the \rcode{dataset} (see the \texttt{R} code below). The variables \rcode{X} and \rcode{Y} should correspond to the names of the corresponding variables in your \rcode{dataset}. \\
+
+\codeblock{lm(formula = Y {\raise.17ex\hbox{$\scriptstyle\sim$}} 1 + X, data = dataset)}
+
+\question{
+    4.4 d
+}{
+    Fit a linear \concept{model} where you use the data in \rcode{dataset7} to predict the average number of thrown away milk cartons per day (\rcode{AvgWasted}) on the basis of the price per milk carton (\rcode{Price}). Store this \concept{model} in an object called \rcode{lmfit}.
+}
+
+\rcodeanswertiny{4.4d}
+
+Now run the following code in \texttt{R}: \\
+
+\codeblock{summary(lmfit)}
+
+\question{
+    4.4 e
+}{
+    Use the summary to find out the $\beta_0$ and $\beat_1$ parameters and write them down in the \concept{regression equation} below.
+}
+
+\emptyanswerbox{
+    4.4e
+}{
+    AvgWasted = $\beta_0$ (\rule{1cm}{0.4pt}) + $\beta_1$ (\rule{1cm}{0.4pt}) $\times$ Price
+}
+
+\question{
+    4.4 f
+}{
+    Using the \rcode{abline()} function, paste the \concept{regression equation} line into your scatter plot from assignment 4.4b.
+}
+
+\rcodeanswertiny{4.4f}
+
+\question{
+    4.4 g
+}{
+    What is the $R^2$ of the \rcode{lmfit} regression \concept{model}? What is the interpretation of this value?
+}
+
+\emptyanswerbox{
+    4.4g
+}{
+    $R^2 = $\shortanswerline    
+    \answerskip
+    Interpretation:
+    \answerskip
+    \rule{\textwidth}{0.4pt}
+    \answerskip
+    \rule{\textwidth}{0.4pt}
+}
+
+\clearpage % Page break
+
+From the regression line, the manager observes that there is indeed a positive \concept{relationship} between the price of a carton of milk and the average number of milk cartons thrown away per day. To be sure she wants to test the hypothesis that, with 95\% confidence, the price of milk is a good predictor of the average number of milk cartons that are thrown away per day, and that this \concept{relationship} is truly positive. \\
+
+\question{
+    4.4 h
+}{
+    Formulate the \concept{null hypothesis} $H_0$ and the \concept{alternative hypothesis} $H_1$ for the manager’s test of the population coefficient $\beta_1$ for the price of a carton of milk.  
+}
+
+\hypothesesbox{4.4h}
+
+\question{
+    4.4 i
+}{
+    Use the \rcode{summary} in \texttt{R} to draw the conclusion for the manager. Include the following four elements:
+        \begin{itemize}
+        \item[$\square$] Discuss what the \concept{p-value} is for this test.
+        \item[$\square$] Discuss whether $H_0$ is rejected or not.
+        \item[$\square$] Describe what this tells us about $\beta_1$.
+        \item[$\square$] Describe what type of error is relevant \textit{(type-I or type-II)}.
+    \end{itemize}
+}
+
+\sixlineanswerbox{4.4i}
+
+\clearpage % Page break
