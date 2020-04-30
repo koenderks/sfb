@@ -1,3 +1,7 @@
+\setcounter{section}{2}
+\setcounter{subsection}{5}
+\setcounter{question}{0}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Assignment 2.5: Creating a box plot in R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -7,16 +11,12 @@
 For this next assignment, let’s return to the \rcode{swiss} data set. More specifically, you will now have to focus on the values that are stored in the separate variable \rcode{agriculture}. \\
 
 \question{
-    2.5 a
-}{
     Find out the \concept{minimum}, \concept{lower quartile}, \concept{median}, \concept{upper quartile}, and \concept{maximum} of the \rcode{agriculture} variable.
 }
 
-\rcodeanswersmall{2.5a}
+\rcodeanswersmall
 
 \emptyanswerbox{
-    2.5a
-}{
     Minimum: \quad \shortanswerline \quad Upper quartile: \shortanswerline
             \answerskip
             Median: \quad\hspace*{7pt} \shortanswerline \quad Lower quartile: \shortanswerline
@@ -25,16 +25,12 @@ For this next assignment, let’s return to the \rcode{swiss} data set. More spe
 }
 
 \question{
-    2.5 b
-}{
     Create a boxplot of the \rcode{agriculture} variable.
 }
 
-\rcodeanswertiny{2.5b}
+\rcodeanswertiny
 
 \question{
-    2.5 c
-}{
     Run the following code in \texttt{R} and explain the table output. How does the code work?
 }
 
@@ -44,18 +40,16 @@ educationLevel[education >= 12] = \textquotesingle3.High\textquotesingle\\
 table(educationLevel)
 }
 
-\twolineanswerbox{2.5c}
+\twolineanswerbox
 
 \clearpage % Page break
 
 \question{
-    2.5 d
-}{
     Create a box plot using the \texttt{R} code below and explain what you see.
 }
 
 \codeblock{boxplot(agriculture {\raise.17ex\hbox{$\scriptstyle\sim$}} educationLevel)}
 
-\twolineanswerbox{2.5d}
+\twolineanswerbox
 
 \clearpage % Page break

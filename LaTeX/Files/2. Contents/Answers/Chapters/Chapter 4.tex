@@ -1,15 +1,15 @@
+\setcounter{section}{4}
+\setcounter{subsection}{1}
+\setcounter{answer}{0}
+
 \subsection{Chapter 4: Correlation and regression}
 
 \answer{
-    4.1 a
-}{
     Two variables can either be positively related, not related, or negatively related. The most logical relationship is that the distance a customer lives from the store is negatively related to how many times they visit the store.
 }
 
 \answer{
-    4.1 b
-}{
-    \vpsace*{1pt}
+    \vspace*{1pt}
     \begin{tabular}{|c|c|r|r|r|r|}
     \hline 
     $i$ & $x_i$ & $y_i$ & $(x_i - \bar{x})$ & $(y_i - \bar{y})$ & $(x_i - \bar{x})(y_i - \bar{y})$ \tstrut\bstrut\\
@@ -40,48 +40,34 @@
 }
 
 \answer{
-    4.1 c
-}{
     The covariance is negative. A negative covariance indicates that that as one variable deviates from the mean, the other variable deviates in the other direction. This means that, when a customer’s distance from the store in kilometers is higher than the mean, their average visits per week will likely be lower than the mean.
 }
 
 \answer{
-    4.1 d
-}{
     The disadvantage of using the covariance as a measure for the strength of this relationship is that it depends on the measurement unit (kilometers vs. meters) that the co-worker asks the questions in. If the co-worker would have asked the question in meters the covariance would have increased by a 1000 times, namely -779.84.
 }
 
 \answer{
-    4.1 e
-}{
     $s_x = \sqrt{\frac{\sum^n_{i = 1} (x_i - \bar{x})^2}{n - 1}} = \sqrt{\frac{6.977}{7}} = 0.998$ \hspace*{2cm} $s_y = \sqrt{\frac{\sum^n_{i = 1} (y_i - \bar{y})^2}{n - 1}} = \sqrt{\frac{7}{7}} = 1$
 }
 
 \answer{
-    4.1 f
-}{
     $r_{xy} = \frac{s_{xy}}{s_x \times s_y} = \frac{-0.779}{0.998 \times 1} = -0.779$
 }
 
 \answer{
-    4.1 g
-}{
     The coefficient is -0.779, which represents is a relatively strong negative relationship.
 }
 
-\answerbreakline 
+\answerbreakline \setcounter{subsection}{2} \setcounter{answer}{0}
 
 \clearpage
 
 \answer{
-    4.2 a
-}{
     $H_0$: $\rho_{xy} \geq 0$ \hspace{4cm} $H_1$: $\rho_{xy} < 0$
 }
 
 \answer{
-    4.2 b
-}{
     \begin{minipage}[t]{.5\textwidth}
     $N = $ unknown \\
     $n = 8$ 
@@ -93,14 +79,10 @@
 }
 
 \answer{
-    4.2 c
-}{
     $z_{0.05} = -1.645$
 }
 
 \answer{
-    4.2 d
-}{
     $z_r = \frac{1}{2} \times log_e(\frac{1 + r}{1 - r}) = \frac{1}{2} \times log_e(\frac{1 - 0.779}{1 + 0.779}) = -1.043$ \\
     \\
     $SE_r = \frac{1}{\sqrt{n - 3}} = \frac{1}{\sqrt{8 - 3}} = 0.447$ \\
@@ -109,24 +91,18 @@
 }
 
 \answer{
-    4.2 e
-}{
     The observed z-value is more extreme (lower) than the critical z-value. $H_0$ is rejected with 95\% confidence. You can be 95\% confident that $\rho_{xy}$ is negative in the population. There is a 5\% change of a type-I error.
 }
 
-\answerbreakline
+\answerbreakline \setcounter{subsection}{3} \setcounter{answer}{0}
 
 \answer{
-    4.3 a
-}{
     \vspace*{-10pt}
     \answercode{{\color{dataset}\# Be sure to set your working directory when providing a relative path} \\
 dataset6 <- read.csv(\textquotesingle localSupermarket.csv\textquotesingle)}
 }
 
 \answer{
-    4.3 b
-}{
     Covariance: -0.30 \\
     Correlation: -0.30 \\
     \\
@@ -135,8 +111,6 @@ cor(dataset6\$Distance, dataset6\$AvgVisits)  {\color{dataset}\# Correlation: -0
 }
 
 \answer{
-    4.3 c
-}{
     \vspace*{-10pt}
     \answercode{cor.test(dataset6\$Distance, dataset6\$AvgVisits, alternative = \textquotesingle less\textquotesingle) \\
 {\color{dataset}\# Correlation: -0.30} \\
@@ -145,8 +119,6 @@ cor(dataset6\$Distance, dataset6\$AvgVisits)  {\color{dataset}\# Correlation: -0
 }
 
 \answer{
-    4.3 d
-}{
     The black line represents the normal distribution. The red line represents the t-distribution. The difference between the two distributions, in terms of their shape, is that the t-distribution has slightly thicker tails. When you increase the degrees of freedom of the t-distribution, it will start to look more like the normal distribution.\\
     \\
     \answercode{curve(dnorm(x, mean = 0, sd = 1), from = -3, to = 3, ylab = \textquotesingle Density\textquotesingle)\\
@@ -156,8 +128,6 @@ curve(dt(x, df = 3), from = -3, to = 3, add = TRUE, col = \textquotesingle red\t
 \clearpage
 
 \answer{
-    4.3 e
-}{
     $df = 998$ \hspace*{5cm} $t_{xy} = -9.936$ \\
     \\
     \answercode{n <- nrow(dataset6) \\
@@ -170,30 +140,22 @@ tscore <- r * sqrt(n - 2) / sqrt(1 - r\textrm{\textasciicircum}2)    \\
 }
 
 \answer{
-    4.3 f
-}{
     You can find the t-value in the bottom line of the output in the console.
 }
 
 \answer{
-    4.3 g
-}{
     The p-value is < 2.2e-16, which is lower than the significance level of 5\%. This means that $H_0$ can be rejected with 95\% confidence.
 }
 
-\answerbreakline
+\answerbreakline \setcounter{subsection}{4} \setcounter{answer}{0}
 
 \answer{
-    4.4 a
-}{
     \vspace*{-10pt}
     \answercode{{\color{dataset}\# Be sure to set your working directory when providing a relative path} \\
 dataset7 <- read.csv(\textquotesingle nationalSupermarket.csv\textquotesingle)}
 }
 
 \answer{
-    4.4 b
-}{
     \vspace*{-10pt}
     \answercode{plot(x = dataset7\$Price, \\
      \hspace*{30pt}y = dataset7\$AvgWasted, \\
@@ -208,21 +170,15 @@ dataset7 <- read.csv(\textquotesingle nationalSupermarket.csv\textquotesingle)}
 }
 
 \answer{
-    4.4 c
-}{
     AvgWasted $= \beta_0 + \beta_1 \,\times$ Price
 }
 
 \answer{
-    4.4 d
-}{
     \vspace*{-10pt}
     \answercode{lmfit <- lm(formula = AvgWasted {\raise.17ex\hbox{$\scriptstyle\sim$}} Price, data = dataset7)}
 }
 
 \answer{
-    4.4 e
-}{
     AvgWasted $= 0.236 + 2.995 \,\times$ Price \\
     \\
     \answercode{summary(lmfit) \\
@@ -235,44 +191,32 @@ dataset7 <- read.csv(\textquotesingle nationalSupermarket.csv\textquotesingle)}
 \clearpage % Page break
 
 \answer{
-    4.4 f
-}{
     \vspace*{-10pt}
     \answercode{abline(lmfit)}
 }
 
 \answer{
-    4.4 g
-}{
     $R^2 = 0.64$ \\
     \\
     Interpretation: The multiple $R^2$ is 0.64, meaning that 64\% of the variation in the number of milk cartons that are thrown away each day can be explained by the price of the milk cartons.
 }
 
 \answer{
-    4.4 h
-}{
     $H_0$: $\beta_1 \leq 0$ \hspace*{4cm} $H_1$: $\beta_1 > 0$
 }
 
 \answer{
-    4.4 i
-}{
     The p-value for the regression coefficient is < 2e-16, which is lower than the significance level of 5\%. $H_0$ can be rejected with 95\% confidence. You can be 95\% sure that $\beta_1$ is positive in the population. The price contributes significantly to the average number of milk cartons thrown away. There is a 5\% risk of a type-I error.
 }
 
-\answerbreakline
+\answerbreakline \setcounter{subsection}{5} \setcounter{answer}{0}
 
 \answer{
-    4.5 a
-}{
     \vspace*{-10pt}  
     \answercode{newdata <- data.frame(Price = 0.70)}
 }
 
 \answer{
-    4.5 b
-}{
     Predicted value: 2.33 \\
     \\
     \answercode{predict(object = lmfit, \\
@@ -280,14 +224,10 @@ dataset7 <- read.csv(\textquotesingle nationalSupermarket.csv\textquotesingle)}
 }
 
 \answer{
-    4.5 c
-}{
     Predicted value: $0.236 + 2.995 \times 0.70 = 2.33$
 }
 
 \answer{
-    4.5 d
-}{
     \vspace*{-10pt}
     \answercode{predict(object = lmfit, newdata = newdata, \\
         \hspace*{40pt}interval = \textquotesingle prediction\textquotesingle, level = 0.90) \\
@@ -297,8 +237,6 @@ dataset7 <- read.csv(\textquotesingle nationalSupermarket.csv\textquotesingle)}
 }
 
 \answer{
-    4.5 e
-}{
     The supermarket will throw away fewer cartons of milk. \\
     \\
     \underline{Explanation}: The current number of milk cartons thrown away (4) lies outside the bounds of the 90\% confidence interval for the prediction.

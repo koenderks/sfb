@@ -1,15 +1,15 @@
+\setcounter{section}{7}
+\setcounter{subsection}{1}
+\setcounter{answer}{0}
+
 \subsection{Chapter 7: Comparing proportions and distributions}
 
 \answer{
-    7.1 a
-}{
     $H_0$: The 2019 distribution is equal to the historical distribution \\
     $H_1$: The 2019 distribution is not equal to the historical distribution
 }
 
 \answer{
-    7.1 b
-}{
 Expected number = Historical \% $\times$ Observed number
     \begin{center}
     \begin{tabular}{|r|c|c|c|c|c|}
@@ -31,32 +31,22 @@ Expected number = Historical \% $\times$ Observed number
 }
 
 \answer{
-    7.1 c
-}{
     Since every season has an expected value above 5 you can do a chi-square test.
 }
 
 \answer{
-    7.1 d
-}{
     $X^2 = 8.530$
 }
 
 \answer{
-    7.1 e
-}{
     The calculated chi-square value of 8.530 is higher than the critical chi-square value of 7.8. $H_0$ is rejected. The 2019 distribution is significantly different from the historical distribution. There is a 5\% risk of a type-I error.
 }
 
 \answer{
-    7.1 f
-}{
     You rejected the null hypothesis $H_0$ with 95\% confidence, and so the p-value must be lower than 0.05.
 }
 
 \answer{
-    7.1 g
-}{
     $X^2 = 8.530$ \\
     \\
     \answercode{Observed <- c(37, 27, 12, 8) \\
@@ -67,8 +57,6 @@ chi <- sum((Observed - Expected)\textrm{\textasciicircum}2 / Expected) {\color{d
 }
 
 \answer{
-    7.1 h
-}{
     Yes. \\
     \\
     \answercode{qchisq(p = 0.95, df = 3) {\color{dataset}\# 7.185}}
@@ -77,8 +65,6 @@ chi <- sum((Observed - Expected)\textrm{\textasciicircum}2 / Expected) {\color{d
 \clearpage % Page break
 
 \answer{
-    7.1 i
-}{
     \texttt{R} returns the same chi-squared as calculated, so the answer was correct. It also shows a p-value of below 0.05, as expected. \\
     \\
     \answercode{{\color{dataset}\# chi-square test: x = observations p = model distribution} \\
@@ -90,8 +76,6 @@ chisq.test(x = Observed, p = Historical, rescale.p = TRUE) \\
 }
 
 \answer{
-    7.1 j
-}{
     The expected values are 25.2, 33.6, 12.6, and 12.6. \texttt{R} shows the same expected values.\\
     \\
     \answercode{chisq <- chisq.test(x = Observed, p = Historical) \\
@@ -99,11 +83,9 @@ chisq\$expected   {\color{dataset}\# Extract expected values with \$expected} \\
 {\color{dataset}\# 25.2 33.6 12.6 12.6}}
 }
 
-\answerbreakline
+\answerbreakline \setcounter{subsection}{2} \setcounter{answer}{0}
 
 \answer{
-    7.2 a
-}{
     The \rcode{sales} data frame contains 3 columns: \rcode{month}, \rcode{historical} and \rcode{newstore}. It contains the ‘Historical’ and ‘New Store’ distribution of sales over the months. \\
     \\
     \answercode{{\color{dataset}\# These are the values for the sales data set} \\
@@ -117,14 +99,10 @@ summary(sales)}
 }
 
 \answer{
-    7.2 b
-}{
     The chi-square test requires every cell in the expected distribution to have a value of at least 5 and it requires the total of both groups to be equal. Since the historical distribution contains more than 5 in every cell and both observed and expected values add up to the same number (100) we can use this for a chi-squared test.
 }
 
 \answer{
-    7.2 c
-}{
     $H_0$: The new distribution is equal to the historical distribution \\
     $H_1$: The new distribution is not equal to the historical distribution
 }
@@ -132,19 +110,15 @@ summary(sales)}
 \clearpage % Page break
 
 \answer{
-    7.2 d
-}{
     The p-value of 0.6963 is higher than the critical p-value of 0.10. $H_0$ is not rejected. The new store distribution is not significantly different from the historical distribution. There is a risk a type-II error. \\
     \\
     \answercode{chisq.test(x = sales\$newstore, p = sales\$historical, rescale.p = TRUE) \\
 {\color{dataset}\# p-value: 0.6963}}
 }
 
-\answerbreakline
+\answerbreakline \setcounter{subsection}{3} \setcounter{answer}{0}
 
 \answer{
-    7.3 a
-}{
     The best estimate of the population proportion $\pi$ is the sample proportion $p$. \\
     \\
     $\pi_1 = \frac{k}{n} = \frac{8}{71} = 0.113$ \\
@@ -153,8 +127,6 @@ summary(sales)}
 }
 
 \answer{
-    7.3 b
-}{
     Confidence interval sample 1: \\
     \\
     $p \pm z_\alpha \times \sqrt{\frac{p(1-p)}{n}} = 0.113 \pm 1.960 \times \sqrt{\frac{0.113 \times (1 - 0.113)}{71}} = [ 0.039;\, 0.187 ]$ \\
@@ -165,48 +137,36 @@ summary(sales)}
 }
 
 \answer{
-    7.3 c
-}{
     $H_0$: $\pi_2 \leq \pi_1$ \hspace*{4cm} $H_1$: $\pi_2 > \pi_1$ \\
     \\
     Where $\pi_2$ and $\pi_1$ are the success proportions for the evening and afternoon calls respectively.
 }
 
 \answer{
-    7.3 d
-}{
     Combined success probability: \\
     \\
     $p^* = \frac{k_1 + k_2}{n_1 + n_2} = \frac{8 + 16}{71 + 111} = 0.132$
 }
 
 \answer{
-    7.3 e
-}{
     Combined standard error: \\
     \\
     $s_p = \sqrt{p^*(1-p^*)(\frac{1}{n_1} + \frac{1}{n_2})} = \sqrt{0.132(1-0.132)(\frac{1}{71} + \frac{1}{111})} = 0.0514$
 }
 
 \answer{
-    7.3 f
-}{
     z-score: $\frac{p_1 - p_2}{s_p} = \frac{0.144 - 0.113}{0.514} = 0.612$ \\
     \\
     Note that $p_1$ and $p_2$ were switched because in the hypotheses $\pi_1$ and $\pi_2$ were also switched.
 }
 
 \answer{
-    7.3 g
-}{
     The calculated z-score of 0.612 is lower than  than the critical z-value of 1.645. $H_0$ is not rejected. The evening success rate is not shown to be significantly higher than the afternoon success rate. There is a risk of a type-II error.
 }
 
 \clearpage % Page break
 
 \answer{
-    7.3 h
-}{
     The code creates a vector of successes \rcode{k} and a vector of sample sizes \rcode{n}. The proportion test then tests the equality. It shows the proportions you calculated earlier, and a  p-value of 0.6984 which supports your conclusion if you do not reject $H_0$. \\
     \\
     \answercode{n <- c(71, 111) \\

@@ -1,3 +1,7 @@
+\setcounter{section}{1}
+\setcounter{subsection}{2}
+\setcounter{question}{0}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Assignment 1.2: Descriptive statistics of small data sets in R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -10,57 +14,48 @@ This assignment assumes you opened a new script in the code editor in
 In R, a one-dimensional row of numbers is represented by a \rcode{vector}. \\
 
 \question{
-    1.2 a
-}{
     Use the \rcode{c()} function to enter the numbers from assignment 1.1a in a new vector called \rcode{dataset1}. Next, run the following code in \texttt{R} and explain what you see.
 }
 
 \codeblock{View(dataset1)}
 
-\hint{Hint 1.1: Check Part I of the R help for more information on how to make a \rcode{vector}.}
+\hint{Check Part I of the R help for more information on how to make a \rcode{vector}.}
 
-\rcodeanswersmall{1.2a}
-\twolineanswerbox{1.2a}
+\rcodeanswersmall
+\twolineanswerbox
 
 \question{
-    1.2 b
-}{
     Write and run your own code in R to find the \concept{mean}, \concept{mode}, \concept{median}, and \concept{range} for the vector \rcode{dataset1}. Compare your answers with those of assignment 1.1a.
 }
 
-\hint{Hint 1.2: Check part IV of the R help on page~\pageref{rhelp} for descriptive statistics functions.}
-\hint{Hint 1.3: There is no \concept{mode} function in R, but you can find the mode in a frequency \rcode{table}.}
+\hint{Check part IV of the R help on page~\pageref{rhelp} for descriptive statistics functions.}
+\hint{There is no \concept{mode} function in R, but you can find the mode in a frequency \rcode{table}.}
 
-\rcodeanswersmall{1.2b}
+\rcodeanswersmall
 
 \clearpage % Page break
 
-\emptyanswerbox{
-1.2b
-}{  Mean: \quad \shortanswerline \hspace{.5cm} \quad Median: \quad \quad \shortanswerline
-            \answerskip
-            Mode: \quad \shortanswerline \hspace{.5cm} \quad Range: \qquad \quad \shortanswerline}
+\emptyanswerbox{  
+    Mean: \quad \shortanswerline \hspace{.5cm} \quad Median: \quad \quad \shortanswerline
+                \answerskip
+                Mode: \quad \shortanswerline \hspace{.5cm} \quad Range: \qquad \quad \shortanswerline
+}
 
 \question{
-    1.2 c
-}{
     Run the following code in \texttt{R} and explain what you see.
 }
 
 \codeblock{quantile(dataset1, type = 6)}
-\twolineanswerbox{1.2c}
+
+\twolineanswerbox
 
 \question{
-1.2 d
-}{
-Use the \rcode{c()} function to create a vector \rcode{dataset2} with the data from assignment 1.1b and find the \concept{mean}, \concept{mode}, \concept{median}, \concept{range}, and \concept{quartiles} for these data. Compare your answers with those of assignment 1.1b.
+    Use the \rcode{c()} function to create a vector \rcode{dataset2} with the data from assignment 1.1b and find the \concept{mean}, \concept{mode}, \concept{median}, \concept{range}, and \concept{quartiles} for these data. Compare your answers with those of assignment 1.1b.
 }
 
-\rcodeanswersmall{1.2d}
+\rcodeanswersmall
 
-\emptyanswerbox{
-    1.2d
-}{  
+\emptyanswerbox{  
 Mean: \quad \shortanswerline \hspace{.5cm} \quad Range: \qquad \qquad \qquad \qquad \shortanswerline
             \answerbreak
             Mode: \quad \shortanswerline \hspace{.4cm} \quad Lower quartile: \qquad \quad \shortanswerline

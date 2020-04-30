@@ -1,3 +1,7 @@
+\setcounter{section}{7}
+\setcounter{subsection}{2}
+\setcounter{question}{0}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Assignment 7.2: Chi-square testing in R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -16,14 +20,12 @@ sales <- data.frame(month = seq(from = 1, to = 12, by = 1), \\
                                  \hspace*{180pt}5.6, 4.8, 8.8, 12.6, 13.1, 13.7))}
                                  
 \question{
-    7.2 a
-}{
     Explore the \rcode{sales} object and describe what it contains.
 }
 
-\hint{Hint 7.2: You can use the \rcode{summary()} function to find out some quick information.}
+\hint{You can use the \rcode{summary()} function to find out some quick information.}
 
-\twolineanswerbox{7.2a}
+\twolineanswerbox
 
 Run the following code in \texttt{R} to create a graphical representation of the data: \\
 
@@ -44,30 +46,22 @@ The company wants to perform a \concept{Chi-square test}, with 90\% confidence, 
 \clearpage % Page break
 
 \question{
-    7.2 b
-}{
     Looking at the graph and considering the values in each month, can you perform a \context{Chi-square test} on these data? 
 }
 
-\twolineanswerbox{7.2b}
+\twolineanswerbox
 
 \question{
-    7.2 c
-}{
     Formulate the \concept{null hypothesis} $H_0$ and the \concept{alternative hypothesis} $H_1$ for this test in words.
 }
 
 \emptyanswerbox{
-    7.2c
-}{
     $H_0$: \rule{.9\textwidth}{0.4pt}
     \answerbreak
     $H_1$: \rule{.9\textwidth}{0.4pt}
 }
 
 \question{
-    7.2 d
-}{
     Perform a \concept{Chi-square test} in \texttt{R} using these data and draw the conclusion for the hypotheses. Include the following elements:
                 \begin{itemize}
         \item[$\square$] Show how the calculated \concept{Chi-square value} relates to the \concept{critical value}.
@@ -77,7 +71,8 @@ The company wants to perform a \concept{Chi-square test}, with 90\% confidence, 
 \end{itemize}
 }
 
-\rcodeanswertiny{7.2d}
-\sixlineanswerbox{7.2d}
+\rcodeanswertiny
+
+\sixlineanswerbox
 
 \clearpage % Page break

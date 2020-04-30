@@ -1,27 +1,21 @@
 \subsection{Reading and writing data}
 
-\question{
-B 67
-}{
-What does the \rcode{read.csv()} function do? How would you read in Excel files? What package contains the function \rcode{read.spss()}? Can you find other file types that \texttt{R} has read functions for?
+\beginnerexercise{
+    What does the \rcode{read.csv()} function do? How would you read in Excel files? What package contains the function \rcode{read.spss()}? Can you find other file types that \texttt{R} has read functions for?
 }
 
-\question{
-B 68
-}{
-Read in the file \dataset{example.csv} from the online resources using the \rcode{read.csv()} function. How many observations does this data contain?
+\beginnerexercise{
+    Read in the file \dataset{example.csv} from the online resources using the \rcode{read.csv()} function. How many observations does this data contain?
 }
 
-\question{
-B 69
-}{
-Run the following code in \texttt{R}: \\
-\\
-\codeblock{d <- data.frame(sex = c(\textquotesingle m\textquotesingle, \textquotesingle f\textquotesingle), \\
-                \hspace*{90pt}Age = c(6.7, 6.5, 5.6, 5.4), \\
-                \hspace*{90pt}var1 = c(9, 5, 4, 4), \\
-                \hspace*{90pt}var2 = c(10, 5, 8, 4))}
-Write the data frame \rcode{d} to a file named \dataset{example.xlsx} so that Excel is able to open it. What options did you use?
+\beginnerexercise{
+    Run the following code in \texttt{R}: \\
+    \\
+    \codeblock{d <- data.frame(sex = c(\textquotesingle m\textquotesingle, \textquotesingle f\textquotesingle), \\
+                    \hspace*{90pt}Age = c(6.7, 6.5, 5.6, 5.4), \\
+                    \hspace*{90pt}var1 = c(9, 5, 4, 4), \\
+                    \hspace*{90pt}var2 = c(10, 5, 8, 4))}
+    Write the data frame \rcode{d} to a file named \dataset{example.xlsx} so that Excel is able to open it. What options did you use?
 }
 
 \clearpage

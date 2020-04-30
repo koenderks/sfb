@@ -1,3 +1,8 @@
+\setcounter{section}{7} % The chapter number
+\setcounter{subsection}{1} % The assignment number
+\setcounter{question}{0} % This is always zero when starting a new question
+% \setcounter{hint}{0} % Insert this only for first assignment a chapter
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Assignment 7.4: A new assignment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,13 +28,8 @@ Some introductory text \\ % Check the spacing when rendering the document!
 % QUESTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% A question generally has the following format:
+% A question generally has the following format (and is numbered automatically):
 \question{
-    % Write down the number of the question here.
-    % Numbering in the workbook normally follows a number.number letter approach 
-    % (e.g. 7.4 a)
-    7.4a
-}{
     % Write down the question here
     What is the meaning of life?
 }
@@ -38,29 +38,26 @@ Some introductory text \\ % Check the spacing when rendering the document!
 % ANSWER
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This is a two line answer box for question 7.1 a
-% Please note the lack of a space in 7.1a below (this is for layout purposes).
-\twolineanswerbox{7.1a}
+% This is a two line answer box for the current question 
+\twolineanswerbox
 
 % Also available:
-% \onelineanswerbox{7.1a}
-% \threelineanswerbox{7.1a}
-% \fourlineanswerbox{7.1a}
-% \sixlineanswerbox{7.1a}
-% \emptyanswerbox{7.1a}{answer layout}
+% \onelineanswerbox
+% \threelineanswerbox
+% \fourlineanswerbox
+% \sixlineanswerbox
+% \emptyanswerbox{answer layout}
 
-% This is an small r code answer box for question 7.1 a
-\rcodeanswerboxsmall{7.1a}
+% This is an small r code answer box for the current question
+\rcodeanswerboxsmall
 
 % Also available:
-% \rcodeanswerboxtiny{}
-% \rcodeanswerboxmedium{}
-% \rcodeanswerboxlarge{}
+% \rcodeanswerboxtiny
+% \rcodeanswerboxmedium
+% \rcodeanswerboxlarge
 
-% Next question
+% Next question (automatically numbered)
 \question{
-    7.4 b
-}{
     Next question contents
 }
 

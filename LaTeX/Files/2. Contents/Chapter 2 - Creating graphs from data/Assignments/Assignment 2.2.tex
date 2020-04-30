@@ -1,3 +1,7 @@
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{question}{0}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Assignment 2.2: Creating and modifying a histogram in R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -5,52 +9,42 @@
 \rassignment{Assignment 2.2: Creating and modifying a histogram in R}
 
 \question{
-    2.2 a
-}{
     Take the numbers from assignment 2.1a and use the \rcode{c()} function to enter these numbers in a vector called \rcode{dataset4}. Next, run the following code in \texttt{R} and explain what you see.
 }
 
 \codeblock{hist(dataset4)}
 
-\twolineanswerbox{2.2a}
+\twolineanswerbox
 
 \question{
-    2.2 b
-}{
     The graph resulting from the command in 2.2a is not the same as the histogram that you drew in assignment 2.1b. What is the difference between the graph from 2.2a and your graph from 2.1b? 
 }
 
-\twolineanswerbox{2.2b}
+\twolineanswerbox
 
 \question{
-    2.2 c
-}{
     Try to replicate your \underline{exact} histogram from 2.1b in \texttt{R}. This requires that you specify the \rcode{breaks} argument after a comma in the \rcode{hist()} function. 
 }
 
-\hint{Hint 2.1: You can find more information on the \rcode{hist()} function by running \rcode{?hist}.}
+\hint{You can find more information on the \rcode{hist()} function by running \rcode{?hist}.}
 
-\rcodeanswertiny{2.2c}
+\rcodeanswertiny
 
 \question{
-    2.2 d
-}{
     Give your histogram a different color by adding and changing the \rcode{col} argument after the comma. Improve your histogram further by changing the \textit{x-axis} name, the main title, and the rotation of the \textit{y-axis} labels by adding more arguments.
 }
 
-\hint{Hint 2.2: Check Part II of the R help for additional arguments to the \rcode{hist()} function.}
+\hint{Check Part II of the R help for additional arguments to the \rcode{hist()} function.}
 
-\rcodeanswersmall{2.2d}
+\clearpage % Page break
+
+\rcodeanswersmall
 
 \question{
-    2.2 e
-}{
     Calculate the \concept{mean} and \concept{median} of the values of \rcode{dataset4}. Is the distribution of \rcode{dataset4} \concept{negatively skewed} or \concept{positively skewed}? Explain your answer using the relation between the \concept{mean} and the \concept{median}.
 }
 
 \emptyanswerbox{
-    2.2e
-}{
     These data sets are \textbf{positively} / \textbf{negatively} / \textbf{not} skewed.
     \answerskip
     Explanation:

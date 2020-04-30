@@ -1,3 +1,7 @@
+\setcounter{section}{4}
+\setcounter{subsection}{3}
+\setcounter{question}{0}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Assignment 4.2: Testing hypotheses about a correlation by hand
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9,35 +13,28 @@ The supermarket manager believes she has found a weakness in the distribution po
 For this assignment, you need the data file \dataset{localSupermarket.csv}, which contains a population of 1,000 observations. \\
 
 \question{
-    4.3 a
-}{
     Use the \rcode{read.csv()} function (and \rcode{setwd()} function if you prefer) to import the data set into a data frame called \rcode{dataset6}.
 }
 
-\rcodeanswertiny{4.3a}
+\rcodeanswertiny
 
 \question{
-    4.3 b
-}{
     Use the \rcode{cov()} and \rcode{cor()} functions to calculate the \concept{covariance} $s_{xy}$ and the \concept{correlation} $r_{xy}$ of the columns \rcode{Distance} and \rcode{AvgVisits}.
 }
 
-\rcodeanswersmall{4.3b}
+\rcodeanswersmall
+
 \emptyanswerbox{
-    4.3 b
-}{
     Covariance: \shortanswerline
     \answerskip
     Correlation: \shortanswerline
 }
 
 \question{
-    4.3 c
-}{
     Use the function \rcode{cor.test()} to test for a negative \concept{relationship} in this \concept{population}. Use \rcode{?cor.test} to get help about the function arguments. Can you confirm the value of the \concept{correlation} that you found in assignment 4.3b?
 }
 
-\rcodeanswersmall{4.3c}
+\rcodeanswersmall
 
 \clearpage % Page break
 
@@ -54,42 +51,32 @@ curve(dt(x, df = 3), from = -3, to = 3, add = TRUE, col = \textquotesingle red\t
 }
 
 \question{
-    4.3 d
-}{
     Which line represents the \concept{normal distribution} in the figure that was drawn? And which line represents the \concept{t-distribution}? Can you explain what the difference between the two distributions is in terms of their shape? What happens when you increase the \concept{degrees of freedom} (\rcode{df}) in the \rcode{dt()} function?
 }
 
-\twolineanswerbox{4.3d}
+\twolineanswerbox
 
 \question{
-    4.3 e
-}{
     Calculate the \concept{degrees of freedom} and the \concept{t-value} for the \concept{correlation coefficient} between \rcode{Distance} and \rocde{AvgVisits}.
 }
 
-\hint{Hint 4.7: You can find the formula for the \concept{degrees of freedom} and the \concept{t-value} of a \concept{correlation} in the formula sheet.}
+\hint{You can find the formula for the \concept{degrees of freedom} and the \concept{t-value} of a \concept{correlation} in the formula sheet.}
 
 \clearpage % Page break
 
-\rcodeanswertiny{4.3e}
+\rcodeanswertiny
 
 \emptyanswerbox{
-    4.3e
-}{
     $df$: \shortanswerline \hspace*{3cm} $t_{xy}$: \shortanswerline
 }
 
 \question{
-    4.3 f
-}{
     Where do you find the \concept{t-value} that you calculated in assignment 4.3e in the output of the \rcode{cor.test()} function from assignment 4.3c?
 }
 
-\onelineanswerbox{4.3f}
+\onelineanswerbox
 
 \question{
-    4.3 g
-}{
     What is the \concept{p-value} for this hypothesis test? Interpret this \concept{p-value} with respect to the confidence used and give a conclusion on the hypotheses. Include the following elements:
     \begin{itemize}
         \item[$\square$] Discuss what the \concept{p-value} is for this test.
@@ -99,6 +86,6 @@ curve(dt(x, df = 3), from = -3, to = 3, add = TRUE, col = \textquotesingle red\t
 \end{itemize}
 }
 
-\sixlineanswerbox{4.3g}
+\sixlineanswerbox
 
 \clearpage % Page break

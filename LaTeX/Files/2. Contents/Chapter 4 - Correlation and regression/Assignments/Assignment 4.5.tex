@@ -1,3 +1,7 @@
+\setcounter{section}{4}
+\setcounter{subsection}{5}
+\setcounter{question}{0}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Assignment 4.5: Making predictions using linear regression in R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -7,38 +11,28 @@
 The manager now wants to know what will happen to the number of milk cartons that she has to throw away when she lowers the price of a milk carton by 30 cents, from \$1.00 to \$0.70. Currently, the supermarket throws away 4 cartons of milk each day. \\
 
 \question{
-    4.5 a
-}{
     Create a new data frame that has only one column that includes the new value for the price of milk (the column has to be named exactly the same as in \rcode{dataset7}).
 }
 
-\rcodeanswersmall{4.5a}
+\rcodeanswersmall
 
 The \rcode{predict()} function can be used to predict new data according to a \concept{linear model}. \\
 
 \question{
-    4.5 b
-}{
     Use the \rcode{predict()} function to predict the number of milk cartons that the supermarket will have to throw away when the \rcode{Price} is \$0.70.
 }
 
-\rcodeanswertiny{4.5b}
+\rcodeanswertiny
 
 \emptyanswerbox{
-    4.5b
-}{
     Predicted value: \shortanswerline
 }
 
 \question{
-    4.5 c
-}{
     Confirm this estimate by writing out the regression equation of the \concept{linear model} from assignment 4.4e and filling in the new value of the price of milk. 
 }
 
 \emptyanswerbox{
-    4.5c
-}{
     Predicted value: \mediumanswerline
 }
 
@@ -47,22 +41,16 @@ The \rcode{predict()} function can also be used to construct a \concept{confiden
 \clearpage % Page break
 
 \question{
-    4.5 d
-}{
     Create a 90\% \concept{confidence interval} for the predicted number of milk cartons thrown away. 
 }
 
-\rcodeanswertiny{4.5d}
+\rcodeanswertiny
 
 \question{
-    4.5 e
-}{
     When the manager lowers her price from \$1.00 to \$0.70, will the supermarket throw away fewer cartons of milk? Incorporate the 90\% \concept{confidence interval} for the predicted value in your answer.
 }
 
 \emptyanswerbox{
-    4.5e
-}{
     The supermarket \textbf{will} / \textbf{will not} throw away fewer cartons of milk.
     \answerskip
     Explanation:

@@ -1,3 +1,7 @@
+\setcounter{section}{6}
+\setcounter{subsection}{3}
+\setcounter{question}{0}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Assignment 6.3: Implementing an ANOVA as a regression in R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12,46 +16,34 @@ Run the following code in \texttt{R} that adds a \concept{dummy variable} for \r
 dataset8   <- cbind(dataset8, dummyBrown)}
 
 \question{
-    6.3 a
-}{
     Add two more \concept{dummy variables} to the data in \rcode{dataset8}, one for \rcode{Blue} eyes and one for \rcode{Green} eyes. Name these variables \rcode{dummyBlue} and \rcode{dummyGreen}.
 }
 
-\rcodeanswermedium{6.3a}
+\rcodeanswermedium
 
 \question{
-    6.3 b
-}{
     Create a \concept{linear model} in \texttt{R} where you predict the (outcome) variable \rcode{Score} using the (predictor) variables \rcode{dummyBrown}, \rcode{dummyGreen}, and \rcode{dummyBlue}. Store the fitted \concept{linear model} in an object called \rcode{anovaReg}.
 }
 
-\rcodeanswersmall{6.3b}
+\rcodeanswersmall
 
 \question{
-    6.3 c
-}{
     Use the \rcode{summary()} function to inspect the results of the \concept{linear model} stored in \rcode{anovaReg}. What is the \concept{F-value} of the model? What is the \concept{p-value} of this model?
 }
 
-\rcodeanswertiny{6.3c}
+\rcodeanswertiny
 
 \emptyanswerbox{
-    6.3c
-}{
     F-value: \shortanswerline \hspace*{3cm} p-value: \shortanswerline
 }
 
 \clearpage % Page break
 
 \question{
-    6.3 d
-}{
     Do the \concept{F-value} and \concept{p-value} of this \concept{linear model} match those of the \concept{ANOVA} in assignment 6.2?
 }
 
 \emptyanswerbox{
-    6.3d
-}{
     \vspace*{-15pt}
     \begin{center}
         YES / NO

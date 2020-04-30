@@ -1,69 +1,45 @@
 \subsection{Beginner R exercises}
 
-\answer{
-    B 1
-}{
+\beginnerexerciseanswer{
     The code created two variables (\rcode{a} and \rcode{b}) in your environment. The value of variable \rcode{a} is 2 (although at first it is specified as 1) and the value of variable \rcode{b} is 1. It does not matter whether variables are assigned with the \rcode{=} or the \rcode{<-} operator.
 }
 
-\answer{
-    B 2
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{rm(a); rm(b)}
 }
 
-\answer{
-    B 3
-}{
-    \vspace*{-10pt}
-    \answercode{rm(list = ls(pat = \textquotesingle n\textquotesingle))}
-}
-
-\answer{
-    B 4
-}{
+\beginnerexerciseanswer{
+    Adding up \rcode{apples} and \rcode{pears} equals 11.\\
     The variable \rcode{Pears} does not exist. Instead, you should add \rcode{apples} and \rcode{pears} together (notice the lack of a capital P).
 }
 
-\answer{
-    B 5
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{t1 <- sqrt(81)}
 }
 
-\answer{
-    B 6
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{t2 <- 81\textrm{\textasciicircum }0.5}
 }
 
-\answer{
-    B 7
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{t1 == t2}
 }
 
 \answerbreakline
 
-\answer{
-    B 8
-}{
+\beginnerexerciseanswer{
     The working directory is a file path on your computer that sets the default location of any files you read into R, or save out of R. In other words, a working directory is like a little flag somewhere on your computer which is tied to a specific analysis project. If you ask R to import a dataset from a text file, or save a data frame as a text file, it will assume that the file is inside of your working directory.
 }
 
-\answer{
-    B 9
-}{ 
-    You can change the working directory using the \rcode{setwd()} function. You can check whether your change worked by calling the \rcode{getwd()} function again and checking whether it is now at the folder you specified in \rcode{setwd()}.
+\beginnerexerciseanswer{ 
+    You can change the working directory using the \rcode{setwd()} function. You can check whether your change worked by calling the \rcode{getwd()} function again and checking whether it is now at the folder you specified in \rcode{setwd()}. Note that RStudio also has the option to change the working directory from the "Session" dropdown menu, then select "Set Working Directory".
 }
 
-\answer{
-    B 10
-}{
+\beginnerexerciseanswer{
     The code shows all the available demos that are built into \texttt{R}. The \rcode{persp} demo can be viewed with: \\
     \\
     \answercode{demo(persp)}
@@ -71,29 +47,21 @@
 
 \clearpage % Page break
 
-\answer{
-    B 11
-}{
+\beginnerexerciseanswer{
     It gives \rcode{NA} because the \rcode{mean()} function does not handle \rcode{NA}’s by default. You can compute the mean without the missing value by setting \rcode{na.rm = TRUE}. 
 }
 
-\answer{
-    B 12
-}{
+\beginnerexerciseanswer{
     Just typing \rcode{mvrnorm()} gives an error because the package \rcode{MASS} (from which the function comes) is not loaded yet. You can load the \rcode{MASS} package by typing: \\
     \\
     \answercode{library(MASS)}
 }
 
-\answer{
-    B 13
-}{
-    The \rcode{\%\%} operator gives the modulo (the remaining number after division) of the first number divided by the last number. You cannot find help by typing \rcode{?\%\%}, but you can search Google for help on how to use this operator.
+\beginnerexerciseanswer{
+    The \rcode{\%\%} operator gives the modulo (the remaining number after division) of the first number divided by the last number. You cannot find help by typing \rcode{?\%\%}, but you can search Google for help on how to use this operator. Note that in RStudio you can also type \rcode{\%\%} into the search bar in the Help section (in the Files and Plots part of RStudio, usually displayed at the bottom right of your screen).
 }
 
-\answer{
-    B 14
-}{
+\beginnerexerciseanswer{
     You can test the correlation and find the confidence interval for the correlation by using the \rcode{cor.test()} function. You can find all function that have ‘cor’ in their name by typing \rcode{apropos(\textquotesingle cor\textquotesingle)}. \\
     \\
     \answercode{cor.test(c(1, 2, 3, 4), c(1, 4, 7, 15))}
@@ -101,100 +69,75 @@
 
 \answerbreakline
 
-\answer{
-    B 15
-}{
+\beginnerexerciseanswer{
     The modes of \rcode{a1}, \rcode{a2}, and \rcode{a3} are character, numeric, and logical respectively. The modes of \rcode{b1}, \rcode{b2}, \rcode{b3}, and \rcode{b4} are character, character, numeric, and character respectively. When vectors of different modes are combined \texttt{R} converts the vectors to one and the same mode, because elements in a vector can only be of one mode. 
 }
 
-\answer{
-    B 16
-}{
+\beginnerexerciseanswer{
     As a standard, \texttt{R} converts \rcode{TRUE} to a 1 and \rcode{FALSE} to a 0. \\
     $\nicefrac{1}{1} = 1$ \hspace{.5cm} $\nicefrac{0}{1} = 1$ \hspace{.5cm} $\nicefrac{0}{0} = $ undefined \hspace{.5cm} $\nicefrac{1}{0} = \infty$
 }
 
-\answer{
-    B 17
-}{
+\beginnerexerciseanswer{
     In the first case the numeric \rcode{1} is converted to character mode, while in the last case the logical \rcode{TRUE} is converted to character mode. \\
     \\
     \answercode{as.numeric(TRUE) \\
 as.character(TRUE)}
 }
 
-\answer{
-    B 18
-}{
+\clearpage % Page break
+
+\beginnerexerciseanswer{
     You can check whether a vector is numeric by using the \rcode{is.numeric()} function. \rcode{c(1, 0)} is numeric; \rcode{c(TRUE, FALSE)} is not; \rcode{c(TRUE, FALSE, 1, 0)} is numeric because \texttt{R} automatically converts \rcode{TRUE} and \rcode{FALSE} to a \rcode{1} and a \rcode{0} because vectors have to be of one mode.
 }
 
 \answerbreakline
 
-\clearpage % Page break
-
-\answer{
-    B 19
-}{
+\beginnerexerciseanswer{
     The length of this vector is 11. \\
     \\
     \answercode{v1 <- c(-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8) \\
 {\color{dataset}\# or} \\
-v1 <- -1:8 \\
+v1 <- -2:8 \\
 length(v1)}
 }
 
-\answer{
-    B 20
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
-    \answercode{v2 <- seq(from = -5, to = 5, by = 0.5)}
+    \answercode{v2 <- seq(from = -5, to = 5, by = 0.5)\\
+    v2 <- (-10:10)/2}
 }
 
-\answer{
-    B 21
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{v3 <- seq(from = 13, to = 33, by = 2)}
 }
 
-\answer{
-    B 22
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{c(a, b)}
 }
 
-\answer{
-    B 23
-}{
+\beginnerexerciseanswer{
     The result of \rcode{rep(2, 10)} is a repeated vector containing 10 times the number 2. The function argument \rcode{times = 10} is implicitly set.
 }
 
-\answer{
-    B 24
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{rep(3:7, each = 3)}
 }
 
-\answer{
-    B 25
-}{
+\beginnerexerciseanswer{
     You have to explicitly specify that the 2 refers to the \rcode{each} argument. By default, the second argument of the \rcode{rep()} function is times, see also \rcode{?rep}.
 }
 
-\answer{
-    B 26
-}{
+\beginnerexerciseanswer{
     The sum of these numbers is 100.  \\
     \\
     \answercode{sum((1:10)*2-1)}
 }
 
-\answer{
-    B 27
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{v3 <- (1:10) * 2 \\
 v4 <- v3 / 5 \\
@@ -202,145 +145,111 @@ v5 <- seq(5, 32, 3)
 }
 }
 
-\answer{
-    B 28
-}{
+\clearpage % Page break
+
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{vector(\textquotesingle logical\textquotesingle, 5)}
 }
 
-\clearpage % Page break
-
-\answer{
-    B 29
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{paste(rep(c(\textquotesingle x\textquotesingle, \textquotesingle y\textquotesingle), each = 4), rep(1:2, each = 2), c(\textquotesingle m\textquotesingle, \textquotesingle f\textquotesingle), sep = \textquotesingle \textquotesingle)}
 }
 
-\answer{
-    B 30
-}{
+\beginnerexerciseanswer{
     The options \rcode{decreasing = TRUE} can be set to sort the numbers from highest to lowest. The default is \rcode{FALSE}, so sorting from lowest to highest does not require specification of this option. \\
     \\
     \answercode{sort(s, decreasing = TRUE)  {\color{dataset}\# Highest to lowest} \\
 sort(s)                     {\color{dataset}\# Lowest to highest}}
 }
 
-\answer{
-    B 31
-}{
+\beginnerexerciseanswer{
     \texttt{R} is actually pretty smart and will recycle values for you. 10 is not divisible by 3, hence full recycling of all numbers is not possible.
 }
 
 \answerbreakline
 
-\answer{
-    B 32
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{matrix(25:1, nrow = 5, byrow = TRUE)}
 }
 
-\answer{
-    B 33
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{matrix(rep(0:1, 8), nrow = 4)}
 }
 
-\answer{
-    B 34
-}{
+\beginnerexerciseanswer{
     You do not have to specify the number of rows (only the number of columns) because, given the number of values and the number of columns, the number of rows for the matrix is known.
 }
 
-\answer{
-    B 35
-}{
+\beginnerexerciseanswer{
     You can transpose a matrix using the \rcode{t()} function.
 }
 
-\answer{
-    B 36
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{colMeans(m1)}
 }
 
-\answer{
-    B 37
-}{
+\beginnerexerciseanswer{
     You can select the diagonal of a matrix using the \rcode{diag()} function. \\
     \\
     \answercode{m2 <- matrix(rep(0, 16), nrow = 4) \\
-diag(m2) <- diag(m1)}
-}
-
-\answer{
-    B 38
-}{
-    \vspace*{-10pt}
-    \answercode{m1 <- rbind(m1, rowSums(m1))}
+    diag(m2) <- diag(m1) \\
+    \\
+    {\color{dataset}\# or:}\\
+    m2 <- diag(diag(m1))}
 }
 
 \clearpage % Page break
 
-\answer{
-    B 39
-}{
-    The means of the columns are all zero, and the standard deviations are all one. The \rcode{scale()} function therefore transforms the values in the columns so that their mean is zero and their standard deviation is one. 
+\beginnerexerciseanswer{
+    \vspace*{-10pt}
+    \answercode{m1 <- rbind(m1, rowSums(m1))}
+}
+
+\beginnerexerciseanswer{
+    The means of the columns are all zero (calculate with rowSums(m1)), and the standard deviations are all one (calculate with apply(m2,2,sd). The \rcode{scale()} function therefore transforms the values in the columns so that their mean is zero and their standard deviation is one. 
 }
 
 \answerbreakline
 
-\answer{
-    B 40
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{data.frame(subject = rep(1:5, each = 2),  \\
            \hspace*{60pt}time = c(\textquotesingle t1\textquotesingle, \textquotesingle t2\textquotesingle), \\
            \hspace*{60pt}score = c(7, 8, 8, 8, 9, 8, 9, 7, 7, 6))}
 }
 
-\answer{
-    B 41
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{as.data.frame(a)}
 }
 
 \answerbreakline
 
-\answer{
-    B 42
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{list(subject = 1:5, \\
-     \hspace*{40pt}time = c(\textquotesingle t1\textquotesingle, \textquotesinglet 2\textquotesingle), \\
-     \hspace*{30pt}score1 = c(7, 8, 9, 7, 8), \\
-     \hspace*{30pt}score2 = c(6, 8, 8, 7, 8))
+     \hspace*{40pt}time = c(\textquotesingle t1\textquotesingle, \textquotesingle t2\textquotesingle), \\
+     \hspace*{30pt}score = matrix(1:25,5,5))
 }
 }
 
 \answerbreakline
 
-\answer{
-    B 43
-}{
-    No, \rcode{g} is not a true vector but a factor. That is because \rcode{g} consist of factor levels. You can check this using \rcode{is.vector(g)} or \rcode{is.factor(g)}.
+\beginnerexerciseanswer{
+    No, \rcode{g} is not a true vector but a factor. That is because \rcode{g} consist of factor levels. You can check this using \rcode{is.vector(g)} or \rcode{is.factor(g)}. Note that you can also find this out by using the 'str' function: str(g).
 }
 
-\answer{
-    B 44
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{v <- as.factor(v)}
 }
 
-\answer{
-    B 45
-}{
+\beginnerexerciseanswer{
     The factor \rcode{x} has three levels, which you can find out using the \rcode{levels()} function.  \\
     \\
     \answercode{x <- as.factor(x) \\
@@ -351,82 +260,60 @@ levels(x)}
 
 \clearpage % Page break
 
-\answer{
-    B 46
-}{
+\beginnerexerciseanswer{
     The value of \rcode{x[2]} is \rcode{NA}.
 }
 
-\answer{
-    B 44
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{a[1] <- 8 \\
 a[a == 2] <- 0}
 }
 
-\answer{
-    B 48
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{l[2, 3]}
 }
 
-\answer{
-    B 49
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{l[c(3, 5), ] }
 }
 
-\answer{
-    B 50
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{m[m[, 1] < 5, ]}
 }
 
-\answer{
-    B 51
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{m[ , -4]}
 }
 
-\answer{
-    B 52
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{m <- as.data.frame(m) \\
 colnames(m) <- paste(\textquotesingle trial\textquotesingle, 1:10, sep = \textquotesingle .\textquotesingle)}
 }
 
-\answer{
-    B 53
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{m\$\textquotesingle trial.1\textquotesingle[2:5] \\
 m\$\textquotesingle trial.4\textquotesingle[1:2]
 }
 }
 
-\answer{
-    B 54
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{b <- ifelse(b == 1, yes = 2, no = 1)}
 }
 
-\answer{
-    B 55
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{gsub(\textquotesingle a\textquotesingle, \textquotesingle .\textquotesingle, n)}
 }
 
-\answer{
-    B 56
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{passed <- grades[rowMeans(grades[, c(\textquotesingle exer\textquotesingle,\textquotesingle exam\textquotesingle)]) > 5.5 \& \\
           \hspace*{90pt}grades[, \textquotesingle exer\textquotesingle] >= 5 \& \\
@@ -438,27 +325,19 @@ failed <- grades\$student[-passed] }
 
 \clearpage % Page break
 
-\answer{
-    B 57
-}{
+\beginnerexerciseanswer{
     The condition \rcode{(a < 0 | b < 0) & (a * b < 0)} means that \rcode{a} is smaller than \rcode{0} or \rcode{b} is smaller than \rcode{0}, and \rcode{a * b} is smaller than \rcode{0}. If this condition is \rcode{TRUE} and \rcode{a} is negative, then \rcode{b} must be positive.
 }
 
-\answer{
-    B 58
-}{
+\beginnerexerciseanswer{
     The number of \rcode{NA}’s in the vector is 1, hence it is smaller than or equal to 2. So, \rcode{sum(is.na(c(1, 2, 3, 4, NA, 7))) <= 2} returns \rcode{TRUE}, and its logical negation (\rcode{!}) is therefore \rcode{FALSE}.
 }
 
-\answer{
-    B 59
-}{
+\beginnerexerciseanswer{
     These are the numbers by which the number 24 can be divided (24 is divisible by 1, 2, 3, 4, 6, 8, 12, and 24).
 }
 
-\answer{
-    B 60
-}{
+\beginnerexerciseanswer{
     This code tests whether two vectors are identical. The \rcode{identical()} function does this automatically. \\
     \\
     \answercode{min(x==y) == 1 \\
@@ -470,30 +349,22 @@ identical(x, y)
 
 \answerbreakline
 
-\answer{
-    B 61
-}{
+\beginnerexerciseanswer{
     You can use the \rcode{table()} function to create a frequency table of the throws.
 }
 
-\answer{
-    B 62
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{sample(c(\textquotesingle jack\textquotesingle, \textquotesingle queen\textquotesingle, \textquotesingle king\textquotesingle, \textquotesingle ace\textquotesingle), replace = TRUE)}
 }
 
-\answer{
-    B 63
-}{
+\beginnerexerciseanswer{
     You can use the \rcode{runif()} function to sample uniform random numbers. \rcode{sample(1:100, 20)} is not correct in this case because the sampling vector starts at 1. \\
     \\
     \answercode{runif(n = 20, min = 0, max = 100)}
 }
 
-\answer{
-    B 64
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{r1 <- runif(n = 21, min = 0, max = 100) \\
 median(r1) \\
@@ -504,9 +375,7 @@ r2[11]
 
 \clearpage % Page break
 
-\answer{
-    B 65
-}{
+\beginnerexerciseanswer{
     Simulating data using the same code twice does not result in the same samples because of the inherent randomness of a simulation. You can use the \rcode{set.seed()} function to make your code reproducible. \\
     \\
     \answercode{set.seed(123) \\
@@ -514,9 +383,7 @@ r2[11]
 var(v3)}
 }
 
-\answer{
-    B 66
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{cov(x) \\
 cor(x)
@@ -525,24 +392,18 @@ cor(x)
 
 \answerbreakline
 
-\answer{
-    B 67
-}{
+\beginnerexerciseanswer{
     The \rcode{read.csv()} function reads in \dataset{.csv} files. You can read in Excel files (\dataset{.xlsx}) using the \rcode{read.xslx()} function (from the \rcode{xlsx} package). The function \rcode{read.spss()} is featured in the package \rcode{foreign} (see \rcode{?read.spss}) and reads \dataset{.spss} files. 
 }
 
-\answer{
-    B 68
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{{\color{dataset}\# Be sure to set your working directory when providing a relative path} \\
 dataset <- read.csv(\textquotesingle example.csv\textquotesingle)
 }
 }
 
-\answer{
-    B 69
-}{
+\beginnerexerciseanswer{
     \vspace*{-10pt}
     \answercode{{\color{dataset}\# Be sure to set your working directory when providing a relative path} \\
 write.csv(d, file = \textquotesingle example.csv\textquotesingle)

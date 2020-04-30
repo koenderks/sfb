@@ -1,8 +1,10 @@
+\setcounter{section}{6}
+\setcounter{subsection}{1}
+\setcounter{answer}{0}
+
 \subsection{Chapter 6: Comparing more than two means}
 
 \answer{
-    6.1 a
-}{
     \vspace*{-10pt}
     \answercode{{\color{dataset}\# Be sure to set your working directory when providing a relative path} \\
 dataset8 <- read.csv(\textquotesingle eyeColor.csv\textquotesingle) \\
@@ -14,14 +16,10 @@ ttestData  <- subset(dataset8,\\
 }
 
 \answer{
-    6.1 b
-}{
     $H_0$: $\mu_1 = \mu_2$ \hspace*{4cm} $H_1$: $\mu_1 \neq \mu_2$
 }
 
 \answer{
-    6.1 c
-}{
     \vspace*{-10pt}
     \answercode{blue <- subset(ttestData\$Score, ttestData\$Group == \textquotesingle Blue\textquotesingle) \\
 brown <- subset(ttestData\$Score, ttestData\$Group == \textquotesingle Brown\textquotesingle) \\
@@ -29,14 +27,10 @@ t.test(blue, brown, var.equal = TRUE) {\color{dataset}\# p-value: 0.1401}}
 }
 
 \answer{
-    6.1 d
-}{
     The p-value is 0.1401, which is higher than the 0.05 required to reject $H_0$. $H_0$ is not rejected with 95\% confidence. You can be 95\% confident that the mean of the blue group is the same as the mean of the brown group. There is a risk of a type-II error.
 }
 
 \answer{
-    6.1 e
-}{
     The content of \rcode{dummyBrown} is a 0 for blue eyes, and a 1 for brown eyes. This kind of variable is called a dummy variable. \\
     \\
     \answercode{dummyBrown <- as.numeric(ttestData\$Group == \textquotesingle Brown\textquotesingle) \\
@@ -45,38 +39,28 @@ ttestData <- cbind(ttestData, dummyBrown)
 }
 
 \answer{
-    6.1 f
-}{
     \vspace*{-10pt}
     \answercode{ttestreg <- lm(formula = Score {\raise.17ex\hbox{$\scriptstyle\sim$}} dummyBrown, data = ttestData)}
 }
 
 \answer{
-    6.1 g
-}{
     \vspace*{-10pt}
     \answercode{summary(ttestreg) {\color{dataset}\# p-value dummyBrown: 0.14}}
 }
 
-\answerbreakline
+\answerbreakline \setcounter{subsection}{2} \setcounter{answer}{0}
 
 \answer{
-    6.2 a
-}{
     $H_0$: $\mu_{1} = \mu_{2} = \mu_{3} = \mu_{4}$ \hspace*{1cm} $H_1$: $\mu_{1} \neq \mu_{2} \neq \mu_{3} \neq \mu_{4}$
 }
 
 \answer{
-    6.2 b
-}{
     $df_M = k - 1 = 4 - 1 = 3$ \hspace{1.2cm} $df_R = n - k = 222 - 4 = 218$
 }
 
 \clearpage % Page break
 
 \answer{
-    6.2 c
-}{
     Critical F-value: 2.646 \\
     \\
     \answercode{df1 <- 4 - 1                {\color{dataset}\# 3} \\
@@ -85,15 +69,11 @@ qf(p = 0.95, df1 = df1, df2 = df2) {\color{dataset}\# 2.646}}
 }
 
 \answer{
-    6.2 d
-}{
     \vspace*{-10pt}
     \answercode{anovaResult <- aov(formula = Score {\raise.17ex\hbox{$\scriptstyle\sim$}} Group, data = dataset8)}
 }
 
 \answer{
-    6.2 e
-}{
     F-value: 2.894 \hspace{4cm} p-value: 0.0362 \\ 
     \\
     \answercode{summary(anovaResult) \\
@@ -103,16 +83,12 @@ qf(p = 0.95, df1 = df1, df2 = df2) {\color{dataset}\# 2.646}}
 }
 
 \answer{
-    6.2 f
-}{
     The p-value is 0.0362, which is lower than the 0.05 required to reject $H_0$. The sample F-value is 2.894, which is higher than the critical F-value of 2.646. $H_0$ is rejected with 95\% confidence. The means of the four groups are not equal to each other. There is a risk of 5\% for a type-I error.
 }
 
-\answerbreakline
+\answerbreakline \setcounter{subsection}{3} \setcounter{answer}{0}
 
 \answer{
-    6.3 a
-}{
     \vspace*{-10pt}
     \answercode{dummyBrown <- as.numeric(dataset8\$Group == \textquotesingle Brown\textquotesingle) {\color{dataset}\# Brown eyes} \\
 dataset8 <- cbind(dataset8, dummyBrown) \\
@@ -125,15 +101,11 @@ dataset8 <- cbind(dataset8, dummyGreen)}
 }
 
 \answer{
-    6.3 b
-}{
     \vspace*{-10pt}
     anovaReg <- lm(formula = Score {\raise.17ex\hbox{$\scriptstyle\sim$}} dummyBrown + dummyBlue + dummyGreen, data = dataset8)
 }
 
 \answer{
-    6.3 c
-}{
     F-value: 2.894  \hspace*{4cm} p-value: 0.0362 \\
     \\
         \answercode{summary(anovaReg) \\
@@ -144,18 +116,14 @@ dataset8 <- cbind(dataset8, dummyGreen)}
 }
 
 \answer{
-    6.3 d
-}{
     Yes, the results are the same.
 }
 
-\answerbreakline
+\answerbreakline \setcounter{subsection}{4} \setcounter{answer}{0}
 
 \clearpage % Page break
 
 \answer{
-    6.4 a
-}{
     \vspace*{-10pt}
     \answercode{ancovaReg <- lm(formula = Score {\raise.17ex\hbox{$\scriptstyle\sim$}} dummyBrown + dummyBlue + \\
     \hspace*{190pt}dummyGreen + initialScore, \\
@@ -163,8 +131,6 @@ dataset8 <- cbind(dataset8, dummyGreen)}
 }
 
 \answer{
-    6.4 b
-}{
     F-value: 2.252		\hspace*{4cm}		p-value: 0.064 \\
     \\
     \answercode{summary(ancovaReg) \\
@@ -175,34 +141,24 @@ dataset8 <- cbind(dataset8, dummyGreen)}
 }
 
 \answer{
-    6.4 c
-}{
     The p-value is 0.0645, which is higher than the 0.05 required to reject $H_0$. $H_0$ is not rejected with 95\% confidence. The means are equal to each other if you consider the initial score as a covariate. There is a 5\% change of a type-I error. 
 }
 
 \answer{
-    6.4 d
-}{
     The p-value is of the coefficient of initial score is 0.5539, which means that it is not significantly different from zero. This means that the initial score is not a good predictor of the actual score.
 }
 
 \answer{
-    6.4 e
-}{
     $R^2$ \rcode{anovaReg}: 0.0383	\hspace*{4cm}		$R^2$ \rcode{ancovaReg}: 0.0398 \\
     \\
     The \rcode{ancovaReg} regression model explains more variation in the outcome variable score.
 }
 
 \answer{
-    6.4 f
-}{
     The groups, together with the initial score, explain 3.98\% of the variance in the dependent variable score.
 }
 
 \answer{
-    6.4 g
-}{
     AIC \rcode{anovaReg}: 865.54 \hspace*{4cm}	AIC \rcode{ancovaReg}: 867.18 \\
     \\
     \answercode{AIC(anovaReg)   {\color{dataset}\# AIC: 865.54} \\
@@ -210,32 +166,24 @@ AIC(ancovaReg)  {\color{dataset}\# AIC: 867.18}}
 }
 
 \answer{
-    6.4 h
-}{
     The AIC value of the \rcode{anovaReg} regression model is the lowest, which means that the \rcode{anovaReg} model fits the data better than the \rcode{ancovaReg} regression model. This means that the model without the covariate is a better model. You may have already seen this, since the covariate in the \rcode{ancovaReg} model was not a good predictor of the score.
 }
 
-\answerbreakline
+\answerbreakline \setcounter{subsection}{5} \setcounter{answer}{0}
 
 \clearpage % Page break
 
 \answer{
-    6.5 a
-}{
     \vspace*{-10pt}
     \answercode{{\color{dataset}\# # Be sure to set your working directory when providing a relative path} \\
     load(\textquotesingle iowa.RData\textquotesingle)}
 }
 
 \answer{
-    6.5 b
-}{
     The \rcode{iowa} data consists of payments made by the state of Iowa. Payments are assigned to fiscal years that run from July 1 through June 30, and are numbered for the calendar year in which they end. The fiscal year is divided into fiscal periods with 1 being July and 12 being June. The fiscal year also includes a hold-over period for payments made after year end for good and services received on or before June 30.
 }
 
 \answer{
-    6.5 c
-}{
     Rows: 12279009 \hspace{4cm} Columns: 22 \\
     \\
     \answercode{nrow(iowa) {\color{dataset}\# 12279009 rows} \\
@@ -243,8 +191,6 @@ ncol(iowa) {\color{dataset}\# 22 columns}}
 }
 
 \answer{
-    6.5 d
-}{
     Unique services: 8 \\
     \\
     \answercode{unique(iowa\$Service) {\color{dataset}\# 8 unique services} \\
@@ -252,14 +198,10 @@ table(iowa\$Service)}
 }
 
 \answer{
-    6.5 e
-}{
     Service: Human Services \hspace{4cm} Rows: 6682159
 }
 
 \answer{
-    6.5 f
-}{
     Number of rows that show a difference: 2624607 \\
     \\
     \answercode{iowa\$Payment.Issue.Date <- as.Date(iowa\$Payment.Issue.Date,format= \textquotesingle \%m/\%d/\%Y\textquotesingle) \\
@@ -269,25 +211,19 @@ length(which(iowa\$Payment.Issue.Date != iowa\$Invoice.Date)) {\color{dataset}\#
 }
 
 \answer{
-    6.5 g
-}{
     \vspace*{-10pt}
     \answercode{dataDif <- data[which(iowa\$Payment.Issue.Date != data\$Invoice.Date),]}
 }
 
 \answer{
-    6.5 h
-}{
     \vspace*{-10pt}
     \answercode{dataDif\$dif.days <- dataDif\$Payment.Issue.Date - dataDif\$Invoice.Date \\
     dataDif\$dif.days <- as.numeric(dataDif\$dif.days)}
 }
 
-\clearpage
+\clearpage % Page break
 
 \answer{
-    6.5 i
-}{
     \vspace*{1pt}
     \begin{minipage}{.5\textwidth}
     Minimum: -3651\\
@@ -309,54 +245,40 @@ sd(dataDif\$dif.days)}
 }
 
 \answer{
-    6.5 j
-}{
     The default histogram does not provide much information due to the fact that \texttt{R} specifies a very wide \textit{x-axis}. \\
     \\
     \answercode{hist(dataDif\$dif.days)}
 }
 
 \answer{
-    6.5 k
-}{
     \vspace*{-10pt}
     \answercode{hist(dataDif\$dif.days[dataDif\$dif.days > quantile(dataDif\$dif.days, 0.05) \& \\ 
     \hspace*{30pt}dataDif\$dif.days < quantile(dataDif\$dif.days, 0.95)], breaks = 100)}
 }
 
 \answer{
-    6.5 l
-}{
     \vspace*{-10pt}
     \answercode{dataDif2 <- dataDif[(dataDif\$dif.days > (-1)) \& (dataDif\$dif.days <= 365),]}
 }
 
 \answer{
-    6.5 m
-}{
     \vspace*{-10pt}
     \answercode{plot(dataDif2\$Amount,dataDif2\$dif.days)}
 }
 
 \answer{
-    6.5 n
-}{
     Correlation: -0.0025\\
     \\
     \answercode{cor.test(dataDif2\$Amount,dataDif2\$dif.days)}   
 }
 
 \answer{
-    6.5 o
-}{
     The p-value of the correlation test against the value zero is 3.148e-05, which is sufficient enough to reject $H_0$ with 95\% confidence. This implies that there is, with 95\% certainty, a correlation between the the time between invoice and payment, and the amount that is paid.
 }
 
 \clearpage % Page break
 
 \answer{
-    6.5 p
-}{
     Administration and regulation: 26.452 \\
     Agriculture and natural resources: 28.275 \\
     Capital: 35.490 \\
@@ -369,8 +291,6 @@ sd(dataDif\$dif.days)}
 }
 
 \answer{
-    6.5 q
-}{
     p-value: < 2e-16 \\
     \\
     \underline{Conclusion}: The p-value is lower than 0.05, so you can reject $H_0$ with 95\% confidence. This means that the means of all expense categories are not equal. There is a 5\% type change of a type-I error. \\
@@ -380,16 +300,12 @@ summary(aovRes)}
 }
 
 \answer{
-    6.5 r
-}{
     All means, except for the means of the justice system expenses and the economic development expenses, show a p-value below 5\% and can thus be regarded to differ from each other. \\
     \\
     \answercode{tukeyRes <- TukeyHSD(aovRes)}
 }
 
 \answer{
-    6.5 s
-}{
     An ANOVA assumes the dependent variable to be continuous. Some examples of appropriate analyses could be: \\
     \\
     \answercode{{\color{dataset}\# Poisson regression and then interpret the predictors} \\
@@ -404,8 +320,6 @@ dunn.res <-dunnTest(dataDif2\$dif.days, dataDif2\$Service)
 }
 
 \answer{
-    6.5 t
-}{
     It is a bad idea, the p-value is affected by the number of samples. The higher the sample, the lower the p-value gets. In other words, p-values lose their meaning quite quickly (unless they are non-significant).
 }
 

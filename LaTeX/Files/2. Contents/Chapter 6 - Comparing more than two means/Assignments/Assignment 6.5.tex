@@ -1,3 +1,7 @@
+\setcounter{section}{6}
+\setcounter{subsection}{5}
+\setcounter{question}{0}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Assignment 6.5: Using post-hoc tests to find differences in means
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -11,110 +15,82 @@ For this assignment you will have to download the data file \dataset{iowa.RData}
 The \dataset{iowa.RData} file contains payment transactions recorded in the State of Iowa’s central accounting system for the Executive Branch and is real data. \\
 
 \question{
-    6.5 a
-}{
     Load the \dataset{iowa.RData} data file into the environment using the \rcode{load()} function. 
 }
 
-\rcodeanswertiny{6.5a}
+\rcodeanswertiny
 
 The data set is now stored in object called \rcode{iowa}. \\
 
 \question{
-    6.5 b
-}{
     Give a short description of the data in \rcode{iowa}.
 }
 
-\hint{Hint 6.5: Search the internet for the source of these data to find out what the columns represent.}
+\hint{Search the internet for the source of these data to find out what the columns represent.}
 
-\threelineanswerbox{6.5b}
+\threelineanswerbox
 
 \question{
-    6.5 c
-}{
     How many rows and columns does the \rcode{iowa} data set have?
 }
 
 \emptyanswerbox{
-    6.5c
-}{
     Rows: \shortanswerline \hspace*{3cm} Columns: \shortanswerline
 }
 
 \clearpage % Page break
 
 \question{
-    6.5 d
-}{
     How many unique services are there? Make a \concept{frequency table} of these services.
 }
 
-\rcodeanswertiny{6.5d}
+\rcodeanswertiny
 
 \emptyanswerbox{
-    6.5d
-}{
     Unique services: \shortanswerline 
 }
 
 \question{
-    6.5 e
-}{
     Which service has the most rows? How many rows does this service have?
 }
 
 \emptyanswerbox{
-    6.5e
-}{
     Service: \shortanswerline \hspace{3cm} Rows: \shortanswerline
 }
 
 \question{
-    6.5 f
-}{
     How many rows show a difference in invoice date and payment date?
 }
 
-\rcodeanswertiny{6.5f}
+\rcodeanswertiny
 
 \emptyanswerbox{
-    6.5f
-}{
     Number of rows that show a difference: \shortanswerline 
 }
 
 \question{
-    6.5 g
-}{
     Create a new data set that consists of these differences, and name the new data set \rcode{dataDif}.
 }
 
-\rcodeanswermedium{6.5g}
+\rcodeanswermedium
 
 \clearpage % Page break
 
 \question{
-    6.5 h
-}{
     Create an extra column named \rcode{dif.days} in \rcode{dataDif} that contains the number of days between invoice and payment.
 }
 
-\hint{Hint 6.6: Make sure that the column \rcode{dif.days} is numeric.}
+\hint{Make sure that the column \rcode{dif.days} is numeric.}
 
-\rcodeanswertiny{6.5h}
+\rcodeanswertiny
 
 \question{
-    6.5 i
-}{
     Calculate the \concept{minimum}, \concept{maximum}, \concept{mean}, \concept{quartiles}, and \concept{standard deviation} of the column \rcode{dif.days}.
 }
 
-\rcodeanswermedium{6.5i}
+\rcodeanswermedium
 
-\emptyanswerbox{
-    6.5i
-}{  
+\emptyanswerbox{  
     Minimum: \quad \shortanswerline \quad Upper quartile: \quad \quad \shortanswerline
             \answerskip
             Mean: \quad\hspace*{9pt} \shortanswerline \quad \quad Lower quartile: \quad \quad \shortanswerline
@@ -123,126 +99,103 @@ The data set is now stored in object called \rcode{iowa}. \\
 }
 
 \question{
-    6.5 j
-}{
     Create a histogram of the column \rcode{dif.days}. Describe what you see in the histogram.
 }
 
-\rcodeanswertiny{6.5j}
-\onelineanswerbox{6.5j}
+\rcodeanswertiny
+
+\onelineanswerbox
 
 \clearpage % Page break
 
 \question{
-    6.5 k
-}{
     Again, create a histogram, but now only use the subset of \rcode{dif.days} that is in the 5-95\% quantile range (so you cut off the bottom and top 5\%).
 }
 
-\hint{Hint 6.7: Hint: use the \rcode{quantile} function.}
+\hint{Hint: use the \rcode{quantile} function.}
 
-\rcodeanswersmall{6.5k}
+\rcodeanswersmall
 
 You don't trust the negative values in \rcode{dif.days} as you cannot interpret them, and therefore you will not include them in your investigation. Moreover, you also don't want to include value in \rcode{dif.days} that are higher than 365 days. \\
 
 \question{
-    6.5 l
-}{
     Create a new data set in which these values are removed and name this data set \rcode{dataDif2}.
 }
 
-\rcodeanswertiny{6.5l}
+\rcodeanswertiny
 
 \question{
-    6.5 m
-}{
     Create a scatter plot with \rcode{dif.days} on the \textit{y-axis} and \rcode{Amount} on the \textit{x-axis}.
 }
 
-\rcodeanswertiny{6.5m}
+\rcodeanswertiny
 
 \question{
-    6.5 n
-}{
     Compute the \concept{correlation} between the time between invoice and payment, and the amount that is paid.
 }
 
-\rcodeanswertiny{6.5n}
+\rcodeanswertiny
+
 \emptyanswerbox{
-    6.5n
-}{
     Correlation: \shortanswerline 
 }
 
 \clearpage % Page break
 
 \question{
-    6.5 o
-}{
     Elaborate on the \concept{correlation coefficient} and it's significance. What does this imply?
 }
 
-\threelineanswerbox{6.5o}
+\threelineanswerbox
 
 \question{
-    6.5 p
-}{
     Compute the \concept{mean} \rcode{dif.days} per expense category.
 }
 
-\hint{Hint 6.8: Use the \rcode{aggregate()} function (for more help on this function see \rcode{?aggregate}).}
+\hint{Use the \rcode{aggregate()} function (for more help on this function see \rcode{?aggregate}).}
 
-\rcodeanswertiny{6.5p}
-\twolineanswerbox{6.5p}
+\rcodeanswertiny
+
+\twolineanswerbox
 
 \question{
-    6.5 q
-}{
     Use the \rcode{aov()} function to test whether the \concept{means} that you computed in assignment 6.5p are statistically different.
 }
 
 \emptyanswerbox{
-    6.5 q
-}{
-p-value: \shortanswerline
-\answerskip
-Conclusion:
-\answerskip
-\rule{\textwidth}{0.4pt}
+    p-value: \shortanswerline
+    \answerskip
+    Conclusion:
+    \answerskip
+    \rule{\textwidth}{0.4pt}
 }
 
-\rcodeanswertiny{6.5q}
+\rcodeanswertiny
 
 \clearpage % Page break
 
 \question{
-    6.5 r
-}{
     Use \concept{Tukey's Honest Significant Differences} to find out which group \concept{means} are truly different.
 }
 
-\hint{Hint 6.9: Use the \rcode{TukeyHSD()} function to find \concept{Tukey's Honest Significant Differences}.} 
+\hint{Use the \rcode{TukeyHSD()} function to find \concept{Tukey's Honest Significant Differences}.} 
 
-\rcodeanswertiny{6.5r}
+\rcodeanswertiny
 
-\twolineanswerbox{6.5r}
+\twolineanswerbox
 
 In assignment 6.5q you have computed an \concept{ANOVA}, but this is statistically not completely sound. \\
 
 \question{
-    6.5 s
-}{
     Can you formulate why the \concept{ANOVA} in assignment 6.5q was not statistically sound? What would be an appropriate analysis?
 }
 
-\twolineanswerbox{6.5s}
+\twolineanswerbox
 
 \question{
-    6.5 t
-}{
     Why do you think it is a good or bad idea to calculate \concept{p-values} if the number of rows in the data is large?
 }
 
-\threelineanswerbox{6.5t}
+\threelineanswerbox
 
 \clearpage % Page break

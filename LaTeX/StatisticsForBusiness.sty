@@ -123,33 +123,33 @@
 }}\vspace{0.75cm}}
 
 % Define R code answer box
-\newcommand{\rcodeanswertiny}[1]
+\newcommand{\rcodeanswertiny}
 {
-    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code #1:]
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thesubsection\thequestion:]
       \vspace*{.5cm}
     \end{tcolorbox}
     \vspace*{0.5cm}
 }
 
-\newcommand{\rcodeanswersmall}[1]
+\newcommand{\rcodeanswersmall}
 {
-    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code #1:]
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thesubsection\thequestion:]
       \vspace*{1.5cm}
     \end{tcolorbox}
     \vspace*{0.5cm}
 }
 
-\newcommand{\rcodeanswermedium}[1]
+\newcommand{\rcodeanswermedium}
 {
-    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code #1:]
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thesubsection\thequestion:]
       \vspace*{2cm}
     \end{tcolorbox}
     \vspace*{0.5cm}
 }
 
-\newcommand{\rcodeanswerlarge}[1]
+\newcommand{\rcodeanswerlarge}
 {
-    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code #1:]
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thesubsection\thequestion:]
       \vspace*{4cm}
     \end{tcolorbox}
     \vspace*{0.5cm}
@@ -170,35 +170,21 @@
         \vspace{0.75cm}
 }
 
-% Define answer
-\newcommand{\answer}[2]
-{
-\begin{minipage}[t]{0.08\textwidth}
-#1\hspace*{-3pt}) \hfill
-\end{minipage}%
-\begin{minipage}[t]{0.92\textwidth}
-\fontfamily{pcr}\selectfont 
-#2
-\normalfont
-\end{minipage}%
-\vspace*{0.5cm}
-}
-
 % Define answer boxes
-\newcommand{\emptyanswerbox}[2]
+\newcommand{\emptyanswerbox}[1]
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1\hspace*{-3pt}:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{.5cm}
-    #2
+    #1
     \normalfont
     \end{tcolorbox}
     \vspace*{0.5cm}
 }
 
-\newcommand{\onelineanswerbox}[1]
+\newcommand{\onelineanswerbox}
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     \answerskip
@@ -208,9 +194,9 @@
     \vspace*{0.5cm}
 }
 
-\newcommand{\twolineanswerbox}[1]
+\newcommand{\twolineanswerbox}
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     \answerskip
@@ -222,9 +208,9 @@
     \vspace*{0.5cm}
 }
 
-\newcommand{\threelineanswerbox}[1]
+\newcommand{\threelineanswerbox}
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     \answerskip
@@ -238,9 +224,9 @@
     \vspace*{0.5cm}
 }
 
-\newcommand{\fourlineanswerbox}[1]
+\newcommand{\fourlineanswerbox}
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     \answerskip
@@ -256,9 +242,9 @@
     \vspace*{0.5cm}
 }
 
-\newcommand{\sixlineanswerbox}[1]
+\newcommand{\sixlineanswerbox}
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     \answerskip
@@ -336,18 +322,81 @@
 }
 
 % Define question
-\newcommand{\question}[2]
+\renewcommand{\thesection}{\arabic{section}}
+\newcounter{question}[subsection]
+\renewcommand{\thequestion}{\alph{question}}
+\newcommand{\question}[1]
 {
 \begin{minipage}[t]{0.08\textwidth}
-#1\hspace*{-3pt}) \hfill
+\stepcounter{question} \thesubsection \hspace*{3pt} \thequestion) \hfill
 \end{minipage}%
 \begin{minipage}[t]{0.92\textwidth}
-#2
+#1
+\end{minipage}%
+\vspace*{0.5cm}
+}
+
+% Define answer
+\newcounter{answer}[subsection]
+\renewcommand{\theanswer}{\alph{answer}}
+\newcommand{\answer}[1]
+{
+\begin{minipage}[t]{0.08\textwidth}
+\stepcounter{answer} \thesubsection \hspace*{3pt} \theanswer) \hfill
+\end{minipage}%
+\begin{minipage}[t]{0.92\textwidth}
+\fontfamily{pcr}\selectfont 
+#1
+\normalfont
+\end{minipage}%
+\vspace*{0.5cm}
+}
+
+% Define beginner R exercise
+\newcounter{beginnerexercise}
+\setcounter{beginnerexercise}{0}
+\newcommand{\beginnerexercise}[1]
+{
+\begin{minipage}[t]{0.08\textwidth}
+\stepcounter{beginnerexercise} B \hspace*{3pt} \thebeginnerexercise) \hfill
+\end{minipage}%
+\begin{minipage}[t]{0.92\textwidth}
+#1
+\end{minipage}%
+\vspace*{0.5cm}
+}
+
+% Define beginner R exercise answer
+\newcounter{beginnerexerciseanswer}[subsection]
+\newcommand{\beginnerexerciseanswer}[1]
+{
+\begin{minipage}[t]{0.08\textwidth}
+\stepcounter{beginnerexerciseanswer} B \hspace*{3pt} \thebeginnerexerciseanswer) \hfill
+\end{minipage}%
+\begin{minipage}[t]{0.92\textwidth}
+\fontfamily{pcr}\selectfont 
+#1
+\normalfont
+\end{minipage}%
+\vspace*{0.5cm}
+}
+
+% Define advanced R exercise
+\newcounter{advancedexercise}
+\setcounter{advancedexercise}{0}
+\newcommand{\advancedexercise}[1]
+{
+\begin{minipage}[t]{0.08\textwidth}
+\stepcounter{advancedexercise} A \hspace*{3pt} \theadvancedexercise) \hfill
+\end{minipage}%
+\begin{minipage}[t]{0.92\textwidth}
+#1
 \end{minipage}%
 \vspace*{0.5cm}
 }
 
 % Define hint
+\newcounter{hint}[section]
 \newcommand{\hint}[1]
 {
 \begin{minipage}{0.08\textwidth}
@@ -357,7 +406,7 @@
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.92\textwidth}
-\textit{#1}
+\stepcounter{hint} \textit{Hint \thesection.\thehint: #1}
 \end{minipage}%
 \vspace*{0.5cm}
 }
@@ -391,7 +440,7 @@
 % Define hypotheses answer box
 \newcommand{\hypothesesbox}[1]
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer #1:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     $H_0$: \shortanswerline \hspace{5cm} $H_1$: \shortanswerline

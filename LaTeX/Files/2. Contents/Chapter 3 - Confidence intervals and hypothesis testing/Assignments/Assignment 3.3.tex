@@ -1,3 +1,7 @@
+\setcounter{section}{3}
+\setcounter{subsection}{3}
+\setcounter{question}{0}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Assignment 3.3: Calculating the confidence interval for the mean and
 % testing for normality
@@ -9,16 +13,12 @@ testing for normality}
 For this assignment, you will need the \dataset{populations.csv} data file, which contains four different \concept{populations} of 10,000 observations called \rcode{P1 - P4}. \\
 
 \question{
-    3.3 a
-}{
     Use the \rcode{read.csv()} function (and \rcode{setwd()} function if you prefer) to import the data set into an object named \rcode{dataset5}.
 }
 
-\rcodeanswertiny{3.3a}
+\rcodeanswertiny
 
 \question{
-    3.3 b
-}{
     Run the following code in \texttt{R} and explain what it does. Why do you have to use a seed?
 }
 
@@ -30,23 +30,19 @@ sample3 <- sample(dataset5\$P3, size = 90)\\
 sample4 <- sample(dataset5\$P4, size = 90)
 }
 
-\hint{Hint 3.8: Use R’s help function \rcode{?} to look for the \rcode{sample()} and \rcode{set.seed()} functions.}
+\hint{Use R’s help function (the \rcode{?} symbol) to find out more information about the \rcode{sample()} and \rcode{set.seed()} functions.}
 
-\twolineanswerbox{3.3b}
+\twolineanswerbox
 
 \question{
-    3.3 c
-}{
     Calculate the \concept{mean} and \concept{standard deviation} for each \concept{sample} and save them into variables \rcode{x1} - \rcode{x4} and \rcode{s1} - \rcode{s4}. Use these results to also calculate the \concept{standard errors} and same them into variables \rcode{se1} - \rcode{se4}.
 }
 
-\rcodeanswermedium{3.3c}
+\rcodeanswermedium
 
 \clearpage % Page break
 
 \emptyanswerbox{
-    3.3c
-}{
     Standard error sample 1: \shortanswerline
     \answerskip
     Standard error sample 2: \shortanswerline
@@ -59,50 +55,40 @@ sample4 <- sample(dataset5\$P4, size = 90)
 The \texttt{R} function \rcode{qnorm(p, mean, sd)} returns the \concept{z-value} for \concept{quantile} \rcode{p} from a \concept{normal distribution} with a certain \concept{mean} $\mu$ (\rcode{mean}) and \concept{standard deviation} $\sigma$ (\rcode{sd}). If you do not specify a mean or standard deviation for the function it will assume the standard normal distribution $N(\mu = 0, \sigma = 1)$. \\
 
 \question{
-    3.3 d
-}{
     Run the following code in \texttt{R} and explain the value that you see. 
 }
 
 \codeblock{qnorm(p = 0.95)}
 
-\twolineanswerbox{3.3d}
+\twolineanswerbox
 
 The \rcode{qnorm()} function cannot return the \concept{z-value} for the two-sided \concept{confidence interval}, but you can work around that by realizing that in a two-sided interval you have to split the risk over both sides of the standard normal distribution. \\
 
 \question{
-    3.3 e
-}{
     Run the following code in \texttt{R} and explain why you can use the value in \rcode{z} for a two-sided 95\% \concept{confidence interval}. 
 }
 
 \codeblock{z <- qnorm(p = 0.975)}
 
-\twolineanswerbox{3.3e}
+\twolineanswerbox
 
 \question{
-    3.3 f
-}{
     Calculate the 95\% \concept{confidence interval} for each sample. Store the lower bounds \rcode{lb1} - \rcode{lb4} and store the upper bounds in \rcode{ub1} - \rcode{ub4}.
 }
 
 \clearpage % Page break
 
-\rcodeanswermedium{3.3f}
+\rcodeanswermedium
 
 This is a rare case in which you actually have the full \concept{populations}, so you can check if the estimates based on your \concept{samples} are actually close to the real value in the populations. \\
 
 \question{
-    3.3 g
-}{
     Calculate the actual \concept{population means}, call them \rcode{mu1} - \rcode{mu4}. Next, fill the schema below with all known values for \rcode{ub}, \rcode{x}, \rcode{lb}, and \rcode{mu}. 
 }
 
-\rcodeanswermedium{3.3g}
+\rcodeanswermedium
 
 \emptyanswerbox{
-    3.3g
-}{
     \vspace*{-10pt}
     \begin{center}
     \begin{tabular}{r|c|c|c|c|}
@@ -130,14 +116,10 @@ This is a rare case in which you actually have the full \concept{populations}, s
 }
 
 \question{
-    3.3 h
-}{
     Are all \concept{population means} inside the interval you calculated?
 }
 
 \emptyanswerbox{
-    3.3h
-}{
     \vspace*{-15pt}
     \begin{center}
         YES / NO
@@ -145,11 +127,9 @@ This is a rare case in which you actually have the full \concept{populations}, s
 }
 
 \question{
-    3.3 i
-}{
     How often do you expect this to happen given the confidence level (95\%) used?
 }
 
-\onelineanswerbox{3.3i}
+\onelineanswerbox
 
 \clearpage % Page break
