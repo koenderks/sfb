@@ -1,0 +1,96 @@
+\setcounter{section}{8}
+\setcounter{subsection}{3}
+\setcounter{question}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 8.3: Finding the posterior distribution using MCMC sampling
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rassignment{Finding the posterior distribution using MCMC sampling}
+
+In assignment 8.2 you have seen that updating a \concept{prior distribution} to a \concept{posterior distribution} is easy when you are counting successes and failures. That is because the \concept{prior distribution} and \concept{posterior distribution} are in the same family, they are both $Beta$ distributions. However, many prior distributions are not so easy to find when updated by the data. In this assignment, you are going to use a Markov chain Monte Carlo sampling method to approximate the posterior distribution. \\
+
+For this exercise you will be using the \texttt{Stan} coding language with the \rcode{rstan} \texttt{R} package. \rcode{rstan} performs MCMC sampling using an Hamiltonian Monte Carlo (HMC) algorithm, which is known to have a very high quality. Install and load the package using: \\
+\\
+\codeblock{install.packages(rstan) \\
+library(rstan)}
+
+\texttt{Stan} is very specific. It requires that you specify all \rcode{data}, all \rcode{parameters}, and the complete statistical \rcode{model}\footnote{For a complete introduction to \texttt{Stan}, you can visit \url{https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started}}. \\
+
+Copy and run the following code in \texttt{R} to set up the \texttt{Stan} model for the scenario in exercise 8.2b and store it in an object called \rcode{modelCode}. The code then compiles the model using the \rcode{stan\_model()} function and starts sampling using the \rcode{sampling()} function. The result of the sampling is stored in the \rcode{stanFit} object. \\
+
+\hint{You can change the \rcode{theta {\raise.17ex\hbox{$\scriptstyle\sim$}} beta(7, 5)} part of the code to specify your own prior distribution from assignment 8.2b.}
+
+\codeblock{modelCode <- {\color{dataset}\textquotesingle} \\
+{\color{dataset}data \{} \\
+    \hspace*{20pt} {\color{dataset}int n;} \\
+    \hspace*{20pt} {\color{dataset}int k;} \\
+{\color{dataset}\}} \\
+{\color{dataset}parameters \{ }\\
+    \hspace*{20pt} {\color{dataset}real<lower=0,upper=1> theta; }\\
+{\color{dataset}\}} \\
+{\color{dataset}model \{ }\\
+    \hspace*{20pt} {\color{dataset}theta {\raise.17ex\hbox{$\scriptstyle\sim$}} beta(7, 5); }\\
+    \hspace*{20pt} {\color{dataset}k {\raise.17ex\hbox{$\scriptstyle\sim$}} binomial(n, theta); }\\
+{\color{dataset} \} } \\
+{\color{dataset}\textquotesingle} \\
+\\
+{\color{dataset}\# Note: The following line can take a while to execute}\\
+compiledModel <- stan\_model(model\_code = modelCode, model\_name = \textquotesingle model\textquotesingle) \\
+\\
+stanFit <- sampling(compiledModel, data = list(n = 40, k = 33), \\ 
+                    \hspace*{110pt}iter = 5000, warmup = 500, chains = 4)}
+
+\clearpage % Page break
+
+\question{Extract the samples of the \concept{posterior distribution} on $\theta$ from the \rcode{stanFit} object using the \rcode{extract()} function and store them in an object called \rcode{samples}.}
+
+\rcodeanswertiny
+
+\question{Create a histogram of the \rcode{samples}. Next, run the following code in \texttt{R} to plot the analytical \concept{posterior distribution} over the histogram. Do the samples of the \concept{posterior distribution} resemble the actual \concept{posterior distribution} in any way?}
+
+\codeblock{curve(dbeta(x, shape1 = 40, shape2 = 12), add = TRUE)}
+
+\hint{Be sure to specify a larger value for the \rcode{breaks} argument since you have many samples. Also set \rcode{probability = TRUE} in the \rcode{hist()} function.}
+
+\rcodeanswersmall
+
+\twolineanswerbox
+
+As you have seen in assignment 8.2, this \concept{posterior distribution} can be calculated by hand, since it is a $Beta$ distribution. To represent your prior information (remember: you have conducted a questionnaire that showed you 60 percent of customers left your store satisfied), let's give $\theta$ a $Normal(\mu,\, \sigma)$ distribution as a prior distribution. You use your prior estimate of $\theta$ as the \concept{mean} of the prior distribution, and the \concept{standard deviation} of the sample ($s = 0.10$) as the \concept{standard deviation} of the \concept{prior distribution}. \\
+
+\question{Change the prior distribution in the \rcode{modelCode} to the $Normal$ distribution described in the text above. Run all appropriate code again.}
+
+\hint{The line \rcode{theta {\raise.17ex\hbox{$\scriptstyle\sim$}} beta(7, 5)} specifies the prior distribution.}
+
+\clearpage % Page break
+
+\rcodeanswermedium
+
+\question{Again, find out the \concept{posterior probability} that more than 60 percent of your customers left the store feeling satisfied, given the prior information and the information from the sample.}
+
+\hint{Do \underline{not} use the \rcode{quantile()} function or the \rcode{pbeta()} function.}
+
+\rcodeanswertiny
+
+\emptyanswerbox{
+    \vspace*{-5pt}
+    Probability: \shortanswerline
+}
+
+\question{
+    Find out the \concept{posterior probability} that the percentage of customers that left the store feeling satisfied, given the prior information and the information from the sample, lies between 70 and 90 percent.
+}
+
+\rcodeanswertiny
+
+\emptyanswerbox{
+    \vspace*{-5pt}
+    Probability: \shortanswerline
+}
+
+\question{Do your answers for assignment 8.3d and assignment 8.3e differ substantially from your answers at assignment 8.2e and assignment 8.2f. What does this tell you about the robustness of your outcomes to the choice of \concept{prior distribution}?}
+
+\twolineanswerbox
+
+\clearpage % Page break

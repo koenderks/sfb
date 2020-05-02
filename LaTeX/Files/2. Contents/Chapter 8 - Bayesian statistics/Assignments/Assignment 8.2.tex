@@ -1,0 +1,78 @@
+\setcounter{section}{8}
+\setcounter{subsection}{2}
+\setcounter{question}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 8.2: Updating a prior distribution to a posterior distribution
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rassignment{Updating a prior distribution to a posterior distribution}
+
+Suppose you are the manager of a small store and want to estimate what proportion of your customers leaves the store with a feeling of satisfaction. You give out a questionnaire to 40 people in the store and ask them whether they felt satisfied or not. In a previous enquiry done by you, it was already shown that, on average, 60\% of your customers feels good about the store, with a \concept{standard deviation} of ten percent. Using Bayesian statistics, you are now going to update the information from your previous enquiry with the information from the new questionnaire. \\
+
+\question{What \concept{parameter} does $\theta$ represent in this scenario?}
+
+\hint{Think about what question you are interested in answering.}
+
+\question{Think of your own $\alpha$ and $\beta$ parameters for the $Beta(\alpha, \,\beta)$ \concept{prior distribution} on $\theta$. Take into account the average percentage from your previous enquiry and incorporate this into your \concept{prior distribution.}}
+
+\emptyanswerbox{
+    $\alpha$: \shortanswerline \hspace*{3cm} $\beta$: \shortanswerline
+}
+
+\question{Use the \rcode{curve()} function to create a figure of your \concept{prior distribution} in \texttt{R}.}
+
+\rcodeanswertiny
+
+By updating the $Beta(\alpha,\, \beta)$ prior distribution with information that you have collected, you create a \concept{posterior distribution}, which contains both the prior information and the information from the sample. Having observed $k$ successes in a sample of $n$ observations, the \concept{prior parameters} $\alpha$ and $\beta$ are updated to the \concept{posterior parameters} $\alpha + k$ and $\beta + n - k$. \\
+
+In your sample of $n = 40$ questioned customers, $k = 33$ said they felt satisfied when leaving the store. \\
+
+\question{Write down the \concept{parameters} of the \concept{posterior distribution}.}
+
+\emptyanswerbox{
+    $\alpha$: \shortanswerline \hspace*{3cm} $\beta$: \shortanswerline
+}
+
+Run the following code in \texttt{R} to create a figure of the \concept{posterior distribution}. Fill in your own values of \rcode{alpha} and \rcode{beta} from assignment 8.2b. \\
+
+\clearpage % Page break
+
+\codeblock{alpha <- 7\\
+beta <- 5\\
+n <- 40\\
+k <- 33\\
+\\
+curve(dbeta(x, alpha + k, beta + n - k), \\
+\hspace*{35pt}xlab = expression(theta), ylab = \textquotesingle\textquotesingle, yaxt = \textquotesingle n\textquotesingle)}
+
+\question{
+    Find out the \concept{posterior probability} that more than 60 percent of your customers left the store feeling satisfied, given the prior information and the information from the sample.
+}
+
+\hint{Use the \rcode{qbeta()} function to find the cumulative probability under a beta distribution.}
+
+\rcodeanswertiny
+
+\emptyanswerbox{
+    \vspace*{-5pt}
+    Probability: \shortanswerline
+}
+
+\question{
+    Find out the \concept{posterior probability} that the percentage of customers that left the store feeling satisfied, given the prior information and the information from the sample, lies between 70 and 90 percent.
+}
+
+\rcodeanswertiny
+
+\emptyanswerbox{
+    \vspace*{-5pt}
+    Probability: \shortanswerline
+}
+
+\question{Change the values of \rcode{alpha} and \rcode{beta} in the code above so that you have a different \concept{prior distribution} and run the code again. Describe how robust the \concept{posterior distribution} is to changes in the prior distribution.}
+
+\twolineanswerbox
+
+
+\clearpage % Page break
