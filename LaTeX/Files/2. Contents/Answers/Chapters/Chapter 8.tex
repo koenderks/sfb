@@ -237,4 +237,121 @@ mLike2 <- bridge\_sampler(stanFitM2)}
     The evidence in favor of $M_2$ is moderate, and so additional testing might be required to come to a reasonable conclusion.
 }
 
+\answerbreakline \setcounter{subsection}{6} \setcounter{answer}{0}
+
+\clearpage % Page break
+
+\answer{
+    \vspace*{-10pt}
+    \answercode{{\color{dataset}\# Be sure to set your working directory when providing a relative path} \\
+insurance <- read.csv(\textquotesingle insurance.csv\textquotesingle)}
+}
+
+\answer{
+    charges = $\beta_0\, + \,\beta_1\,\, \times $ age $+ \,\beta_2\,\, \times $ bmi $+\, \beta_3\,\, \times $ neighbors 
+}
+
+\answer{
+    $\beta_0$: -6670.25 \hspace*{1cm} $\beta_1$: 333.92 \hspace*{1cm} $\beta_2$: 241.56 \hspace*{1cm} $\beta_3$: 45.84 \\
+    \\
+    \answercode{regressionFit <- sampling(object = regressionModel, \\
+    \hspace*{165pt}data = list(N = nrow(insurance), \\
+        \hspace*{230pt}x1 = insurance\$bmi, \\
+        \hspace*{230pt}x2 = insurance\$age, \\
+        \hspace*{230pt}x3 = insurance\$neighbors, \\
+        \hspace*{230pt}y = insurance\$charges),\\
+        \hspace*{165pt}iter = 5000, warmup = 500, chains = 4) \\
+                        \\
+                        regressionSamples <- extract(regressionFit) \\
+                        summary(regressionSamples)}
+}
+
+\answer{
+    YES \\
+    \\
+    \answercode{summary(lm(charges {\raise.17ex\hbox{$\scriptstyle\sim$}} 1 + age + bmi + neighbors, data = insurance))}
+}
+
+\answer{
+    \vspace*{-10pt}
+    \answercode{layout(matrix(1:4, nrow = 2)) \\
+    \\
+    plot(density(regressionSamples\$beta1), xlab = \textquotesingle \textquotesingle, ylab = \textquotesingle \textquotesingle, \\
+\hspace*{30pt}yaxt = \textquotesingle n\textquotesingle, bty = \textquotesingle n\textquotesingle, main = expression(beta[1])) \\
+plot(density(regressionSamples\$beta0), xlab = \textquotesingle \textquotesingle, ylab = \textquotesingle \textquotesingle, \\
+\hspace*{30pt}yaxt = \textquotesingle n\textquotesingle, bty = \textquotesingle n\textquotesingle, main = expression(beta[0])) \\
+plot(density(regressionSamples\$beta2), xlab = \textquotesingle \textquotesingle, ylab = \textquotesingle \textquotesingle, \\
+\hspace*{30pt}yaxt = \textquotesingle n\textquotesingle, bty = \textquotesingle n\textquotesingle, main = expression(beta[2])) \\
+plot(density(regressionSamples\$beta3), xlab = \textquotesingle \textquotesingle, ylab = \textquotesingle \textquotesingle, \\
+\hspace*{30pt}yaxt = \textquotesingle n\textquotesingle, bty = \textquotesingle n\textquotesingle, main = expression(beta[3])) \\
+\\
+layout(1)}
+}
+
+\answer{
+    Probability: 0.966\\
+    \\
+    \answercode{length(which(regressionSamples\$beta2 > 200)) / length(regressionSamples\$beta2)}
+}
+
+\clearpage % Page break
+
+\answer{
+    Probability: 0.052\\
+    \\
+    \answercode{length(which(regressionSamples\$beta1 < 250)) / length(regressionSamples\$beta1)}
+}
+
+\answer{
+    Lower bound: -79.98 \hspace*{3cm} Upper bound: 169.74 \\
+    \\
+    \answercode{quantile(regressionSamples\$beta3, probs = c(0.10, 0.90))}
+}
+
+\answer{
+    \vspace*{-10pt}
+    \answercode{regressionmodelcode2 <- {\color{dataset}\textquotesingle} \\
+{\color{dataset}data \{} \\
+    \hspace*{20pt} {\color{dataset}int<lower=0> N;} \\
+    \hspace*{20pt} {\color{dataset}vector[N] x1;} \\
+    \hspace*{20pt} {\color{dataset}vector[N] x2;} \\
+    \hspace*{20pt} {\color{dataset}vector[N] y;} \\
+{\color{dataset}\}} \\
+{\color{dataset}parameters \{ }\\
+    \hspace*{20pt} {\color{dataset}real beta0; }\\
+    \hspace*{20pt} {\color{dataset}real beta1; }\\
+    \hspace*{20pt} {\color{dataset}real beta2; }\\
+    \hspace*{20pt} {\color{dataset}real<lower=0> sigma; }\\
+{\color{dataset}\}} \\
+{\color{dataset}model \{ }\\
+    \hspace*{20pt} {\color{dataset}y {\raise.17ex\hbox{$\scriptstyle\sim$}} normal(beta0 + beta1 * x1 + beta2 * x2, sigma);}\\
+{\color{dataset} \} } \\
+{\color{dataset}\textquotesingle} \\
+\\
+{\color{dataset}\# Note: The following line can take a while to execute}\\
+regressionModel2 <- stan\_model(model\_code = regressionmodelcode2,  \\ 
+\hspace*{150pt}model\_name = \textquotesingle Regression2\textquotesingle) }
+}
+
+\answer{
+    \vspace*{-10pt}
+    \answercode{regressionFit2 <- sampling(object = regressionModel2, \\
+    \hspace*{165pt}data = list(N = nrow(insurance), \\
+        \hspace*{230pt}x1 = insurance\$bmi, \\
+        \hspace*{230pt}x2 = insurance\$age, \\
+        \hspace*{230pt}y = insurance\$charges),\\
+        \hspace*{165pt}iter = 5000, warmup = 500, chains = 4) \\
+                        \\
+                        mLike1 <- bridge\_sampler(regressionFit) \\
+                        mLike2 <- bridge\_sampler(regressionFit2) \\
+                        \\
+                        BF12 <- bf(mLike1, mLike2)}
+}
+
+\clearpage % Page break
+
+\answer{
+    The value of \rcode{BF12} is 258.65. This implies that the data are 258.65 times as likely to be observed under the model where $\beta_3$ is not included in the regression equation under the model where $\beta_3$ is included. The evidence against the number of \rcode{neighbors} adding to the prediction accuracy is extreme.
+}
+
 \clearpage % Page break

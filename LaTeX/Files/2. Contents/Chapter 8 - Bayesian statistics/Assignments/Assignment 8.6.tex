@@ -1,0 +1,143 @@
+\setcounter{section}{8}
+\setcounter{subsection}{6}
+\setcounter{question}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 8.6: Performing a Bayesian linear regression
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rassignment{Performing a Bayesian linear regression}
+
+Suppose you work as an analyst for an insurance firm. Your firm wants to assess which variables can predict the height of of a customer insurance charges. For this assignment you will need the \dataset{insurance.csv}\footnote{These data are adapted from the original open-source data set which can be found at: \url{https://www.kaggle.com/mirichoi0218/insurance/data}.} from the online resources. The data set contains a sample of 1338 health insurance customer and their recorded variables. For the current assignment, you can focus on the columns \rcode{charges} (the total charges of the customer), \rcode{age} (the customer age), \rcode{bmi} (the customer BMI score), and \rcode{neighbors} (the number of neighbors of the customer) columns. \\
+
+\question{
+    Use the \rcode{read.csv()} function (and \rcode{setwd()} function if you prefer) to import the data set into an object named \rcode{insurance}.
+}
+
+\rcodeanswertiny
+
+\question{
+    Write down the regression equation for a \concept{linear model} where you predict the variable \rcode{charges} on the basis of the predictor variables \rcode{age}, \rcode{bmi}, and \rcode{neighbors}.
+}
+
+\emptyanswerbox{
+    charges = \longanswerline
+}
+
+Run the following code in \texttt{R} to create a \texttt{Stan} model $M_1$ that corresponds to this linear model with all \concept{coefficients}. Note that you do not specify \concept{prior distributions} (under the \rcode{model} section) for the $\beta_0$, $\beta_1$, and $\beta_2$ parameters. That is because, when you do not specify the prior distributions in \rcode{Stan}, the posterior distributions will be estimated solely from the data. \\
+
+\clearpage % Page break
+
+\codeblock{regmodelcode <- {\color{dataset}\textquotesingle} \\
+{\color{dataset}data \{} \\
+    \hspace*{20pt} {\color{dataset}int<lower=0> N;} \\
+    \hspace*{20pt} {\color{dataset}vector[N] x1;} \\
+    \hspace*{20pt} {\color{dataset}vector[N] x2;} \\
+    \hspace*{20pt} {\color{dataset}vector[N] x3;} \\
+    \hspace*{20pt} {\color{dataset}vector[N] y;} \\
+{\color{dataset}\}} \\
+{\color{dataset}parameters \{ }\\
+    \hspace*{20pt} {\color{dataset}real beta0; }\\
+    \hspace*{20pt} {\color{dataset}real beta1; }\\
+    \hspace*{20pt} {\color{dataset}real beta2; }\\
+    \hspace*{20pt} {\color{dataset}real beta3; }\\
+    \hspace*{20pt} {\color{dataset}real<lower=0> sigma; }\\
+{\color{dataset}\}} \\
+{\color{dataset}model \{ }\\
+    \hspace*{20pt} {\color{dataset}y {\raise.17ex\hbox{$\scriptstyle\sim$}} normal(beta0 + beta1 * x1 + beta2 * x2 + beta3 * x3, sigma);}\\
+{\color{dataset} \} } \\
+{\color{dataset}\textquotesingle} \\
+\\
+{\color{dataset}\# Note: The following line can take a while to execute}\\
+regressionModel <- stan\_model(model\_code = regmodelcode, model\_name = \textquotesingle Regression\textquotesingle) }
+
+\question{
+    Use the \rcode{sampling()} function to sample from the \rcode{regressionModel} model and store the samples in an object named \rcode{regressionSamples}. Next, use the \rcode{summary()} function to find out the \concept{posterior means} of the $\beta_0$, $\beta_1$, $\beta_2$, and $\beta_3$ coefficients. 
+}
+
+\emptyanswerbox{
+    \vspace*{-7.5pt}
+    $\beta_0$: \tinyanswerline \hspace*{1cm} $\beta_1$: \tinyanswerline \hspace*{1cm} $\beta_2$: \tinyanswerline \hspace*{1cm} $\beta_3$: \tinyanswerline
+}
+
+\rcodeanswersmall
+
+\question{Use the \rcode{lm()} function to fit a regular \concept{linear model} to the data. Use the \rcode{summary()} function to find out the estimates of the coefficients when done this way. Do they match the \concept{posterior means} from assignment 8.6b?}
+
+\rcodeanswertiny
+
+\clearpage % Page break
+
+\emptyanswerbox{
+    \vspace*{-15pt}
+    \begin{center}
+        YES / NO
+    \end{center}
+}
+
+Run the following code in \texttt{R} to create a figure of the posterior distribution of $\beta_1$, the regression coefficient for the variable \rcode{age}: \\
+\\
+\codeblock{plot(density(regressionSamples\$beta1), xlab = \textquotesingle \textquotesingle, ylab = \textquotesingle \textquotesingle, \\
+\hspace*{30pt}yaxt = \textquotesingle n\textquotesingle, bty = \textquotesingle n\textquotesingle, main = expression(beta[1]))}
+
+\question{
+    Also create figures of the posterior distributions for $\beta_0$, $\beta_2$, and $\beta_3$.
+}
+
+\rcodeanswersmall
+
+\question{Find out the probability that the average increase in \rcode{charges} as a function of 1 point on the \rcode{bmi} scale is higher than 200 dollars.}
+
+\hint{Use the approach that you applied in assignment 8.3d and assignment 8.3e.}
+
+\rcodeanswertiny
+
+\emptyanswerbox{
+    Probability: \shortanswerline
+}
+
+\question{
+    Find out the probability that the value of $\beta_1$ is lower than 250.
+}
+
+\rcodeanswertiny
+
+\emptyanswerbox{
+    Probability: \shortanswerline
+}
+
+\clearpage % Page break
+
+\question{
+    Find out between which values of $\beta_3$ 90 percent of the \concept{posterior samples} lie. 
+}
+
+\rcodeanswertiny
+
+\emptyanswerbox{
+    Lower bound: \shortanswerline \hspace*{1cm} Upper bound: \shortanswerline
+}
+
+As you can see, the posterior distribution for the $\beta_3$ coefficient centers around zero, and it's contribution to the accuracy of the prediction can be questioned. To test how much more likely a model is that includes the $\beta_3$ predicts the data compared to a model that excludes the coefficient, you can use the procedure that you have learned in assignment 8.5. \\
+
+\question{
+    Write code for a new \texttt{Stan} model $M_2$ where you remove the predictor variable \rcode{neighbors}.
+}
+
+\rcodeanswerlarge
+
+\question{
+    Using the procedure in assignment 8.5, calculate the \concept{Bayes factor} $BF_{12}$ in favor of $M_1$ (the model that includes $\beta_3$) over $M_2$ (the model that excludes $\beta_3$). 
+}
+
+\rcodeanswermedium
+
+\clearpage % Page break
+
+\question{What is the value of $BF_{12}$. Interpret this \concept{Bayes factor} with respect to the coefficient $\beta_0$. Incorporate the strength of the evidence in your answer.}
+
+\fourlineanswerbox
+
+Keep in mind that basically all statistical tests are a specific form of regression (like you have learned in chapter 6). This means that you can extend the \texttt{Stan} models that you have seen in this chapter to answer any question that you want to investigate.
+
+\clearpage % Page break

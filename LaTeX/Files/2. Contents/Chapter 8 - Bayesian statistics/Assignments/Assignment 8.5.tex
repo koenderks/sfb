@@ -10,15 +10,15 @@
 
 You are not convinced by the evidence from assignment 8.4 and want to perform additional testing. This time, however, you want to find out whether your algorithm makes more than 75 percent of the trades with profit. That is, you want to test whether $\theta$ is higher or lower than 0.75.\\
 
-\question{Formulate the models $M_1$ (restricts $\theta$ to be below 0.75) and $M_2$ (restricts $\theta$ to be higher than 0.75). Choose between $\leq / = / \geq$ in each model.}
+\question{Formulate the \concept{models} $M_1$ (restricts $\theta$ to be below 0.75) and $M_2$ (restricts $\theta$ to be higher than 0.75). Choose the restriction ($\leq$, $=$, or $\geq$) that applies to each model.}
 
 \emptyanswerbox{
     $M_1$: $\theta \leq / = / \geq$ \tinyanswerline \hspace{3cm} $M_2$: $\theta \leq / = / \geq$ \tinyanswerline
 }
 
-For more complicated (e.g., non-nested) models, the computation of the \concept{Bayes factor} becomes more difficult since it involves the computation of the \concept{marginal likelihoods} of the models. However, you can use the \rcode{bridgesampling} package together with the \rcode{rstan} package to let \texttt{R} calculate these values for you. \\
+For these more complicated (e.g., non-nested) models, the computation of the \concept{Bayes factor} becomes more difficult since it involves computing the \concept{marginal likelihoods} of the \concept{models}. To make your life simple, you can use the \rcode{bridgesampling} package together with the \rcode{rstan} package to let \texttt{R} calculate these values for you. \\
 
-Run the following code in \texttt{R} to install the \rcode{bridgesampling} package and load both the \rcode{bridgesampling} and the \rcode{rstan} package. \\
+Run the following code in \texttt{R} to install the \rcode{bridgesampling} package. Then load the \rcode{bridgesampling} and the \rcode{rstan} package. \\
 \\
 \codeblock{install.packages(\textquotesingle bridgesampling\textquotesingle) \\
             \\
@@ -46,19 +46,19 @@ model1 <- stan\_model(model\_code = model1code, model\_name = \textquotesingle m
 
 \clearpage % Page break
 
-\question{Create the \texttt{Stan} model for $M_2$, the model that restricts $\theta$ to be higher than 0.75. Name the compiled model \rcode{model2}.}
+\question{Create the \texttt{Stan} model for $M_2$, the model that restricts $\theta$ to be higher than 0.75, on the basis of the lines in \rcode{model1code}. Name the compiled model \rcode{model2}.}
 
 \hint{First find out what elements were added to the code since assignment 8.3.}
 
 \rcodeanswerlarge
 
-\question{Find and describe the \concept{prior distributions} for $\theta$ in $M_1$ and $M_2$.}
+\question{Locate and describe the \concept{prior distributions} for $\theta$ in $M_1$ and $M_2$.}
 
 \twolineanswerbox
 
-Suppose that you monitor your algorithm for $n = 156$ more trades, of which $k = 123$ were traded with profit. \\
+Now you start collecting data again. Suppose that you monitor your algorithm for $n = 156$ more trades, and find that $k = 123$ trades resulted in a profit. \\
 
-\question{Use the \rcode{sampling()} function to sample the posterior distribution of both $M_1$ and $M_2$ using these data. Store the fitted \texttt{Stan} models in objects named \rcode{stanFitM1} and \rcode{stanFitM2}.}
+\question{Use the \rcode{sampling()} function to sample for the \concept{models} $M_1$ and $M_2$ using these data. Store the fitted \texttt{Stan} models in objects named \rcode{stanFitM1} and \rcode{stanFitM2}.}
 
 \rcodeanswersmall
 
@@ -68,11 +68,11 @@ Suppose that you monitor your algorithm for $n = 156$ more trades, of which $k =
 
 \clearpage % Page break
 
-\question{Use the \rcode{bf()} function to calculate the \concept{Bayes factor} $BF_{21}$ in favor of model $M_2$ and store it in an object called \rcode{BF12}.}
+\question{Use the \rcode{bf()} function to calculate the \concept{Bayes factor} $BF_{21}$ in favor of model $M_2$ over model $M_1$ and store it in an object called \rcode{BF21}.}
 
-\hint{Be sure to insert the two marginal likelihoods into the \rcode{bf()} function in the correct order.}
+\hint{Be sure to insert the two marginal likelihoods into the \rcode{bf()} function in the correct order so that the result is $BF_{21}$.}
 
-\question{What is the value of \rcode{BF12}? Interpret this \concept{Bayes factor} with respect to the model that restricts $\theta$ to be higher than 0.75.}
+\question{What is the value of \rcode{BF21}? Interpret this \concept{Bayes factor} with respect to the model that restricts $\theta$ to be higher than 0.75.}
 
 \threelineanswerbox
 
