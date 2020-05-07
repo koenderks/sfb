@@ -8,14 +8,14 @@
 
 \handassignment{Independent two-sample t-test by hand and in R}
 
-To test the effect of caffeine on the respiratory exchange ratio (RER), 9 men get caffeine and 9 different men get a placebo, their RER is measured while doing sports\footnote{These data are taken from \url{http://learntech.uwe.ac.uk/da/Default.aspx?pageid=1438}}: \\
+To test the effect of caffeine on the respiratory exchange ratio (RER), 9 men get caffeine and 9 different men get a placebo, their RER is measured while doing sports\footnote{This example is taken from \url{http://learntech.uwe.ac.uk/da/Default.aspx?pageid=1438}}: \\
 \vspace*{0.5cm}
 \begin{center}
 \begin{tabular}{c|ccc}
 RER measurement & $n$ & Mean ($\bar{x}$) & Standard deviation ($s_x$) \tstrut\bstrut\\
 \hline
-Caffeine & 9 & 94.22 & 5.61 \tstrut\bstrut\\
-Placebo & 9 & 100.56 & 7.70 \tstrut\bstrut\\
+Caffeine & 9 & 94.22 & 6.49 \tstrut\bstrut\\
+Placebo & 9 & 101.22 & 8.14 \tstrut\bstrut\\
 \end{tabular}
 \end{center}
 \vspace*{0.5cm}
@@ -97,8 +97,8 @@ Run the following code in \texttt{R}: \\
 \vspace*{.1cm}
 
 \codeblock{{\color{dataset}\# These are the values for the RER test data set}\\
-placebo <- c(105, 119, 100, 97, 96, 101, 94, 95, 98)\\
-caffeine <- c(96, 99, 94, 89, 96, 93, 88, 105, 88)}
+placebo <- c(97, 106, 120, 104, 96, 100, 93, 96, 99)\\
+caffeine <- c(97, 92, 95, 100, 95, 88, 85, 106, 89)}
 
 \question{
     Calculate the \concept{mean} and \concept{standard deviation} for the \rcode{placebo} and \rcode{caffeine} variables, confirm that your results match with the previous assignment.

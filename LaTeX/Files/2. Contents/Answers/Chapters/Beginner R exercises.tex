@@ -211,7 +211,7 @@ sort(s)                     {\color{dataset}\# Lowest to highest}}
 }
 
 \beginnerexerciseanswer{
-    The means of the columns are all zero (calculate with rowSums(m1)), and the standard deviations are all one (calculate with apply(m2,2,sd). The \rcode{scale()} function therefore transforms the values in the columns so that their mean is zero and their standard deviation is one. 
+    The means of the columns are all zero (calculate with \rcode{rowSums(m1)}), and the standard deviations are all one (calculate with \rcode{apply(m2,2,sd)}. The \rcode{scale()} function therefore transforms the values in the columns so that their mean is zero and their standard deviation is one. 
 }
 
 \answerbreakline
@@ -241,7 +241,7 @@ sort(s)                     {\color{dataset}\# Lowest to highest}}
 \answerbreakline
 
 \beginnerexerciseanswer{
-    No, \rcode{g} is not a true vector but a factor. That is because \rcode{g} consist of factor levels. You can check this using \rcode{is.vector(g)} or \rcode{is.factor(g)}. Note that you can also find this out by using the 'str' function: str(g).
+    No, \rcode{g} is not a true vector but a factor. That is because \rcode{g} consist of factor levels. You can check this using \rcode{is.vector(g)} or \rcode{is.factor(g)}. Note that you can also find this out by using the \rcode{str()} function: \rcode{str(g)}.
 }
 
 \beginnerexerciseanswer{
@@ -339,12 +339,6 @@ failed <- grades\$student[-passed] }
 
 \beginnerexerciseanswer{
     This code tests whether two vectors are identical. The \rcode{identical()} function does this automatically. \\
-    \\
-    \answercode{min(x==y) == 1 \\
-mean(x==y) == 1 \\
-prod(x==y) == 1 \\
-identical(x, y)
-}
 }
 
 \answerbreakline
@@ -355,11 +349,11 @@ identical(x, y)
 
 \beginnerexerciseanswer{
     \vspace*{-10pt}
-    \answercode{sample(c(\textquotesingle jack\textquotesingle, \textquotesingle queen\textquotesingle, \textquotesingle king\textquotesingle, \textquotesingle ace\textquotesingle), replace = TRUE)}
+    \answercode{sample(c(\textquotesingle jack\textquotesingle, \textquotesingle queen\textquotesingle, \textquotesingle king\textquotesingle, \textquotesingle ace\textquotesingle), 4, replace = TRUE)}
 }
 
 \beginnerexerciseanswer{
-    You can use the \rcode{runif()} function to sample uniform random numbers. \rcode{sample(1:100, 20)} is not correct in this case because the sampling vector starts at 1. \\
+    You can use the \rcode{runif()} function to sample uniform random numbers. \rcode{sample(1:100, 20)} is not correct in this case because the sampling vector starts at 1 and is generating integers instead of floating point numbers. \\
     \\
     \answercode{runif(n = 20, min = 0, max = 100)}
 }
@@ -380,7 +374,7 @@ r2[11]
     \\
     \answercode{set.seed(123) \\
     r3 <- rnorm(n = 100, mean = 100, sd = 15) \\
-var(v3)}
+var(r3)}
 }
 
 \beginnerexerciseanswer{
@@ -393,7 +387,8 @@ cor(x)
 \answerbreakline
 
 \beginnerexerciseanswer{
-    The \rcode{read.csv()} function reads in \dataset{.csv} files. You can read in Excel files (\dataset{.xlsx}) using the \rcode{read.xslx()} function (from the \rcode{xlsx} package). The function \rcode{read.spss()} is featured in the package \rcode{foreign} (see \rcode{?read.spss}) and reads \dataset{.spss} files. 
+    The \rcode{read.csv()} function reads in \dataset{.csv} files. You can read in Excel files (\dataset{.xlsx}) using the \rcode{read.xslx()} function (from the \rcode{xlsx} package). The function \rcode{read.spss()} is featured in the package \rcode{foreign} (see \rcode{?read.spss}) and reads \dataset{.spss} files. For people that were born before
+    1980, we acknowledge that you can also read in \dataset{.dbf} files with \rcode{read.dbf()}.
 }
 
 \beginnerexerciseanswer{

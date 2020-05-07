@@ -1,7 +1,7 @@
 \subsection{Conditions}
 
 \beginnerexercise{
-    What does \rcode{(a < 0 | b < 0) & (a * b < 0)} mean? If this condition is \rcode{TRUE} and \rcode{a} is negative, what do you know about \rcode{b}?
+    What does \rcode{(a < 0 | b < 0) \& (a * b < 0)} mean (| and & are the logical "or" and "and" operator, respectively)? If this condition is \rcode{TRUE} and \rcode{a} is negative, what do you know about \rcode{b}?
 }
 
 \beginnerexercise{
@@ -25,7 +25,7 @@
     y{[1]} <- 0\\
     sum(x==y) == length(x==y)
     }
-    Explain the result of this code. Can you make a test whether \rcode{x} and \rcode{y} are identical using the \rcode{min()} function? And with the \rcode{mean()} or \rcode{prod()} function? Is there a special function to test whether two vectors are identical?
+    Explain the result of this code. 
 }
 
 \clearpage

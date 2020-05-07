@@ -8,14 +8,14 @@
 
 \rassignment{Finding the posterior distribution using MCMC sampling}
 
-In assignment 8.2 you have seen that updating a \concept{prior distribution} to a \concept{posterior distribution} is easy when you are counting successes and failures. That is because the \concept{prior distribution} and \concept{posterior distribution} are in the same family, they are both $Beta$ distributions. However, many prior distributions are not so easy to find when updated by the data. In this assignment, you are going to use a Markov chain Monte Carlo sampling method to approximate the posterior distribution. \\
+In assignment 8.2 you have seen that updating a \concept{prior distribution} to a \concept{posterior distribution} is easy when you are counting successes and failures. In this scenario the \concept{prior distribution} and \concept{posterior distribution} are in the same family, they are both $Beta$ distributions. However, many posterior distributions are not so easy to find. In this assignment, you are going to learn how to use a Markov chain Monte Carlo sampling method to approximate the posterior distribution for any combination of \concept{prior distributions} and \concept{likelihoods}. \\
 
-For this exercise you will be using the \texttt{Stan} coding language with the \rcode{rstan} \texttt{R} package. \rcode{rstan} performs MCMC sampling using an Hamiltonian Monte Carlo (HMC) algorithm, which is known to have a very high quality. Install and load the package using: \\
+For this exercise you will be using the \texttt{Stan} coding language with the \rcode{rstan} \texttt{R} package. \rcode{rstan} performs MCMC sampling using an Hamiltonian Monte Carlo (HMC) algorithm, which is known to have a very high quality in finding the \concept{posterior distribution}. Install and load the package using: \\
 \\
 \codeblock{install.packages(rstan) \\
 library(rstan)}
 
-\texttt{Stan} is very specific. It requires that you specify all \rcode{data}, all \rcode{parameters}, and the complete statistical \rcode{model}\footnote{For a complete introduction to \texttt{Stan}, you can visit \url{https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started}}. \\
+\texttt{Stan} requires very specific commands. It requires that you specify all \rcode{data}, all \rcode{parameters}, and the complete statistical \rcode{model}\footnote{For a complete introduction to \texttt{Stan}, you can visit \url{https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started}}. \\
 
 Copy and run the following code in \texttt{R} to set up the \texttt{Stan} model for the scenario in exercise 8.2b and store it in an object called \rcode{modelCode}. The code then compiles the model using the \rcode{stan\_model()} function and starts sampling using the \rcode{sampling()} function. The result of the sampling is stored in the \rcode{stanFit} object. \\
 
@@ -57,7 +57,7 @@ stanFit <- sampling(compiledModel, data = list(n = 40, k = 33), \\
 
 \twolineanswerbox
 
-As you have seen in assignment 8.2, this \concept{posterior distribution} can be calculated by hand, since it is a $Beta$ distribution. To represent your prior information (remember: you have conducted a questionnaire that showed you 60 percent of customers left your store satisfied), let's give $\theta$ a $Normal(\mu,\, \sigma)$ distribution as a prior distribution. You use your prior estimate of $\theta$ as the \concept{mean} of the prior distribution, and the \concept{standard deviation} of the sample ($s = 0.10$) as the \concept{standard deviation} of the \concept{prior distribution}. \\
+As you have seen in assignment 8.2, the \concept{posterior distribution} you just estimated can be calculated by hand, since it is a $Beta$ distribution. However, to represent your prior information (remember: you have conducted a questionnaire that showed you 60 percent of customers left your store satisfied with a \concept{standard deviation} of 10 percent), let's give $\theta$ a $Normal(\mu,\, \sigma)$ distribution as a prior distribution. You use your prior estimate of $\theta$ as the \concept{mean} of the prior distribution, and the \concept{standard deviation} of the sample ($s = 0.10$) as the \concept{standard deviation} of the \concept{prior distribution}. \\
 
 \question{Change the prior distribution in the \rcode{modelCode} to the $Normal$ distribution described in the text above. Run all appropriate code again.}
 

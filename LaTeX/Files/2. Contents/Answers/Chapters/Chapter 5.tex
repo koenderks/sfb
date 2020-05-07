@@ -165,15 +165,15 @@ One-tailed left sided test: $H_0$ not rejected (1.6 < 2.153) \\
 }
 
 \answer{
-    $\s^2_p = \frac{(n_1 - 1) s_1^2 + (n_2 - 1) s_2^2}{n_1 + n_2 - 2)} = \frac{(9 - 1) \times 5.61^2 + (9 - 1) \times 7.70^2}{9 + 9 - 2} = 45.38$
+    $\s^2_p = \frac{(n_1 - 1) s_1^2 + (n_2 - 1) s_2^2}{n_1 + n_2 - 2)} = \frac{(9 - 1) \times 6.49^2 + (9 - 1) \times 8.14^2}{9 + 9 - 2} = 7.36$
 }
 
 \answer{
-    $t = \frac{(x_1 - x_2) - D_0}{\sqrt{s^2_p (\frac{1}{n_1} + \frac{1}{n_2})}} = \frac{(94.22 - 100.56)}{\sqrt{45.38 \times (\frac{1}{9} + \frac{1}{9})}} = 1.995$
+    $t = \frac{(x_1 - x_2) - D_0}{\sqrt{s^2_p (\frac{1}{n_1} + \frac{1}{n_2})}} = \frac{(94.11 - 101.22)}{\sqrt{7.36 \times (\frac{1}{9} + \frac{1}{9})}} = 2.050$
 }
 
 \answer{
-    The calculated t-score of 1.995 is more extreme (higher) than the critical value of 1.746. $H_0$ is rejected with 95\% confidence. The mean placebo RER level is significantly higher than the mean caffeine RER level. There is a risk of 5\% for type-I error.
+    The calculated t-score of 2.050 is more extreme (higher) than the critical value of 1.746. $H_0$ is rejected with 95\% confidence. The mean placebo RER level is significantly higher than the mean caffeine RER level. There is a risk of 5\% for type-I error.
 
 }
 
@@ -183,30 +183,30 @@ One-tailed left sided test: $H_0$ not rejected (1.6 < 2.153) \\
     \vspace*{-7.5pt}
     \begin{minipage}[t]{0.5\textwidth}
     \rcode{placebo}	\\
-Mean: 	100.55 \\
-Standard deviation: 7.699
+Mean: 	101.22 \\
+Standard deviation: 8.14
     \end{minipage}
     \begin{minipage}[t]{0.5\textwidth}
     \rcode{caffeine} \\
-    Mean: 94.22 \\
-    Standard deviation: 5.607
+    Mean: 94.11 \\
+    Standard deviation: 6.49
     \end{minipage} \\
     \\
     \\
     \answercode{{\color{dataset}\# These are the values for the RER test data set} \\
-placebo <- c(105, 119, 100, 97, 96, 101, 94, 95, 98) \\
-caffeine <- c(96, 99, 94, 89, 96, 93, 88, 105, 88) \\
+placebo <- c(106, 120, 104, 96, 97, 100, 93, 96, 99) \\
+caffeine <- c(95, 100, 95, 88, 97, 92, 85, 106, 89) \\
  \\
  \\
-mean(placebo)  {\color{dataset}\# Mean:                 100.55} \\
-sd(placebo)    {\color{dataset}\# Standard deviation:   7.699}   \\
+mean(placebo)  {\color{dataset}\# Mean:                 101.22} \\
+sd(placebo)    {\color{dataset}\# Standard deviation:   8.14}   \\
  \\
-mean(caffeine) {\color{dataset}\# Mean:                 94.22}\\
-sd(caffeine)   {\color{dataset}\# Standard deviation:   5.607} }
+mean(caffeine) {\color{dataset}\# Mean:                 94.11}\\
+sd(caffeine)   {\color{dataset}\# Standard deviation:  6.49} }
 }
 
 \answer{
-    The code runs an independent (not paired) samples t-test with a confidence of 95\% for \rcode{placebo} and \rcode{caffeine}, with the alternative hypothesis $H_1$ that the difference in means is greater than 0. The variances are assumed equal. \\
+    The code runs an independent (not paired) samples t-test with a confidence of 95\% for \rcode{placebo} and \rcode{caffeine}, with the alternative hypothesis $H_1$ that the difference in means is greater than 0. The variances are assumed equal. The output t-value and p-value confirm the previous result to reject $H_0$. \\
     \\
     \answercode{t.test(x = placebo, y = caffeine, alternative = \textquotesingle greater\textquotesingle, mu = 0, \\
 \hspace*{40pt}paired = FALSE, var.equal = TRUE, conf.level = 0.95)
@@ -214,7 +214,7 @@ sd(caffeine)   {\color{dataset}\# Standard deviation:   5.607} }
 }
 
 \answer{
-    The Welch Two Sample t-test leads to a slightly different p-value of 0.03252, but the same conclusion: rejection of $H_0$. \\
+    The Welch Two Sample t-test leads to a slightly different p-value of 0.02899, but the same conclusion: rejection of $H_0$. \\
     \\
     \answercode{t.test(x = placebo, y = caffeine, alternative = \textquotesingle greater\textquotesingle, mu = 0, \\
 \hspace*{40pt}paired = FALSE, var.equal = FALSE, conf.level = 0.95)
@@ -234,18 +234,18 @@ sd(caffeine)   {\color{dataset}\# Standard deviation:   5.607} }
 \clearpage % Page break
 
 \answer{
-    Mean standing: 140.83 \\
-Mean lying: 143.33 \\
-Mean difference: 2.5 \\
+    Mean standing: 137.07 \\
+Mean lying: 145.43 \\
+Mean difference: 8.36 \\
 \\
 \answercode{{\color{dataset}\# These are the values for the blood pressure data set} \\
-standing <- c(132, 146, 135, 141, 139, 162, 128, 137, 145, 151, 131, 143) \\
-lying <- c(136, 145, 140, 147, 142, 160, 137, 136, 149, 158, 120, 150) \\
+standing <- c(136, 144, 152, 133, 140, 129, 131, 133, 145, 134, 142, 140, 125, 135) \\
+sitting <- c(148, 159, 121, 151, 145, 139, 135, 144, 141, 148, 143, 161, 150, 151) \\
  \\
-mean(standing)   {\color{dataset}\# Mean standing: 140.83} \\
-mean(lying)      {\color{dataset}\# Mean lying: 143.33} \\
-differences <- lying - standing \\
-mean(differences) {\color{dataset}\# Mean difference: 2.5}}
+mean(standing)   {\color{dataset}\# Mean standing: 137.07} \\
+mean(sitting)      {\color{dataset}\# Mean sitting: 145.43} \\
+differences <- sitting - standing \\
+mean(differences) {\color{dataset}\# Mean difference: 8.36}}
 }
 
 \answer{
@@ -253,17 +253,17 @@ mean(differences) {\color{dataset}\# Mean difference: 2.5}}
 }
 
 \answer{
-    The test is done with \rcode{alternative = \textquotesingle greater\textquotesingle}, which means that now \texttt{R} will test for standing greater than lying, which is quite improbable given the sample results. \\
+    The test is done with \rcode{alternative = \textquotesingle greater\textquotesingle}, which means that now \texttt{R} will test for standing greater than sitting, which is quite improbable given the sample results. \\
     \\
-    \answercode{t.test(x = standing, y = lying, alternative = \textquotesingle greater\textquotesingle, mu = 0, \\
+    \answercode{t.test(x = standing, y = sitting, alternative = \textquotesingle greater\textquotesingle, mu = 0, \\
 \hspace*{40pt}paired = TRUE, conf.level = 0.925)}
 }
 
 \answer{
-    The p-value for this sample outcome is 0.07189, which is below the limit of 0.075 (92.5\% confidence). $H_0$ is rejected with 92.5\% confidence. The blood pressure is significantly higher lying down than standing up. There is a risk of 7.5\% for type-I error. \\
+    The p-value for this sample outcome is 0.02055, which is below the limit of 0.075 (92.5\% confidence). $H_0$ is rejected with 92.5\% confidence. The blood pressure is significantly higher lying down than standing up. There is a risk of 7.5\% for type-I error. \\
     \\
     \answercode{{\color{dataset}\# Correct: alternative = \textquotesingle less\textquotesingle} \\
-    t.test(x = standing, y = lying, alternative = \textquotesingle less\textquotesingle, mu = 0, \\
+    t.test(x = standing, y = sitting, alternative = \textquotesingle less\textquotesingle, mu = 0, \\
 \hspace*{40pt}paired = TRUE, conf.level = 0.925)}
 }
 
