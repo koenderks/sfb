@@ -1,8 +1,8 @@
-\setcounter{section}{6}
-\setcounter{subsection}{1}
+\setcounter{chapter}{6}
+\setcounter{section}{1}
 \setcounter{answer}{0}
 
-\subsection{Chapter 6: Comparing more than two means}
+\section{Chapter 6: Comparing more than two means}
 
 \answer{
     \vspace*{-10pt}
@@ -48,7 +48,7 @@ ttestData <- cbind(ttestData, dummyBrown)
     \answercode{summary(ttestreg) {\color{dataset}\# p-value dummyBrown: 0.14}}
 }
 
-\answerbreakline \setcounter{subsection}{2} \setcounter{answer}{0}
+\answerbreakline \setcounter{section}{2} \setcounter{answer}{0}
 
 \answer{
     $H_0$: $\mu_{1} = \mu_{2} = \mu_{3} = \mu_{4}$ \hspace*{1cm} $H_1$: $\mu_{1} \neq \mu_{2} \neq \mu_{3} \neq \mu_{4}$
@@ -86,7 +86,7 @@ qf(p = 0.95, df1 = df1, df2 = df2) {\color{dataset}\# 2.646}}
     The p-value is 0.0362, which is lower than the 0.05 required to reject $H_0$. The sample F-value is 2.894, which is higher than the critical F-value of 2.646. $H_0$ is rejected with 95\% confidence. The means of the four groups are not equal to each other. There is a risk of 5\% for a type-I error.
 }
 
-\answerbreakline \setcounter{subsection}{3} \setcounter{answer}{0}
+\answerbreakline \setcounter{section}{3} \setcounter{answer}{0}
 
 \answer{
     \vspace*{-10pt}
@@ -119,7 +119,7 @@ dataset8 <- cbind(dataset8, dummyGreen)}
     Yes, the results are the same.
 }
 
-\answerbreakline \setcounter{subsection}{4} \setcounter{answer}{0}
+\answerbreakline \setcounter{section}{4} \setcounter{answer}{0}
 
 \clearpage % Page break
 
@@ -169,7 +169,7 @@ AIC(ancovaReg)  {\color{dataset}\# AIC: 867.18}}
     The AIC value of the \rcode{anovaReg} regression model is the lowest, which means that the \rcode{anovaReg} model fits the data better than the \rcode{ancovaReg} regression model. This means that the model without the covariate is a better model. You may have already seen this, since the covariate in the \rcode{ancovaReg} model was not a good predictor of the score.
 }
 
-\answerbreakline \setcounter{subsection}{5} \setcounter{answer}{0}
+\answerbreakline \setcounter{section}{5} \setcounter{answer}{0}
 
 \clearpage % Page break
 

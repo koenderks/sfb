@@ -2,7 +2,6 @@
 \usepackage{xcolor}
 \usepackage{fancyhdr}
 \usepackage[margin=2.2cm]{geometry}
-
 \usepackage{helvet}
 \usepackage{courier}
 \usepackage{titlesec}
@@ -19,6 +18,7 @@
 \usepackage{enumitem}
 \usepackage{nicefrac}
 \usepackage{hyperref}
+\usepackage{eurosym}
 
 % Arial letter type
 \renewcommand{\familydefault}{\sfdefault}
@@ -37,7 +37,7 @@
     pdfcreator={PdfLaTeX},
     bookmarksnumbered=true,
     bookmarksopen=true,
-    bookmarksopenlevel=1,
+    bookmarksopenlevel=0,
     pdfstartview=Fit,
     unicode=true,
     pdfpagemode=UseOutlines
@@ -51,20 +51,27 @@
 \definecolor{codeblock}{RGB}{208, 231, 255}
 \definecolor{concept}{RGB}{198, 0, 0}
 \definecolor{answercode}{RGB}{241, 241, 241}
+\definecolor{frontpage}{RGB}{106, 168, 79}
 
 % Define header and footer
-\fancyfoot[LE,RO]{\thepage} % Left side on Even pages; Right side on Odd pages
 \pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
 \fancypagestyle{plain}{%
-  \fancyhf[lh]{{\fontsize{12}{14}\selectfont\textit{Statistics for Business}}}%
-  \fancyhf[rh]{{\fontsize{12}{14}\selectfont\textit{\nouppercase{\rightmark}}}}%
-  \renewcommand{\headrulewidth}{1pt}%
-  \fancyhf[lef,rof]{\thepage}%
-  \fancyhf[cf]{}
-  %\renewcommand{\footrulewidth}{1pt}%
+    \fancyhf[lh]{{\fontsize{12}{14}\selectfont\textit{Statistics for Business}}}%
+    %\fancyhf[rh]{{\fontsize{12}{14}\selectfont\textit{\nouppercase{}}}}%
+    \renewcommand{\headrulewidth}{1pt}%
+    \fancyhf[lef,rof]{\thepage}%
+    \fancyhf[cf]{}
 }
 \pagestyle{plain}
 \setlength\parindent{0pt}
+
+\fancypagestyle{emptyhead}{                 % Define a new pagestyle
+    \fancyhf{}                              % Clear header/footer
+    \fancyhf[lh]{{\fontsize{12}{14}\selectfont\textit{Statistics for Business}}}%
+    \renewcommand{\headrulewidth}{1pt}%
+    \fancyfoot[lef,rof]{\thepage}                 % Set pagenumber in footer
+}
 
 % Define table of contents
 \setcounter{secnumdepth}{0}
@@ -74,29 +81,51 @@
 
 \renewcommand\cftaftertoctitle{\hfill\llap{\textit{Page}}}
 \renewcommand\contentsname{\vspace{-1.5cm}\fontsize{16}{18}\selectfont\textit{Content}\vspace{-.5cm}}
+  
+\titleformat{\chapter}[display]{\normalfont}{}{0pt}{\Huge}
 
-% Define chapter title
-\titleformat{\section}[hang]
-  {\fontsize{16}{18}\selectfont\textit}{}{}{}
-\titlespacing{\section}
-  {0cm}{0.75cm}{0.75cm}
+% Define chapter front page
+\newcommand{\Chapter}[3]{
+    \chapter*{
+        \fontfamily{\sfdefault}\selectfont
+        \color{frontpage} 
+        \fontsize{80}{100}\selectfont
+        #1\\\medskip\smaller\color{black} #2}
+    \thispagestyle{emptyhead}
+    \addcontentsline{toc}{chapter}{#3}
+    \colorbox{frontpage}{
+      \begin{minipage}[t]{\textwidth}
+      \hfill
+        \vspace*{.05cm}
+      \end{minipage}
+   }
+   \clearpage % Page break
+   \pagestyle{plain}
+}
+
+% Define chapter title in text
+\newcommand{\chaptertitle}[1]
+{
+{\fontsize{16}{18}\selectfont\textit{#1}}
+\vspace*{0.75cm}
+}
   
 % Define assignment title
-\titleformat{\subsection}[hang]
+\titleformat{\section}[hang]
   {\bfseries\textit}{}{}{}
-\titlespacing{\subsection}
+\titlespacing{\section}
   {0cm}{0cm}{0.75cm}
 
 % Define statistical concept
 \newcommand{\concept}[1]
 {
-{\color{concept} \fontfamily{pcr}\selectfont \textbf{#1}}
+{\color{concept} \fontfamily{pcr}\selectfont\textbf{#1}}
 }
 
 % Define R code
 \newcommand{\rcode}[1]
 {
-{\color{rcode} \fontfamily{zi4}\selectfont \textbf{#1}}
+{\color{rcode} \fontfamily{zi4}\selectfont\textbf{#1}}
 }
 
 % Define R comment
@@ -108,7 +137,7 @@
 % Define data set
 \newcommand{\dataset}[1]
 {
-{\color{dataset} \fontfamily{pcr}\selectfont \textbf{#1}}
+{\color{dataset} \fontfamily{pcr}\selectfont\textbf{#1}}
 }
 
 % Define empty learning objectives box
@@ -125,7 +154,7 @@
 % Define R code answer box
 \newcommand{\rcodeanswertiny}
 {
-    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thesubsection\thequestion:]
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thechapter.\thesection\thequestion:]
       \vspace*{.5cm}
     \end{tcolorbox}
     \vspace*{0.5cm}
@@ -133,7 +162,7 @@
 
 \newcommand{\rcodeanswersmall}
 {
-    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thesubsection\thequestion:]
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thechapter.\thesection\thequestion:]
       \vspace*{1.5cm}
     \end{tcolorbox}
     \vspace*{0.5cm}
@@ -141,7 +170,7 @@
 
 \newcommand{\rcodeanswermedium}
 {
-    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thesubsection\thequestion:]
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thechapter.\thesection\thequestion:]
       \vspace*{2cm}
     \end{tcolorbox}
     \vspace*{0.5cm}
@@ -149,7 +178,7 @@
 
 \newcommand{\rcodeanswerlarge}
 {
-    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thesubsection\thequestion:]
+    \begin{tcolorbox}[colback=black!10!white,colframe=rcode,title=\hspace*{-10pt}\texttt{R} code \thechapter.\thesection\thequestion:]
       \vspace*{4cm}
     \end{tcolorbox}
     \vspace*{0.5cm}
@@ -173,7 +202,7 @@
 % Define answer boxes
 \newcommand{\emptyanswerbox}[1]
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thechapter.\thesection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{.5cm}
     #1
@@ -184,7 +213,7 @@
 
 \newcommand{\onelineanswerbox}
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thechapter.\thesection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     \answerskip
@@ -196,7 +225,7 @@
 
 \newcommand{\twolineanswerbox}
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thechapter.\thesection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     \answerskip
@@ -210,7 +239,7 @@
 
 \newcommand{\threelineanswerbox}
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thechapter.\thesection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     \answerskip
@@ -226,7 +255,7 @@
 
 \newcommand{\fourlineanswerbox}
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thechapter.\thesection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     \answerskip
@@ -244,7 +273,7 @@
 
 \newcommand{\sixlineanswerbox}
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thechapter.\thesection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     \answerskip
@@ -323,12 +352,12 @@
 
 % Define question
 \renewcommand{\thesection}{\arabic{section}}
-\newcounter{question}[subsection]
+\newcounter{question}[section]
 \renewcommand{\thequestion}{\alph{question}}
 \newcommand{\question}[1]
 {
 \begin{minipage}[t]{0.08\textwidth}
-\stepcounter{question} \thesubsection \hspace*{3pt} \thequestion) \hfill
+\stepcounter{question} \thechapter.\thesection \hspace*{3pt} \thequestion) \hfill
 \end{minipage}%
 \begin{minipage}[t]{0.92\textwidth}
 #1
@@ -337,12 +366,12 @@
 }
 
 % Define answer
-\newcounter{answer}[subsection]
+\newcounter{answer}[section]
 \renewcommand{\theanswer}{\alph{answer}}
 \newcommand{\answer}[1]
 {
 \begin{minipage}[t]{0.08\textwidth}
-\stepcounter{answer} \thesubsection \hspace*{3pt} \theanswer) \hfill
+\stepcounter{answer} \thechapter.\thesection \hspace*{3pt} \theanswer) \hfill
 \end{minipage}%
 \begin{minipage}[t]{0.92\textwidth}
 \fontfamily{pcr}\selectfont 
@@ -396,7 +425,7 @@
 }
 
 % Define hint
-\newcounter{hint}[section]
+\newcounter{hint}[chapter]
 \newcommand{\hint}[1]
 {
 \begin{minipage}{0.08\textwidth}
@@ -406,7 +435,7 @@
 \end{minipage}%
 \hfill
 \begin{minipage}[t]{0.92\textwidth}
-\stepcounter{hint} \textit{Hint \thesection.\thehint: #1}
+\stepcounter{hint} \textit{Hint \thechapter.\thehint: #1}
 \end{minipage}%
 \vspace*{0.5cm}
 }
@@ -415,7 +444,7 @@
 \newcommand{\rassignment}[1]
 {
 \begin{minipage}{0.8\textwidth}
-\subsection{Assignment \thesubsection: #1}
+\section{Assignment \thechapter.\thesection: #1}
 \end{minipage}%
 \hfill%
 \begin{minipage}{0.1\textwidth}
@@ -428,7 +457,7 @@
 \newcommand{\handassignment}[1]
 {
 \begin{minipage}{0.8\textwidth}
-\subsection{Assignment \thesubsection: #1}
+\section{Assignment \thechapter.\thesection: #1}
 \end{minipage}%
 \hfill%
 \begin{minipage}{0.1\textwidth}
@@ -440,7 +469,7 @@
 % Define hypotheses answer box
 \newcommand{\hypothesesbox}[1]
 {
-    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thesubsection\thequestion:]
+    \begin{tcolorbox}[colback=white,coltitle=white,colframe=black, title=\hspace*{-10pt}Answer \thechapter.\thesection\thequestion:]
     \fontfamily{pcr}\selectfont 
     \vspace*{0.5cm}
     $H_0$: \shortanswerline \hspace{5cm} $H_1$: \shortanswerline
