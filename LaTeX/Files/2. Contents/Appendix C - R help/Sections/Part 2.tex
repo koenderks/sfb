@@ -1,0 +1,93 @@
+\label{rhelpparttwo}
+
+\section{Part II: Commands for creating graphics}
+
+\textit{2.1 Creating a plot} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{plot(x, y, ...) } \\
+\\
+\\
+\rcode{points(x, y) } \\
+\rcode{lines(x, y) } \\
+\rcode{abline() 	} \\
+\rcode{text(x, y, \textquotesingle text\textquotesingle) } \\
+\rcode{legend(\textquotesingle bottomright\textquotesingle) } \\
+\\
+\rcode{pdf(\textquotesingle x\textquotesingle) 	} \\		
+\rcode{dev.off() 	} \\
+\rcode{layout(matrix(1:6, 2, 3)) } \\
+\rcode{layout(1) 	} \\
+\rcode{curve(dnorm(x, 0, 1), -3, 3)} \\
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+The basic plot function. Can be extended by adding arguments in \rcode{...} \\
+\\
+Adds points with \rcode{x} and \rcode{y} values to an existing plot \\
+Adds a line with \rcode{x} and \rcode{y} values to an existing plot \\
+Adds a linear line to plot (see \rcode{?abline}) \\
+Add text to plot on \rcode{x} and \rcode{y} coordinates \\
+Inserts legend in the bottom right of the plot \\
+\\
+When called, writes all images to \dataset{.pdf} file \rcode{x} \\
+Ends writing all created images to a file  \\
+Create the layout (for multiple figures) \\
+Put every plot on one page \\
+Plot the curve of the standard normal distribution
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{2.2 Quick plot functions} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{hist(x, ...) } \\
+\rcode{dotchart(x, ...) } \\
+\rcode{pairs(x, ...) } \\	 
+\rcode{boxplot(x, ...) } \\
+\rcode{barplot(x, ...)	}
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Creates a histogram of \rcode{x} \\
+Creates a point chart of \rcode{x} \\
+Compares all variables of \rcode{x} with multiple plots \\
+Creates a box plot of \rcode{x} \\
+Creates a bar plot of \rcode{x}
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{2.3 Additional plot arguments (to be entered in \rcode{...})} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{axes = FALSE} \\ 
+\rcode{add = TRUE} \\ 
+\rcode{las = 1} \\ 
+\rcode{xlim = c(0, 1)} \\ 	
+\rcode{ylim = c(0, 1) } \\ 
+\rcode{xlab = \textquotesingle x-axis\textquotesingle} \\ 
+\rcode{ylab = \textquotesingle y-axis\textquotesingle} \\ 
+\rcode{type = \textquotesingle p\textquotesingle} \\ 
+\rcode{type = \textquotesingle l\textquotesingle} \\ 
+\rcode{type = \textquotesingle b\textquotesingle} \\ 
+\rcode{lty = 1} \\ 
+\rcode{col = \textquotesingle blue\textquotesingle} 
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Disable axis in plot \\
+Adds the created plot to the previous plot  \\
+Rotates the labels on the \rcode{x} and \rcode{y} axes \\
+Set the range of the \rcode{x} axis between 0 and 1 \\
+Set the range of the \rcode{y} axis between 0 and 1 \\
+Set the name of the \rcode{x} axis to \rcode{x-axis} \\
+Set the name of the \rcode{y} axis to \rcode{y-axis} \\
+Creates a plot containing the data as points \\
+Creates a plot containing the data as line \\
+Creates both points and lines \\
+Set the line type in the plot \\
+Set the color in the plot to \rcode{blue}
+\end{minipage}
+\vspace*{.5cm}
+
+\clearpage % Page break

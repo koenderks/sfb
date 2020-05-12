@@ -1,0 +1,31 @@
+\subsection{Conditions}
+
+\beginnerexercise{
+    What does \rcode{(a < 0 | b < 0) \& (a * b < 0)} mean (| and & are the logical "or" and "and" operator, respectively)? If this condition is \rcode{TRUE} and \rcode{a} is negative, what do you know about \rcode{b}?
+}
+
+\beginnerexercise{
+    Why does \rcode{!sum(is.na(c(1, 2, 3, 4, NA, 7))) <= 2} return \rcode{FALSE}? 
+}
+
+\beginnerexercise{
+    Run the following code in \texttt{R} and explain the result: \\
+    \\
+    \codeblock{x <- 1:24 \\
+    which(24\%\%x == 0)}
+}
+
+\beginnerexercise{
+    Run the following code in \texttt{R}: \\
+    \\
+    \codeblock{x <- y <- 1:10\\
+    sum(x==y) == length(x==y)\\
+    \\
+    x <- y <- 1:10\\
+    y{[1]} <- 0\\
+    sum(x==y) == length(x==y)
+    }
+    Explain the result of this code. 
+}
+
+\clearpage

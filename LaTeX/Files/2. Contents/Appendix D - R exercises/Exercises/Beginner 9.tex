@@ -1,0 +1,72 @@
+\subsection{Indexing}
+
+\beginnerexercise{
+    Suppose you have \rcode{x <- 3}. Now type \rcode{x[3] <- 5}. What is the value of \rcode{x[2]}?
+}
+
+\beginnerexercise{
+    Run the following code in \texttt{R}: \\
+    \\
+    \codeblock{a <- c(9, 2, 4, 5, 2, 7, 5)}
+    Change the first element into an 8. Next, change the 2's in the vector into zero's.
+}
+
+\beginnerexercise{
+    Run the following code in \texttt{R}: \\
+    \\
+    \codeblock{l <- matrix(c(1, 4, 6, 7, 4, 7), ncol = 3)}
+    Use the square brackets to find out the second value of the third column of the matrix \rcode{l}. 
+}
+
+\beginnerexercise{
+    Run the following code in \texttt{R}: \\
+    \\
+    \codeblock{m <- matrix(sample(1:100, 100, replace = T), 10, 10)}
+    Select the third and fifth row of the matrix \rcode{m}. 
+}
+
+\beginnerexercise{
+    Select those rows from matrix \rcode{m} for which the value in the first column is less than 5.
+}
+
+\beginnerexercise{
+    Select all but the fourth column of matrix \rcode{m}.
+}
+
+\clearpage % Page break
+
+\beginnerexercise{
+    Change the matrix \rcode{m} to a data frame using \rcode{as.data.frame()} function. Give the columns of the data frame the names \rcode{\textquotesingle trial.1\textquotesingle}, \rcode{\textquotesingle trial.2\textquotesingle}, etc using the \rcode{colnames()} function.
+}
+
+\beginnerexercise{
+    Select the second to the fifth element of column \rcode{trial.1}. Select the first 2 elements of column \rcode{trial.4}.
+}
+
+\beginnerexercise{
+    Run the following code in \texttt{R}: \\
+    \\
+    \codeblock{b <- c(1, 2, 2, 1, 2, 1, 1, 2, 2, 1)}
+    Suppose you want to change all ones into twos and all twos to ones. To try out, run the following code in \texttt{R}. It doesn’t work. Can you find a method so that this is done correctly? \\
+    \\
+    \codeblock{b{[b==1]} <- 2\\
+    b{[b==2]} <- 1}
+}
+
+\beginnerexercise{
+    Run the following code in \texttt{R}: \\
+    \\
+    \codeblock{n <- c(\textquotesingle bananas\textquotesingle, \textquotesingle apples\textquotesingle)}
+    Use the \rcode{gsub()} function to change all a's in \rcode{n} to dots (e.g., bananas becomes b.n.n.s).
+}
+
+\beginnerexercise{
+    Run the following code in \texttt{R}: \\
+    \\
+    \codeblock{set.seed(1) \\
+    grades <- data.frame(1:30, matrix(sample(4:10, 60, TRUE), , 2)) \\
+    names(grades) <- c(\textquotesingle student\textquotesingle, \textquotesingle exer\textquotesingle, \textquotesingle exam\textquotesingle)}
+    Students pass a course when the average grade is at least 5.5 and both grades are larger than 5. Select (index) which students passed the course. Also find out how can you select which students did not pass the course.
+}
+
+\clearpage

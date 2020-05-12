@@ -1,0 +1,90 @@
+\label{rhelppartfour}
+
+\section{Part IV: Descriptive statistics and hypothesis testing}
+
+\textit{4.1 Descriptive statistics} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{mean(x) } \\ 
+\rcode{median(x) } \\
+\rcode{sum(x) } \\
+\rcode{min(x) } \\ 
+\rcode{max(x) } \\	
+\rcode{sd(x)  } \\
+\rcode{var(x) } \\
+\rcode{cor(x, y) } \\
+\rcode{table(x) } \\
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Gives the \concept{average} of \rcode{x} \\
+Gives the \concept{median} of \rcode{x} \\
+Gives the \concept{sum} of \rcode{x} \\
+Gives the \concept{minimum} of \rcode{x} \\
+Gives the \concept{maximum} of \rcode{x} \\
+Gives the \concept{standard deviation} of \rcode{x} \\
+Gives the \concept{variance} of \rcode{x} \\
+Gives the \concept{correlation} between \rcode{x} and \rcode{y} \\
+Gives a \concept{frequency table} of \rcode{x}  \\
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{4.2 Simple hypothesis testing} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{t.test(x, y) } \\
+\rcode{cor.test(x, y) } \\	
+\rcode{binom.test(x, n, p)} \\
+\rcode{chisq.test(x, y)} \\
+\rcode{aov(formula, x) 	} \\	
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Performs a \concept{t-test} on the data \rcode{x} (\rcode{y} is optional) \\
+Performs a \concept{correlation test} on the data \rcode{x} and \rcode{y} \\
+Performs a \concept{binomial test} on the data \\
+Performs a \concept{chi-square test} on the data \\
+Performs an \concept{ANOVA} on the data in \rcode{x} using formula \\
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{4.3 Regression} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{lm(y {\raise.17ex\hbox{$\scriptstyle\sim$}} 1 + x) } \\	
+\rcode{lm(y {\raise.17ex\hbox{$\scriptstyle\sim$}} 1 + x + z) } \\	
+\rcode{lm(y {\raise.17ex\hbox{$\scriptstyle\sim$}} 0 + x) } \\
+\rcode{lm(y {\raise.17ex\hbox{$\scriptstyle\sim$}} x:z) } \\
+\rcode{lm(y {\raise.17ex\hbox{$\scriptstyle\sim$}} x * z) } \\
+\rcode{lm(y {\raise.17ex\hbox{$\scriptstyle\sim$}} poly(x, 2)) } \\
+\\
+\rcode{coef(x) } \\ 
+\rcode{residuals(x) } \\  
+\rcode{AIC(x) } \\
+\rcode{BIC(x)  } \\
+\rcode{summary(x) } \\
+\rcode{confint(x) 	 } \\
+\rcode{abline(x)} \\
+\rcode{predict(x, newdata)} \\
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Regression model $y = \beta_0 + \beta_1 \times x$  \\
+Regression model $y = \beta_0 + \beta_1 \times x + \beta_2 \times z$  \\
+Regression model $y = \beta_1 \times x$  \\
+Regression model $y = \beta_0 + \beta_1 \times x \times z$ \\ 
+Regression model $y = \beta_0 + \beta_1 \times x + \beta_2 \times z + \beta_3 \times x \times z$ \\
+Regression model $y = \beta_0 + \beta_1 \times x^2$ \\
+\\
+Gives \concept{coefficients} of regression model in \rcode{x} \\
+Gives \concept{residuals} of regression model in \rcode{x} \\
+Gives the \concept{AIC} value of regression model in \rcode{x}  \\
+Gives the \concept{BIC} value of regression model in \rcode{x} \\
+Gives a summary of \concept{regression model} in \rcode{x}  \\
+Gives the \concept{confidence interval} of model \rcode{x} \\
+When added to a plot, plots the regression line \\
+Use the \concept{regression model} in \rcode{x} to predict new data \\
+\end{minipage}
+\vspace*{.5cm}
+
+\clearpage % Page break

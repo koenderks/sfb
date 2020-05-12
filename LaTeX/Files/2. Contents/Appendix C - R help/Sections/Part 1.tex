@@ -1,0 +1,256 @@
+\section{Part I: Basic functionality}
+
+\textit{1.1 Types of data} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{numeric} \\
+\rcode{character} \\
+\rcode{logical} \\
+\rcode{factor} \\ 			
+\rcode{Inf} \\					
+\rcode{NaN} \\ 					 
+\rcode{NA}  
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Numbers \\
+Words (text) \\
+TRUE or FALSE \\
+One of the above with predefined categories \\
+Infinite \\
+Not a number \\
+Not available
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{1.2 Assigning values to variables} \\
+\\
+There are multiple ways to assign a value to a variable. For example, these all do the same, which is assigning the value \rcode{1} to the variable \rcode{a}.\\
+\\
+\begin{center}
+    \rcode{a = 1} or \rcode{a <- 1} \hspace{2.5cm} \rcode{assign(\textquotesingle a\textquotesingle, 1)}  \hspace{2.5cm}	\rcode{a = b = 1} 
+\end{center}
+\vspace*{0.5cm}
+\textit{1.3 Data structures} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{vector} \\ 				 
+\rcode{matrix} \\				
+\rcode{array} 	\\			
+\rcode{data frame} \\				 
+\rcode{list} 				
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+A one-dimensional data structure \\
+A two-dimensional data structure \\
+A multi-dimensional data structure \\
+A data structure containing different types of data \\
+A collection of different data structures
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{1.4 Vectors} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{c(1, 2, 3)} \\			 
+\rcode{seq(1, 6, 2) } \\			
+\rcode{rep(1:3, 2)} \\				
+\rcode{1:4} \\ 					
+\rcode{paste(x, y)} \\ 				 
+\rcode{letters[1:5]} \\ 			
+\rcode{sample(x, 5)} \\ 			 
+\rcode{length(x) } \\				
+\rcode{cut(x, 5)} \\ 				
+\rcode{append(x, c(4, 5))} \\ 		
+\rcode{x <- numeric()} \\ 			
+\rcode{sort(x) 	} \\			
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Combine the numbers 1, 2, and 3 in a vector \\
+Create sequence from 1 to 6 in increments of 2 \\
+Repeat 1 to 3, and do that 2 times \\
+Vector of 1 t/m 4 (\rcode{:} is therefore making a vector) \\
+Paste vectors \rcode{x} and y together \\
+Vector of first 5 letters of the alphabet  \\
+Gives a random sample of size 5 from of data \rcode{x} \\
+Indicates the length of \rcode{x} \\
+Divide \rcode{x} in vectors with length 5 \\
+Add the numbers 4 and 5 to vector \rcode{x} \\
+Creates an empty vector \rcode{x} \\
+Order vector \rcode{x} from low to high (default) \\
+\end{minipage}
+\vspace*{.5cm}
+
+\clearpage % Page break
+
+\textit{1.5 Matrices} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{matrix(1:9, 3, 3) } \\			
+\rcode{diag(x) 		} \\		
+\rcode{head(x, 2) } \\				
+\rcode{t(x) 	} \\			
+\rcode{rbind(x, y) 	} \\		
+\rcode{cbind(x, y) 	} \\		
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Create a matrix of 1 t/m 9 with 3 rows and 3 columns  \\
+Get the diagonal from matrix \rcode{x} \\
+Gives the first two rows of matrix or data frame \rcode{x} \\
+Gives transpose of matrix \rcode{x} \\
+Add rows from matrix \rcode{x} and \rcode{y} together \\
+Add columns from matrix \rcode{x} and \rcode{y} together \\
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{1.6 Data frames} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{data.frame(\textquotesingle X\textquotesingle = x) } \\
+\rcode{head(x, 2) 	} \\			
+\rcode{names(x) } \\				
+\rcode{colnames(x) 	} \\			
+\rcode{rownames(x) 	} \\
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Create a data frame with data \rcode{x} (\rcode{X} is the column name) \\
+Look at first two rows of data frame \rcode{x} \\
+Names of data frame \rcode{x} \\
+Column names of data frame \rcode{x} \\
+Row names of data frame \rcode{x} \\
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{1.7 Lists} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{x <- list()} \\ 				
+\rcode{x[[\textquotesingle title\textquotesingle]] <- m} \\	
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Create an empty list \rcode{x}  \\
+Insert structure \rcode{m} into list \rcode{x} (\rcode{title} is the new title)
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{1.8 Indexing} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{x[2] 	} \\				
+\rcode{x[1:5] 	} \\			
+\rcode{x[-1] 	} \\			
+\rcode{x[x > 5] } \\				
+\rcode{x[x > 3 \& x < 6] } \\			 
+\rcode{x[1:3, 1] 	} \\		
+\rcode{x[1:3, 1:4] 	} \\
+\rcode{x\$h or x[\textquotesingle h\textquotesingle]	}	
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Get the second element from the vector \rcode{x} \\
+Get the first to the fifth element from vector \rcode{x} \\
+Get all elements except first element from vector \rcode{x} \\
+Get all elements greater than 5 from vector \rcode{x} \\
+Get all values from \rcode{x} greater than 3 and less than 6 \\
+Get first 3 values from the first column from data \rcode{x} \\
+Get first 3 values from the first four columns from \rcode{x} \\
+Select element \rcode{h} from data frame \rcode{x}
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{1.9 Operators} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{x == y 	} \\			
+\rcode{x != y } \\				
+\rcode{\%\% } 	
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Check if \rcode{x} equals \rcode{y} \\
+Check if \rcode{x} does not equal \rcode{y} \\
+The remainder of a division (e.g. \rcode{36\%\%5} = 1)	
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{1.10 Importing data and files} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{data(\textquotesingle x\textquotesingle)} \\ 				
+\rcode{file.choose() } \\ 			
+\rcode{read.table(\textquotesingle x\textquotesingle)} \\  			
+\rcode{write.table(x) } \\ 		
+\rcode{read.csv(\textquotesingle x\textquotesingle) } \\ 		
+\rcode{write.csv(x) } \\ 		
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Import data set \rcode{x} \\
+Get access to interface to select a file \\
+Read in a \dataset{.txt} file \rcode{x} from the working directory \\
+Writes data \rcode{x} to a \dataset{.txt} file from the working directory \\
+Reads in a \dataset{.csv} file \rcode{x} from the working directory \\
+Writes data \rcode{x} to a \dataset{.csv} file from the working directory 
+\end{minipage}
+\vspace*{.5cm}
+
+\clearpage % Page break
+
+\textit{1.11 Basic functions} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{TAB} \\ 					
+\rcode{ls() } \\ 					 
+\rcode{rm(list = ls())} \\  		
+\rcode{getwd()	} \\ 	 		
+\rcode{setwd() 	} \\ 		
+\rcode{help(x) 	} \\ 
+\rcode{str(x)	 } \\ 		
+\rcode{summary(x) 	} \\ 			
+\rcode{print(\textquotesingle Hello\textquotesingle) } \\ 		
+\rcode{round(x, digits = 2)} \\  		  
+\rcode{which.max(x) } \\ 			 
+\rcode{which(x == 10) 	} \\ 	
+\rcode{unique(x)	} \\ 		
+\rcode{length(x)	} \\ 		
+\rcode{nrow(x)	} \\ 		
+\rcode{ncol(x)	} \\ 				
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Scrolling through functions beginning with that letter  \\
+See all variables available in the environment \\
+Delete all variables in your environment \\
+See the location of your working directory  \\
+Set the location of your working directory  \\
+Read help about the function \rcode{x} \\
+Finds out the structure of data \rcode{x}  \\
+Gives summary of the object \rcode{x} \\
+Print \rcode{Hello} to the output \\
+Round number(s) in \rcode{x} to a specified number of digits \\
+Indicates the place of the highest value of data \rcode{x} \\
+Shows the place of each object in \rcode{x} that equals 10 \\
+Gives only the unique values in \rcode{x} \\
+Gives the number of elements in \rcode{x} \\
+Gives number of rows of matrix/data frame \rcode{x} \\
+Gives number of columns of matrix/data frame \rcode{x}
+\end{minipage}
+\vspace*{.5cm}
+
+\textit{1.12 Installing an add-on package} \\
+\\
+\begin{minipage}[t]{.4\textwidth}
+\vspace*{-8pt}
+\rcode{install.packages(\textquotesingle x\textquotesingle)}		
+\end{minipage}
+\begin{minipage}[t]{.6\textwidth}
+Installs package with name \rcode{x} 	
+\end{minipage}
+\vspace*{.5cm}
+
+\clearpage % Page break

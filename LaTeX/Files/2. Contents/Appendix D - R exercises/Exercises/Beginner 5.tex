@@ -1,0 +1,58 @@
+\subsection{Object types: Matrices}
+
+\beginnerexercise{
+    Use the \rcode{matrix()} function to create the following matrix: \\
+    \begin{center}
+        \begin{tabular}{ccccc}
+        \rcode{25}  & \rcode{24} &  \rcode{23} & \rcode{ 22} &  \rcode{21}\\
+    \rcode{20}  & \rcode{19} &  \rcode{18} &  \rcode{17}  & \rcode{16}\\
+    \rcode{15}  & \rcode{14}  & \rcode{13} &  \rcode{12}   & \rcode{11} \\
+    \rcode{10}  &  \rcode{9} &   \rcode{8} &  \rcode{ 7}  &  \rcode{6} \\ 
+     \rcode{5}  &  \rcode{4}  &  \rcode{3}   & \rcode{2}  &  \rcode{1}
+    \end{tabular}
+    \end{center}
+}
+
+\beginnerexercise{
+    Create the following matrix: \\
+    \begin{center}
+        \begin{tabular}{cccc}
+        \rcode{0}  & \rcode{0} &  \rcode{0} & \rcode{0} \\
+    \rcode{1}  & \rcode{1} &  \rcode{1} &  \rcode{1}\\
+    \rcode{0}  & \rcode{0} &  \rcode{0} & \rcode{0} \\
+    \rcode{1}  & \rcode{1} &  \rcode{1} &  \rcode{1}
+    \end{tabular}
+    \end{center}
+}
+
+\beginnerexercise{
+    Run the following code in \texttt{R}: \\
+    \\
+    \codeblock{m1 <- matrix(1:20, , 4)}
+    Why don't you have to give \texttt{R} the number of rows for the matrix?
+}
+
+\beginnerexercise{
+    With what function can you transpose a matrix?
+}
+
+\beginnerexercise{
+    \rcode{mean(m1)} returns one number. How can you get the mean of each column in \rcode{m1} without calculating them each in turn?
+}
+
+\beginnerexercise{
+    Find out the values of the diagonal in matrix \rcode{m1}. Can you make a new matrix of 0’s with on the diagonal the diagonal of \rcode{m1}?
+}
+
+\beginnerexercise{
+    Add a new row to matrix \rcode{m1} with the sum of each row of the matrix. Use the \rcode{rowSums()} function.
+}
+
+\beginnerexercise{
+    Run the following code in \texttt{R}: \\
+    \\
+    \codeblock{m2 <- scale(m1)}
+    What are the means of the columns in matrix \rcode{m2}? And the standard deviations (hint: use the R function apply)? Given these values, can you find out what the \rcode{scale()} function does?
+}
+
+\clearpage
