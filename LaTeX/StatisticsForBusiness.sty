@@ -19,6 +19,7 @@
 \usepackage{nicefrac}
 \usepackage{hyperref}
 \usepackage{eurosym}
+\usepackage{etoc}
 
 % Arial letter type
 \renewcommand{\familydefault}{\sfdefault}
@@ -55,10 +56,9 @@
 
 % Define header and footer
 \pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
 \fancypagestyle{plain}{%
     \fancyhf[lh]{{\fontsize{12}{14}\selectfont\textit{Statistics for Business}}}%
-    %\fancyhf[rh]{{\fontsize{12}{14}\selectfont\textit{\nouppercase{}}}}%
+    %\fancyhf[rh]{{\fontsize{12}{14}\selectfont\textit{\nouppercase{\leftmark}}}}%
     \renewcommand{\headrulewidth}{1pt}%
     \fancyhf[lef,rof]{\thepage}%
     \fancyhf[cf]{}
@@ -75,6 +75,7 @@
 
 % Define table of contents
 \setcounter{secnumdepth}{0}
+\setcounter{minitocdepth}{1}
 \renewcommand\cfttoctitlefont{\normalsize\itseries}
 \renewcommand\cftsecfont{\normalsize\itseries}
 \renewcommand\cftsubsecfont{\normalsize}
@@ -86,12 +87,12 @@
 
 % Define chapter front page
 \newcommand{\Chapter}[3]{
+    \pagestyle{emptyhead}
     \chapter*{
         \fontfamily{\sfdefault}\selectfont
         \color{frontpage} 
         \fontsize{80}{100}\selectfont
         #1\\\medskip\smaller\color{black} #2}
-    \thispagestyle{emptyhead}
     \addcontentsline{toc}{chapter}{#3}
     \colorbox{frontpage}{
       \begin{minipage}[t]{\textwidth}
@@ -99,6 +100,8 @@
         \vspace*{.05cm}
       \end{minipage}
    }
+   \vspace*{1.5cm}
+   \localtableofcontents
    \clearpage % Page break
    \pagestyle{plain}
 }
