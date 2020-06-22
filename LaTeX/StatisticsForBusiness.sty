@@ -90,7 +90,7 @@
 \titleformat{\chapter}[display]{\normalfont}{}{0pt}{\Huge}
 
 % Define chapter front page
-\newcommand{\Chapter}[3]{
+\newcommand{\Chapter}[4]{
     \pagestyle{emptyhead}
     \chapter*{
         \fontfamily{\sfdefault}\selectfont
@@ -103,8 +103,11 @@
       \hfill
         \vspace*{.05cm}
       \end{minipage}
-   }
-   \vspace*{1.5cm}
+   }\\
+   \\
+   \\
+    #4
+   \vspace*{1cm}
    \localtableofcontents
    \clearpage % Page break
    \pagestyle{plain}

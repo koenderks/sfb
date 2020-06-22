@@ -1,9 +1,17 @@
 \section{Table 1: Critical values for Hartley’s $F$ ($F_{max}$)}
 \label{table1}
 
-Level of significance $\alpha = 0.05$ \\
-\begin{center}
-\small
+Hartley’s $F_{max}$ tests whether the \concept{assumption} of \concept{homogeneity of variances} is met in your data. This \concept{assumption} entails that the spread (\concept{variance}) of the data should be similar across groups. Hartley’s $F$ is fairly simple to figure out by hand, but it has the requirement that there must be an equal number of observations in each group. \\
+
+Let's consider an example. Suppose that you measured the prices of three brands of soap in $n = 10$ stores. The sample \concept{variances} of the brands $b1$, $b2$, and $b3$, were $s^2_{b1} = 4$, $s^2_{b2} = 7$, and $s^2_{b3} = 10$, respectively. You want to verify the \concept{null hypothesis} that the variances among the brands are equal ($H_0: \sigma^2_{b1} = \sigma^2_{b2} = \sigma^2_{b3}$) against the \concept{alternative hypothesis} that the variances among the brands are unequal ($H_1: \sigma^2_{b1} \neq \sigma^2_{b2} \neq \sigma^2_{b3}$), with 95 percent confidence. \\
+
+Hartley's $F$ is simply the ratio of the largest and the smallest variance: $F = \frac{s^2_{max}}{s^2_{min}}$. In our example, the value of Hartley's $F$ is therefore $\frac{10}{4} = 2.5$. Depending on the number of groups to compare ($k$) and the number of observations ($n$), you can determine the \concept{critical value} of Hartley's $F$ from the table or figure below. \\
+
+If the calculated value is smaller than the critical value, you can retain the \concept{null hypothesis} and conclude that the variances are homogeneous. If the calculated value is larger than the critical value, you must reject the \concept{null hypothesis} and conclude that the variance is not homogeneous. In the example, the calculated value of 2.5 is smaller than the critical value of 6.00, so we can retain the \concept{null hypothesis} that our variance is homogeneous with 95 percent confidence. \\
+
+\begin{raggedright}
+\hspace*{0.5cm}
+\scriptsize
 \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
 \hline
 \multicolumn{12}{c}{\textbf{Number of variances to compare} ($k$)}                    \bstrut\tstrut\\
@@ -26,7 +34,13 @@ $n - 1$ & \multicolumn{1}{c}{\textbf{2}}    & \multicolumn{1}{c}{\textbf{3}}    
 \textbf{60}    & 1.67 & 1.85 & 1.96 & 2.04 & 2.11 & 2.17 & 2.22 & 2.26 & 2.30 & 2.33 & 2.36 \bstrut\tstrut\\
 $\infty$      & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \bstrut\tstrut\\
 \hline
-\end{tabular}
-\end{center}
+\end{tabular} \\
+\hspace*{0.6cm}Level of significance $\alpha = 0.05$
+\end{raggedright}
+
+\begin{raggedleft}
+\hspace{7cm}
+\includegraphics[height = 5.6cm]{Files/Images/HartleysF.pdf}
+\end{raggedleft}
 
 \clearpage % Page break
