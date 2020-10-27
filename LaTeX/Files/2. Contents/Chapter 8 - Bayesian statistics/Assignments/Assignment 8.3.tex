@@ -8,7 +8,7 @@
 
 \rassignment{Finding the posterior distribution using MCMC sampling}
 
-In assignment 8.2 you have seen that updating a \concept{prior distribution} to a \concept{posterior distribution} is easy when you are counting successes and failures. In this scenario the \concept{prior distribution} and \concept{posterior distribution} are in the same family, they are both $Beta$ distributions. However, many posterior distributions are not so easy to find. In this assignment, you are going to learn how to use a Markov chain Monte Carlo sampling method to approximate the posterior distribution for any combination of \concept{prior distributions} and \concept{likelihoods}. \\
+In assignment 8.2 you have seen that updating a \concept{prior distribution} to a \concept{posterior distribution} is easy when you are counting successes and failures. In this scenario the \concept{prior distribution} and \concept{posterior distribution} are in the same family, they are both $Beta$ distributions. However, many posterior distributions are not so easy to find. In this assignment, you are going to learn how to use a Markov chain Monte Carlo sampling method to approximate the posterior distribution for any combination of \concept{prior distribution} and \concept{likelihoods}. \\
 
 For this exercise you will be using the \texttt{Stan} coding language with the \rcode{rstan} \texttt{R} package. \rcode{rstan} performs MCMC sampling using an Hamiltonian Monte Carlo (HMC) algorithm, which is known to have a very high quality in finding the \concept{posterior distribution}. Install and load the package using: \\
 \\
@@ -57,7 +57,7 @@ stanFit <- sampling(compiledModel, data = list(n = 40, k = 33), \\
 
 \twolineanswerbox
 
-As you have seen in assignment 8.2, the \concept{posterior distribution} you just estimated can be calculated by hand, since it is a $Beta$ distribution. However, to represent your prior information (remember: you have conducted a questionnaire that showed you 60 percent of customers left your store satisfied with a \concept{standard deviation} of 10 percent), let's give $\theta$ a $Normal(\mu,\, \sigma)$ distribution as a prior distribution. You use your prior estimate of $\theta$ as the \concept{mean} of the prior distribution, and the \concept{standard deviation} of the sample ($s = 0.10$) as the \concept{standard deviation} of the \concept{prior distribution}. \\
+As you have seen in assignment 8.2, the \concept{posterior distribution} you just estimated can be calculated by hand, since it is a $Beta$ distribution. However, to represent your prior information (remember: you have conducted a questionnaire that showed you 60 percent of customers left your store satisfied with a \concept{standard deviation} of 10 percent), let's give $\theta$ a $Normal(\mu,\, \sigma)$ distribution as a prior distribution. You use your prior estimate of $\theta$ ($p=0.6$) as the \concept{mean} of the prior distribution, and the \concept{standard deviation} of the sample ($s = 0.10$) as the \concept{standard deviation} of the \concept{prior distribution}. \\
 
 \question{Change the prior distribution in the \rcode{modelCode} to the $Normal$ distribution described in the text above. Run all appropriate code again.}
 

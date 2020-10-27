@@ -8,11 +8,11 @@
 
 \rassignment{Comparing simple models using the Bayes factor}
 
-Bayesian statistics does not use the \concept{p-value} to test hypotheses and yield conclusions in an all-or-none fashion. Instead it uses a continuous measure of evidence, the \concept{Bayes factor}. The \concept{Bayes factor} quantifies the relative predictive performance of two competing hypotheses; the \concept{null hypothesis} $H_0$ and the \concept{alternative hypothesis} $H_1$. The subscript in the \concept{Bayes factor} indicates for which hypothesis supported is quantified. $BF_{10}$ indicates the Bayes factor in favor of $H_1$ over $H_0$, whereas $BF_{01}$ indicates the \concept{Bayes factor} in favor of $H_0$ over $H_1$. Larger values of $BF_{10}$ indicate more support for $H_1$. A \concept{Bayes factor} can range from 0 to $\infty$, and a Bayes factor of 1 indicates that both hypotheses are supported equally well by the data. A $BF_{10} = 10$ indicates that the data is 10 times more likely to occur under $H_1$ than under $H_0$. This way, the Bayes factor is a continuous measure for the strength of evidence. \\
+Bayesian statistics does not use the \concept{p-value} to test hypotheses and yield conclusions in an all-or-none fashion. Instead it uses a continuous measure of evidence, the \concept{Bayes factor}. The \concept{Bayes factor} quantifies the relative predictive performance of two competing hypotheses; the \concept{null hypothesis} $H_0$ and the \concept{alternative hypothesis} $H_1$. The subscript in the \concept{Bayes factor} indicates for which hypothesis support is quantified. $BF_{10}$ indicates the Bayes factor in favor of $H_1$ over $H_0$, whereas $BF_{01}$ indicates the \concept{Bayes factor} in favor of $H_0$ over $H_1$. Larger values of $BF_{10}$ indicate more support for $H_1$. A \concept{Bayes factor} can range from 0 to $\infty$, and a Bayes factor of 1 indicates that both hypotheses are supported equally well by the data. A $BF_{10} = 10$ indicates that the data is 10 times more likely to occur under $H_1$ than under $H_0$. Given this interpretation, the \concept{Bayes factor} is a continuous measure for the strength of evidence. \\
 
-Suppose you are a data scientist at a stock trading company. You have written an algorithm that trades stocks automatically. Your algorithm either makes a profitable trade, or a losing trade. You want to make sure that your algorithm actually does something intellectual, and want to disprove the hypothesis that your algorithm makes a profitable trade with a probability other than if it were to trade stocks randomly. \\
+Suppose you are a data scientist at a stock trading company. You have written an algorithm that trades stocks automatically. Your algorithm either makes a profitable trade, or a losing trade. You want to make sure that your algorithm actually does something intellectual, and therefore want to disprove the hypothesis that your algorithm makes a profitable trade with a probability other than if it were to trade stocks randomly. \\
 
-\question{Specify the \concept{null hypothesis} $H_0$ and the \concept{alternative hypothesis} $H_1$ for the test of a proportion against a chance value.}
+\question{Specify the \concept{null hypothesis} $H_0$ and the \concept{alternative hypothesis} $H_1$ for the test of a proportion $\theta$ against a chance value.}
 
 \hypothesesbox
 
@@ -38,16 +38,18 @@ You monitor the algorithm for 30 trades, and each time mark a trade as a success
 
 \clearpage % Page break
 
-\question{Use the \rcode{curve()} function to create a figure that has both the prior and the posterior distribution in it.}
+\question{Use the \rcode{curve()} function to create a figure showing both the prior and the posterior distribution.}
 
 \hint{The \rcode{curve()} function has an argument \rcode{add} that controls whether to add a line to an already existing plot.}
+
+\rcodeanswertiny
 
 In this scenario, the \concept{Bayes factor} is intuitively to calculate by only looking at the posterior distribution for $H_1$. The \concept{Bayes factor} $BF_{10}$ tells you how much more likely the \concept{alternative hypothesis} $H_1$ is in comparison with to the point \concept{null hypothesis} $H_0$. The \concept{Bayes factor} $BF_{10}$ in favor of the unrestricted \concept{alternative hypothesis} $H_1: \theta \neq 0.5$ is simply the height of the \concept{posterior distribution} at the point $\theta = 0.5$ divided by the height of the \concept{prior distribution} at the point $\theta = 0.5$. \\
 
 Please note that this is a trick that only works for \concept{nested} hypotheses and models, in which only one of the \concept{parameters} is fixed to a specific value. \\
 
 \begin{center}
-    \includegraphics[width=0.8\textwidth]{Files/Images/priorAndPosterior.pdf}
+    \includegraphics[width=0.6\textwidth]{Files/Images/priorAndPosterior.pdf}
 \end{center}
 
 \question{Use the \rcode{dbeta()} function to find out the height of your \concept{prior distribution} at the point $\theta = 0.5$ and store it in an object called \rcode{heightPrior}.}
@@ -68,7 +70,7 @@ Run the following code in \texttt{R} to compute the \concept{Bayes factor} in fa
 
 \twolineanswerbox
 
-To make interpretation of the \concept{Bayes factor} more simple, the labels in the table below have been proposed. Please note that you shout not get too hung up on the specific labels and breakpoints in this table, since convincing evidence is different for every situation. \\
+To make interpretation of the \concept{Bayes factor} more simple, the labels in the table below have been proposed. Please note that you shout not get too hung up on the specific labels and breakpoints in this table, since what constitutes convincing evidence should be different in every situation. \\
 
 \begin{table}[h]
     \centering
@@ -83,7 +85,7 @@ To make interpretation of the \concept{Bayes factor} more simple, the labels in 
     \end{tabular}
 \end{table}
 
-\question{Considering the labels from the table above, can you convincingly disprove the hypothesis that your algorithm makes a profitable trade with a probability other than if it were to trade stocks randomly?}
+\question{Considering the labels from the table above, are you convinced enough to reject the hypothesis that your algorithm makes a profitable trade with a probability other than if it were to trade stocks randomly?}
 
 \twolineanswerbox
 

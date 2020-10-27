@@ -26,13 +26,13 @@ Suppose you are the manager of a small store and want to estimate what proportio
 
 \rcodeanswertiny
 
-By updating the $Beta(\alpha,\, \beta)$ prior distribution with information that you have collected, you create a \concept{posterior distribution}, which contains both the prior information and the information from the sample. Having observed $k$ successes in a sample of $n$ observations, the \concept{prior parameters} $\alpha$ and $\beta$ are updated to the \concept{posterior parameters} $\alpha + k$ and $\beta + n - k$. \\
+By updating the $Beta(\alpha,\, \beta)$ prior distribution with information that you have collected, you create a \concept{posterior distribution}, which contains both the prior information and the information from the sample. Having observed $k$ successes in a sample of $n$ observations, the \concept{prior parameters} $\alpha$ and $\beta$ are updated to the \concept{posterior parameters} $\alpha = \alpha + k$ and $\beta = \beta + n - k$. \\
 
 In your sample of $n = 40$ questioned customers, $k = 33$ said they felt satisfied when leaving the store. \\
 
 \clearpage % Page break
 
-\question{Write down the \concept{parameters} of the \concept{posterior distribution}.}
+\question{Write down the $\alpha$ and $\beta$ \concept{parameters} of your \concept{posterior distribution}.}
 
 \emptyanswerbox{
     $\alpha$: \shortanswerline \hspace*{3cm} $\beta$: \shortanswerline
@@ -49,7 +49,7 @@ curve(dbeta(x, alpha + k, beta + n - k), \\
 \hspace*{35pt}xlab = expression(theta), ylab = \textquotesingle\textquotesingle, yaxt = \textquotesingle n\textquotesingle)}
 
 \question{
-    Find out the \concept{posterior probability} that more than 60 percent of your customers left the store feeling satisfied, given the prior information and the information from the sample.
+    Find out the \concept{posterior probability} that more than 60 percent of your customers left the store feeling satisfied, given your prior information and the information from the sample.
 }
 
 \hint{Use the \rcode{qbeta()} function to find the cumulative probability under a beta distribution.}
@@ -62,7 +62,7 @@ curve(dbeta(x, alpha + k, beta + n - k), \\
 }
 
 \question{
-    Find out the \concept{posterior probability} that the percentage of customers that left the store feeling satisfied, given the prior information and the information from the sample, lies between 70 and 90 percent.
+    Find out the \concept{posterior probability} that the percentage of customers that left the store feeling satisfied, given your prior information and the information from the sample, lies between 70 and 90 percent.
 }
 
 \rcodeanswertiny
@@ -74,7 +74,7 @@ curve(dbeta(x, alpha + k, beta + n - k), \\
 
 \clearpage % Page break
 
-\question{Change the values of \rcode{alpha} and \rcode{beta} in the code above so that you have a different \concept{prior distribution} and run the code again. Describe how robust the \concept{posterior distribution} is to changes in the prior distribution.}
+\question{Change your values of \rcode{alpha} and \rcode{beta} in the code above so that you have a different \concept{prior distribution} and run the code again. Describe how robust the \concept{posterior distribution} is to changes in the prior distribution.}
 
 \rcodeanswersmall
 
