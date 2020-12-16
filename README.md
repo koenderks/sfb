@@ -41,4 +41,7 @@ The links below redirect you to the raw data files. You can `right click` + `sav
 * [eyeColor.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/eyeColor.csv)
 * [insurance.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/insurance.csv)
 * [shaving.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/shaving.csv)
+* [UNresolutions.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/UNresolutions.csv)
+* [US.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/US.csv)
+* [Russia.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/Russia.csv)
 * [sinoForest.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/sinoForest.csv)
