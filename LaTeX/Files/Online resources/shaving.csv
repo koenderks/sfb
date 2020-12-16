@@ -1,0 +1,301 @@
+"Gender","Education","Sector","Rating"
+"Male","University","Retail",9.39
+"Female","High school","Retail",5.61
+"Female","High school","Education",6.86
+"Male","University","Education",9.12
+"Male","College","Finance",4.3
+"Male","University","Education",8.79
+"Male","College","Public",7.48
+"Female","University","Public",6.87
+"Male","College","Public",6.92
+"Male","High school","Agriculture",5.1
+"Male","High school","Agriculture",5.27
+"Male","University","Public",7.21
+"Male","High school","Retail",6.05
+"Male","College","Education",5.22
+"Female","University","Finance",6.96
+"Male","University","Public",9.52
+"Female","College","Education",6.34
+"Male","College","Finance",9.51
+"Male","University","Finance",5.42
+"Male","High school","Retail",8.7
+"Male","High school","Public",8.36
+"Male","College","Retail",3.47
+"Male","High school","Retail",2.87
+"Male","College","Public",2.47
+"Female","High school","Public",8.06
+"Male","University","Agriculture",8.34
+"Male","University","Retail",4.71
+"Male","University","Education",7.5
+"Female","College","Education",4.99
+"Female","High school","Education",5.94
+"Male","University","Education",7.5
+"Male","High school","Finance",5.23
+"Male","High school","Public",10
+"Male","College","Finance",7.7
+"Male","College","Education",9.21
+"Male","College","Finance",5.22
+"Female","University","Finance",1
+"Male","College","Retail",7.18
+"Male","High school","Education",4.52
+"Male","High school","Education",9.4
+"Male","University","Finance",1.76
+"Male","College","Agriculture",6.89
+"Male","High school","Public",8.68
+"Male","High school","Finance",7.04
+"Female","University","Finance",3.31
+"Female","High school","Retail",5.79
+"Female","High school","Retail",6.39
+"Male","College","Education",9.99
+"Female","High school","Agriculture",6.2
+"Female","University","Retail",5.67
+"Male","University","Finance",7.1
+"Female","College","Agriculture",6.22
+"Male","College","Retail",6.16
+"Male","College","Finance",9.06
+"Female","High school","Agriculture",6.9
+"Male","College","Education",4.83
+"Female","College","Agriculture",4.85
+"Female","University","Retail",8.58
+"Male","High school","Retail",3.43
+"Male","College","Retail",5.51
+"Male","University","Retail",9.13
+"Male","High school","Finance",6.51
+"Female","College","Education",1.45
+"Female","College","Agriculture",7.12
+"Male","College","Finance",5.33
+"Female","High school","Retail",9.29
+"Male","University","Education",10
+"Female","College","Public",10
+"Male","High school","Finance",4.73
+"Male","University","Finance",7.77
+"Female","University","Finance",2.75
+"Male","High school","Education",5.65
+"Female","College","Public",4.48
+"Male","College","Retail",2.01
+"Female","College","Finance",4.72
+"Female","College","Public",4.74
+"Female","High school","Finance",5.15
+"Female","University","Public",7.53
+"Male","University","Public",8.46
+"Male","University","Education",8.52
+"Female","High school","Finance",5.92
+"Male","College","Agriculture",6.78
+"Male","University","Retail",9.42
+"Male","University","Public",10
+"Male","College","Finance",6.63
+"Female","University","Retail",6.51
+"Male","High school","Retail",5.85
+"Male","University","Retail",5.19
+"Male","College","Retail",6.46
+"Male","University","Public",6.06
+"Male","University","Finance",10
+"Male","College","Education",3.79
+"Female","High school","Agriculture",4.05
+"Male","High school","Public",7.72
+"Male","University","Public",9.81
+"Male","High school","Agriculture",9.01
+"Male","High school","Agriculture",9.58
+"Male","College","Education",6.48
+"Male","College","Agriculture",6.86
+"Male","University","Retail",9.18
+"Male","High school","Agriculture",5.34
+"Female","College","Finance",4.49
+"Female","University","Agriculture",6.05
+"Female","University","Education",5.58
+"Female","College","Public",4.39
+"Male","College","Public",8.65
+"Male","University","Retail",4.08
+"Male","College","Education",5.73
+"Male","University","Agriculture",6.82
+"Male","College","Retail",4.75
+"Female","High school","Public",6.37
+"Female","College","Retail",4.16
+"Male","High school","Retail",8.9
+"Male","College","Education",3.36
+"Female","High school","Retail",8.54
+"Male","University","Agriculture",9.53
+"Male","High school","Agriculture",9.83
+"Female","University","Finance",8.16
+"Male","University","Agriculture",10
+"Female","College","Education",9.83
+"Male","College","Education",4.92
+"Male","High school","Education",5.57
+"Male","University","Agriculture",9.14
+"Male","College","Retail",6.9
+"Male","University","Finance",10
+"Female","College","Education",4.64
+"Female","University","Finance",3.84
+"Male","High school","Agriculture",8.84
+"Male","College","Retail",6.22
+"Male","High school","Education",6.9
+"Male","High school","Public",7.76
+"Female","University","Agriculture",4.91
+"Male","College","Agriculture",6.87
+"Male","High school","Agriculture",4.17
+"Female","College","Retail",6.04
+"Male","College","Agriculture",7.26
+"Male","College","Agriculture",4.96
+"Male","University","Retail",7.64
+"Male","University","Education",10
+"Female","University","Retail",5.09
+"Male","College","Retail",6.39
+"Female","College","Education",5.35
+"Male","High school","Finance",3.35
+"Male","High school","Finance",6.73
+"Male","High school","Education",2.71
+"Female","University","Finance",6.24
+"Male","High school","Agriculture",6.67
+"Male","College","Retail",3.74
+"Male","University","Retail",8.64
+"Male","High school","Education",4.57
+"Male","College","Public",7.74
+"Male","High school","Retail",6.71
+"Female","College","Public",8.07
+"Female","College","Finance",5.14
+"Male","High school","Public",7.77
+"Male","College","Agriculture",5.92
+"Male","High school","Education",10
+"Male","College","Retail",5.54
+"Male","College","Agriculture",4.03
+"Female","High school","Retail",8.85
+"Male","University","Finance",7.48
+"Male","College","Retail",6.88
+"Male","High school","Agriculture",6.51
+"Female","High school","Finance",5.95
+"Male","College","Agriculture",5.13
+"Male","High school","Agriculture",7.05
+"Male","University","Education",9.2
+"Female","College","Retail",5.81
+"Male","University","Finance",10
+"Male","College","Agriculture",5.95
+"Male","College","Agriculture",7.24
+"Male","High school","Agriculture",5.51
+"Male","University","Finance",6.88
+"Female","College","Public",6.37
+"Female","University","Agriculture",5.14
+"Female","University","Education",8.96
+"Male","College","Public",9.72
+"Male","College","Agriculture",2.27
+"Male","College","Public",3.74
+"Female","High school","Agriculture",7.98
+"Male","College","Finance",5.05
+"Female","College","Finance",8.74
+"Female","University","Education",8.08
+"Male","High school","Finance",5.61
+"Male","University","Finance",4.11
+"Male","University","Agriculture",9.53
+"Male","University","Retail",7.51
+"Female","College","Finance",4.63
+"Female","High school","Finance",6.73
+"Female","High school","Education",7.35
+"Female","College","Agriculture",4.32
+"Male","University","Retail",5.99
+"Female","College","Retail",2.62
+"Male","College","Finance",4.56
+"Male","College","Education",4.83
+"Male","University","Finance",7.94
+"Male","College","Finance",3.38
+"Male","University","Education",8.01
+"Male","College","Education",8.23
+"Male","High school","Education",8.67
+"Male","College","Finance",5.74
+"Male","High school","Retail",5.39
+"Male","High school","Agriculture",6.95
+"Female","College","Education",6.58
+"Male","University","Agriculture",7.12
+"Female","High school","Finance",4.54
+"Male","University","Education",10
+"Male","College","Public",6.82
+"Female","College","Finance",5.55
+"Female","College","Retail",6.12
+"Male","High school","Public",1
+"Female","University","Agriculture",4.23
+"Male","College","Education",4.49
+"Male","High school","Public",9.28
+"Male","University","Agriculture",7.48
+"Female","University","Education",4.94
+"Male","College","Retail",7.83
+"Male","High school","Agriculture",6.84
+"Male","High school","Public",6.08
+"Male","High school","Agriculture",10
+"Male","High school","Agriculture",10
+"Male","High school","Public",7.48
+"Female","College","Retail",5.14
+"Female","University","Retail",6.38
+"Male","High school","Agriculture",4.92
+"Male","High school","Retail",1.76
+"Female","University","Public",5.67
+"Male","College","Finance",5.3
+"Female","College","Finance",6.48
+"Male","High school","Education",7.03
+"Male","University","Agriculture",10
+"Male","University","Public",6.27
+"Male","College","Retail",6
+"Female","College","Finance",6.81
+"Male","High school","Finance",5.21
+"Female","College","Education",3.75
+"Male","University","Education",7.03
+"Female","College","Retail",5.12
+"Female","College","Agriculture",5.63
+"Female","High school","Education",4.64
+"Female","High school","Agriculture",4.67
+"Male","High school","Public",6.24
+"Female","University","Agriculture",5.65
+"Male","College","Education",2.49
+"Male","College","Education",8.86
+"Male","University","Agriculture",7.88
+"Male","College","Education",7.13
+"Male","University","Agriculture",6.86
+"Male","University","Agriculture",6.67
+"Female","High school","Public",6.13
+"Male","University","Retail",10
+"Male","College","Agriculture",6.65
+"Female","High school","Agriculture",8.57
+"Male","High school","Agriculture",4.08
+"Female","University","Education",4.48
+"Male","College","Finance",4.57
+"Male","University","Public",10
+"Female","University","Agriculture",5
+"Female","University","Finance",4.46
+"Male","High school","Finance",5.56
+"Male","University","Finance",7.97
+"Male","University","Agriculture",9.24
+"Male","High school","Education",8.56
+"Male","College","Education",4.51
+"Male","College","Retail",4.83
+"Male","University","Public",10
+"Male","High school","Public",6.95
+"Female","University","Retail",2.1
+"Male","University","Public",8.32
+"Male","High school","Agriculture",4.52
+"Male","University","Public",9.6
+"Female","High school","Retail",4
+"Male","University","Agriculture",7.37
+"Female","High school","Agriculture",5.45
+"Male","High school","Education",6.55
+"Male","High school","Retail",8.37
+"Male","High school","Education",5.91
+"Female","College","Finance",3.55
+"Male","High school","Finance",1.89
+"Male","College","Education",4.72
+"Male","College","Agriculture",9.73
+"Male","University","Public",5.64
+"Female","High school","Finance",4.01
+"Male","University","Agriculture",7.27
+"Female","University","Finance",5.08
+"Male","High school","Agriculture",3.36
+"Female","High school","Public",5.28
+"Male","College","Agriculture",4.39
+"Male","University","Retail",6.14
+"Female","High school","Finance",2.96
+"Male","College","Finance",4.39
+"Male","University","Retail",6.77
+"Female","College","Finance",5.58
+"Male","College","Agriculture",4.63
+"Male","University","Retail",10
+"Male","College","Public",4.58
+"Male","High school","Finance",6.96
+"Female","High school","Education",5.19
+"Male","College","Education",5.93
+"Male","High school","Finance",1

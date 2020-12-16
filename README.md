@@ -24,7 +24,7 @@ Download the complete course workbook (version 0.1.0) [here](https://github.com/
 
 ## Appendices
 
-* [Appendix A - Examination](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Appendix%20A%20-%20Examination.pdf)
+* [Appendix A - Preparation and examination](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Appendix%20A%20-%20Preparation%20and%20Examination.pdf)
 * [Appendix B - Resources](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Appendix%20B%20-%20Resources.pdf)
 * [Appendix C - R help](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Appendix%20C%20-%20R%20help.pdf)
 * [Appendix E - R exercises](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Appendix%20D%20-%20R%20exercises.pdf)

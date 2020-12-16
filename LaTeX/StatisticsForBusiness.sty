@@ -80,14 +80,26 @@
 
 % Define table of contents
 \setcounter{secnumdepth}{0}
-\setcounter{minitocdepth}{1}
-\renewcommand\cfttoctitlefont{\normalsize\itseries}
-\renewcommand\cftsecfont{\normalsize\itseries}
-\renewcommand\cftsubsecfont{\normalsize}
 
+% Define title of table of contents
+\renewcommand\cfttoctitlefont{\normalsize\itseries}
+
+% Define fonts in table of contents
+\renewcommand\cftchapfont{\normalsize\bfseries}
+\renewcommand\cftsecfont{\normalsize\itseries}
+
+% Define fonts of page numbers in table of contents
+\renewcommand\cftchappagefont{\normalsize\bfseries}
+\renewcommand\cftsecpagefont{\normalsize}
+
+% Set format of 'content' and 'page' in table of contents
 \renewcommand\cftaftertoctitle{\hfill\llap{\textit{Page}}}
-\renewcommand\contentsname{\vspace{-1.5cm}\fontsize{16}{18}\selectfont\textit{Content}\vspace{-.5cm}}
+\renewcommand\contentsname{\vspace{-2cm}\fontsize{16}{18}\selectfont\textit{Content}\vspace{-1cm}}
   
+\renewcommand\cftchapafterpnum{\vskip-1pt}
+\renewcommand\cftsecafterpnum{\vskip-1pt}
+  
+% Format the chapter titles
 \titleformat{\chapter}[display]{\normalfont}{}{0pt}{\Huge}
 
 % Define chapter front page
