@@ -44,5 +44,6 @@ The links below redirect you to the raw data files. You can `right click` + `sav
 * [UNresolutions.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/UNresolutions.csv)
 * [US.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/US.csv)
 * [Russia.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/Russia.csv)
+* [BuildIt.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/BuildIt.csv)
 * [sinoForest.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/sinoForest.csv)
 * [1020183.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/1020183.csv)
