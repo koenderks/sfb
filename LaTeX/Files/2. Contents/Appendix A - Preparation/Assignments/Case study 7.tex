@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{minipage}{0.8\textwidth}
-\section{Case study 7: Assessing financial fraud using Benford's law}
+\section{Case study 7: Assessing potential data tampering using Benford's law}
 \end{minipage}%
 \hfill%
 \begin{minipage}{0.1\textwidth}
@@ -11,16 +11,17 @@
 \end{minipage}
 \vspace*{.1cm}
 
-In this case study you may work in groups (max. 4 students) to perform a statistical analysis in \texttt{R}, write a small report, and present the results to your client. For this case study you will need the data set \dataset{sinoForest.csv} from the online resources. The case you will be working on this week is the following: \\
+In this case study you can work in groups (max. 4 students) to perform a statistical analysis in \texttt{R}, write a small report, and present the results to your client. For this case study you will need the data set \dataset{sinoForest.csv}\footnote{This data set is featured in the \texttt{R} package \texttt{benford.analysis}.} from the online resources. The case you will be working on this week is the following: \\
 
-\textit{You and your team are part of the audit division at a Big 4 accounting firm that is hired to perform an audit of the Sino-Forest corporation, (which was) the leading commercial forest plantation operator in China\footnote{The Sino-Forest corporation was accused of fraud in 2011, and on July 13, 2017, it was decided that four individuals at the corporation had indeed committed fraud.}. To determine whether it is likely that the data have been tampered with, your team decides to apply the principles of Benford's law to the data.} \\
+\textit{You and your team are part of the audit division at a Big 4 accounting firm that is hired to perform an audit of the Sino-Forest corporation, (which was) the leading commercial forest plantation operator in China\footnote{The Sino-Forest corporation was accused of fraud in 2011, and on July 13, 2017, it was decided that four individuals at the corporation had indeed committed fraud.}. You client is interested in knowing whether the data is likely to be tampered with. To determine whether this tampering has likely occurred, your team decides to apply the principles of \href{https://en.wikipedia.org/wiki/Benford\%27s_law}{Benford's law} to the data set.} \\
 
 Write a small report to the client's management where you give your insights and recommendations. The report should describe your analysis and how you arrived at your conclusions. It should at least contain the following points: \\
 
 \begin{itemize}
-    \item[$\blacksquare$] A short introduction about the reason and topic of the report.
+    \item[$\blacksquare$] A short introduction about the reason and topic of the report, including a description of what Benford's law represents and how it can be tested.
     \item[$\blacksquare$] What the variables in the data set represent on a practical level and what their measurement level is. 
-    
+    \item[$\blacksquare$] A table containing the frequency of the first digits in the data set, alongside a table containing the expected frequency of the first digits under Benford's law.
+    \item[$\blacksquare$] A test of the frequencies of the first digits in the data against their expected frequencies under Benford's law.
     \item[$\blacksquare$] On the basis of these results, your answer to the question(s) posed by the client's management.
 \end{itemize}
 
