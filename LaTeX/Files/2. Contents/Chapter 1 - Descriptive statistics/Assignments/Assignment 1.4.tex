@@ -24,13 +24,13 @@ print(meanValue)
 
 Now let's roll two dice at the same time. If you roll a 3 on the first die and a 1 on the second die, then the \concept{mean} is $\frac{1}{2} \times 1 + \frac{1}{2} \times 3 = 2$. With that knowledge you can create a matrix which will give you the \concept{mean} for any combination of dice rolls (the values in the square brackets, \rcode{[ ]}, refer to the values obtained from each die). This is done for you below, but you can try to figure out how to recreate this matrix for yourself. \\
 
-\codeblock{\#\#      [,1] [,2] [,3] [,4] [,5] [,6] \\
-\#\# [1,]  1.0  1.5  2.0  2.5  3.0  3.5 \\
-\#\# [2,]  1.5  2.0  2.5  3.0  3.5  4.0 \\
-\#\# [3,]  2.0  2.5  3.0  3.5  4.0  4.5 \\ 
-\#\# [4,]  2.5  3.0  3.5  4.0  4.5  5.0 \\ 
-\#\# [5,]  3.0  3.5  4.0  4.5  5.0  5.5 \\
-\#\# [6,]  3.5  4.0  4.5  5.0  5.5  6.0
+\codeblock{\#\# \hspace*{20pt} [,1] [,2] [,3] [,4] [,5] [,6] \\
+\#\# [1,]  1.0 \hspace*{1pt} 1.5 \hspace*{1pt} 2.0 \hspace*{1pt} 2.5 \hspace*{1pt} 3.0 \hspace*{1pt} 3.5 \\
+\#\# [2,]  1.5 \hspace*{1pt} 2.0 \hspace*{1pt} 2.5 \hspace*{1pt} 3.0 \hspace*{1pt} 3.5 \hspace*{1pt} 4.0 \\
+\#\# [3,]  2.0 \hspace*{1pt} 2.5 \hspace*{1pt} 3.0 \hspace*{1pt} 3.5 \hspace*{1pt} 4.0 \hspace*{1pt} 4.5 \\ 
+\#\# [4,]  2.5 \hspace*{1pt} 3.0 \hspace*{1pt} 3.5 \hspace*{1pt} 4.0 \hspace*{1pt} 4.5 \hspace*{1pt} 5.0 \\ 
+\#\# [5,]  3.0 \hspace*{1pt} 3.5 \hspace*{1pt} 4.0 \hspace*{1pt} 4.5 \hspace*{1pt} 5.0 \hspace*{1pt} 5.5 \\
+\#\# [6,]  3.5 \hspace*{1pt} 4.0 \hspace*{1pt} 4.5 \hspace*{1pt} 5.0 \hspace*{1pt} 5.5 \hspace*{1pt} 6.0
 }
 
 The \concept{sample mean} of the two dice ranges from 1 to 6. Note that you only see the values 1 and 6 once in the matrix. This is because the only way to get an \concept{sample mean} of 1 is to roll a 1 on our first die and then roll a 1 on our second die as well. In a similar manner, getting an \concept{sample mean} of 6 means you have to roll a 6 on both dice. Compare these \concept{sample means} of 1 and 6 with a \concept{sample mean} of 1.5. There are two ways to obtain a \concept{sample mean} of 1.5. You could roll a 1 on your first die and a 2 on our second die, or you could roll a 2 on our first die and a 1 on our second die. So, there are more ways to get a 1.5 than to get a 1. In fact, the probability of getting a certain value tends to get larger as you get closer to 3.5 (which is the true \concept{mean} of the population). Look at the diagonal entries of the matrix: 3.5 appears six times in the matrix. \\
