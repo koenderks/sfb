@@ -30,10 +30,10 @@ sd3 <- sd(sample3) # 290.46
 sd4 <- sd(sample4) # 171.58
 
 # Standard errors for samples 1 to 4 [se = sd / sqrt(n)]
-se1 <- sd1 / sqrt(length(sample1))              # Standard error: 29.24
-se2 <- sd2 / sqrt(length(sample2))              # Standard error: 7.64
-se3 <- sd3 / sqrt(length(sample3))              # Standard error: 30.61
-se4 <- sd4 / sqrt(length(sample4))              # Standard error: 18.09
+se1 <- sd1 / sqrt(90)              # Standard error: 29.24
+se2 <- sd2 / sqrt(90)              # Standard error: 7.64
+se3 <- sd3 / sqrt(90)              # Standard error: 30.61
+se4 <- sd4 / sqrt(90)              # Standard error: 18.09
 
 ## 3.3d ######################
 
