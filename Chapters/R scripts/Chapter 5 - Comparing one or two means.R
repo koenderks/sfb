@@ -48,49 +48,47 @@ qt(p = 0.98, df = 28, lower.tail = FALSE)  # One-tailed left sided test:   -2.15
 
 ## 5.3f ######################
 
-# These are the values for the RER test dataset
-placebo <- c(105, 119, 100, 97, 96, 101, 94, 95, 98)
-caffeine <- c(96, 99, 94, 89, 96, 93, 88, 105, 88)
+# These are the values for the RER test data set
+placebo <- c(97, 106, 120, 104, 96, 100, 93, 96, 99)
+caffeine <- c(97, 92, 95, 100, 95, 88, 85, 106, 89)
 
-mean(placebo)  # Mean:                 100.55
-sd(placebo)    # Standard deviation:   7.699  
+mean(placebo)  # Mean:                 101.22
+sd(placebo)    # Standard deviation:   8.14 
 
-mean(caffeine) # Mean:                 94.22
-sd(caffeine)   # Standard deviation:   5.607  
+mean(caffeine) # Mean:                 94.11
+sd(caffeine)   # Standard deviation:   6.48  
 
 ## 5.3g ######################
 
-# Perform an one-sided right tailed independent samples t-test 
-t.test(x = placebo, y = caffeine, alternative = 'greater', mu = 0,
+# Perform an one-sided left-tailed independent samples t-test 
+t.test(x = caffeine, y = placebo, alternative = 'less', mu = 0,
        paired = FALSE, var.equal = TRUE, conf.level = 0.95)        
 
 ## 5.3h ######################
 
-t.test(x = placebo, y = caffeine, alternative = 'greater', mu = 0,
+t.test(x = caffeine, y = placebo, alternative = 'less', mu = 0,
        paired = FALSE, var.equal = FALSE, conf.level = 0.95)  
 # The results differ slightly to those of 5.3g (see df and p-value)
 
 ## 5.4b ######################
 
-# These are the values for the blood pressure dataset
-standing <- c(132, 146, 135, 141, 139, 162, 128, 137, 145, 151, 131,
-              143)
-lying <- c(136, 145, 140, 147, 142, 160, 137, 136, 149, 158, 120, 150)
+# These are the values for the blood pressure data set
+standing <- c(136, 144, 152, 133, 140, 129, 131, 133, 145, 134, 142, 140, 125, 135)
+sitting <- c(148, 159, 121, 151, 145, 139, 135, 144, 141, 148, 143, 161, 150, 151)
 
-mean(standing)                                  # Mean standing:        100.55
-mean(lying)                                     # Mean lying:           94.22
-differences <- standing - lying
-mean(differences)                               # Mean difference:      -2.5
+mean(standing)                                  # Mean standing:        137.07
+mean(sitting)                                   # Mean lying:           145.43
+differences <- sitting - standing
+mean(differences)                               # Mean difference:      8.36
 
 ## 5.4d ######################
 
-t.test(x = standing, y = lying, alternative = 'greater', mu = 0 ,
+t.test(x = standing, y = sitting, alternative = 'greater', mu = 0 ,
        paired = TRUE, conf.level = 0.925)
-# The test is done with alternative = 'greater'
+# This tests whether standing is greater than sitting
 
 ## 5.4e ######################
 
-# Correct: alternative = 'less'
-t.test(x = standing, y = lying, alternative = 'less', mu = 0 ,
+# Correct: alternative: x = sitting, y = standing
+t.test(x = sitting, y = standing, alternative = 'greater', mu = 0 ,
        paired = TRUE, conf.level = 0.925)
-

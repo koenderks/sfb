@@ -161,7 +161,7 @@ One-tailed left sided test: $H_0$ not rejected (1.6 < 2.153) \\
 }
 
 \answer{
-    $H_0$: $\mu_1 \leq \mu_2$ \hspace{4cm} $H_1$: $\mu_1 > \mu_2$
+    $H_0$: $\mu_1 \geq \mu_2$ \hspace{4cm} $H_1$: $\mu_1 < \mu_2$
 }
 
 \answer{
@@ -169,12 +169,11 @@ One-tailed left sided test: $H_0$ not rejected (1.6 < 2.153) \\
 }
 
 \answer{
-    $t = \frac{(x_1 - x_2) - D_0}{\sqrt{s^2_p (\frac{1}{n_1} + \frac{1}{n_2})}} = \frac{(101.22 - 94.11)}{\sqrt{54.15 \times (\frac{1}{9} + \frac{1}{9})}} = 2.050$
+    $t = \frac{(x_1 - x_2) - D_0}{\sqrt{s^2_p (\frac{1}{n_1} + \frac{1}{n_2})}} = \frac{(94.11 - 101.22)}{\sqrt{54.15 \times (\frac{1}{9} + \frac{1}{9})}} = -2.050$
 }
 
 \answer{
-    The calculated t-score of 2.050 is more extreme (higher) than the critical value of 1.746. $H_0$ is rejected with 95\% confidence. The mean placebo RER level is significantly higher than the mean caffeine RER level. There is a risk of 5\% for type-I error.
-
+    The calculated t-score of -2.050 is more extreme (lower) than the critical value of -1.746. $H_0$ is rejected with 95\% confidence. The mean caffeine RER level is significantly lower than the mean placebo RER level. There is a risk of 5\% for type-I error.
 }
 
 \clearpage % Page break
@@ -194,8 +193,8 @@ Standard deviation: 8.14
     \\
     \\
     \answercode{{\color{dataset}\# These are the values for the RER test data set} \\
-placebo <- c(106, 120, 104, 96, 97, 100, 93, 96, 99) \\
-caffeine <- c(95, 100, 95, 88, 97, 92, 85, 106, 89) \\
+placebo <- c(97, 106, 120, 104, 96, 100, 93, 96, 99) \\
+caffeine <- c(97, 92, 95, 100, 95, 88, 85, 106, 89) \\
  \\
  \\
 mean(placebo)  {\color{dataset}\# Mean:                 101.22} \\
@@ -206,9 +205,9 @@ sd(caffeine)   {\color{dataset}\# Standard deviation:  6.49} }
 }
 
 \answer{
-    The code runs an independent (not paired) samples t-test with a confidence of 95\% for \rcode{placebo} and \rcode{caffeine}, with the alternative hypothesis $H_1$ that the difference in means is greater than 0. The variances are assumed equal. The output t-value and p-value confirm the previous result to reject $H_0$. \\
+    The code runs an independent (not paired) samples t-test with a confidence of 95\% for \rcode{placebo} and \rcode{caffeine}, with the alternative hypothesis $H_1$ that the mean in the caffeine group is lower than the mean in the placebo group. The variances are assumed equal. The resulting t-value and p-value confirm the previous result to reject $H_0$. \\
     \\
-    \answercode{t.test(x = placebo, y = caffeine, alternative = \textquotesingle greater\textquotesingle, mu = 0, \\
+    \answercode{t.test(x = caffeine, y = placebo, alternative = \textquotesingle less\textquotesingle, mu = 0, \\
 \hspace*{40pt}paired = FALSE, var.equal = TRUE, conf.level = 0.95)
 }
 }
@@ -216,7 +215,7 @@ sd(caffeine)   {\color{dataset}\# Standard deviation:  6.49} }
 \answer{
     The Welch Two Sample t-test leads to a slightly different p-value of 0.02899, but the same conclusion: rejection of $H_0$. \\
     \\
-    \answercode{t.test(x = placebo, y = caffeine, alternative = \textquotesingle greater\textquotesingle, mu = 0, \\
+    \answercode{t.test(x = caffeine, y = placebo, alternative = \textquotesingle less\textquotesingle, mu = 0, \\
 \hspace*{40pt}paired = FALSE, var.equal = FALSE, conf.level = 0.95)
 }
 }
@@ -234,8 +233,8 @@ sd(caffeine)   {\color{dataset}\# Standard deviation:  6.49} }
 \clearpage % Page break
 
 \answer{
-    Mean standing: 137.07 \\
-Mean lying: 145.43 \\
+Mean standing: 137.07 \\
+Mean sitting:  145.43 \\
 Mean difference: 8.36 \\
 \\
 \answercode{{\color{dataset}\# These are the values for the blood pressure data set} \\
@@ -262,8 +261,8 @@ mean(differences) {\color{dataset}\# Mean difference: 8.36}}
 \answer{
     The p-value for this sample outcome is 0.02055, which is below the limit of 0.075 (92.5\% confidence). $H_0$ is rejected with 92.5\% confidence. The blood pressure is significantly higher lying down than standing up. There is a risk of 7.5\% for type-I error. \\
     \\
-    \answercode{{\color{dataset}\# Correct: alternative = \textquotesingle less\textquotesingle} \\
-    t.test(x = standing, y = sitting, alternative = \textquotesingle less\textquotesingle, mu = 0, \\
+    \answercode{{\color{dataset}\# Correct: alternative: x = sitting, y = standing} \\
+    t.test(x = sitting, y = standing, alternative = \textquotesingle greater\textquotesingle, mu = 0, \\
 \hspace*{40pt}paired = TRUE, conf.level = 0.925)}
 }
 
