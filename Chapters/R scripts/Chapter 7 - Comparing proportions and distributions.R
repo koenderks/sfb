@@ -16,7 +16,7 @@ qchisq(p = 0.95, df = 3) # 7.185
 
 ## 7.1i ######################
 
-# chi-square test: x = observations p = model distribution
+# Chi-squared test: x = observations p = model distribution
 # rescale makes sure the model distribution adds up to 100%
 chisq.test(x = Observed, p = Historical, rescale.p = TRUE)
 

@@ -31,7 +31,7 @@ Expected number = Historical \% $\times$ Observed number
 }
 
 \answer{
-    Since every season has an expected value above 5 you can do a chi-square test.
+    Since every season has an expected value above 5 you can do a Chi-squared test.
 }
 
 \answer{
@@ -39,7 +39,7 @@ Expected number = Historical \% $\times$ Observed number
 }
 
 \answer{
-    The calculated chi-square value of 59.587 is higher than the critical chi-square value of 7.8. $H_0$ is rejected. The 2019 distribution is significantly different from the historical distribution. There is a 5\% risk of a type-I error.
+    The calculated Chi-squared value of 59.587 is higher than the critical chi-squared value of 7.8. $H_0$ is rejected. The 2019 distribution is significantly different from the historical distribution. There is a 5\% risk of a type-I error.
 }
 
 \answer{
@@ -67,7 +67,7 @@ chi <- sum((Observed - Expected)\textrm{\textasciicircum}2 / Expected) {\color{d
 \answer{
     \texttt{R} returns the same Chi-squared as calculated, so the answer was correct. It also shows a p-value of below 0.05, as expected. \\
     \\
-    \answercode{{\color{dataset}\# chi-square test: x = observations p = model distribution} \\
+    \answercode{{\color{dataset}\# Chi-squared test: x = observations p = model distribution} \\
 {\color{dataset}\# rescale makes sure the model distribution adds up to 100\%} \\
 chisq.test(x = Observed, p = Historical, rescale.p = TRUE) \\
  \\
@@ -99,7 +99,7 @@ summary(sales)}
 }
 
 \answer{
-    The chi-square test requires every cell in the expected distribution to have a value of at least 5 and it requires the total of both groups to be equal. Since the historical distribution contains more than 5 in every cell and both observed and expected values add up to the same number (100) we can use this for a chi-squared test.
+    The Chi-squared test requires every cell in the expected distribution to have a value of at least 5 and it requires the total of both groups to be equal. Since the historical distribution contains more than 5 in every cell and both observed and expected values add up to the same number (100) we can use this for a Chi-squared test.
 }
 
 \answer{
@@ -175,7 +175,7 @@ prop.test(x = k, n = n) \\
 {\color{dataset}\# p-value: 0.6984}
 } \\
 \\
-Note that \texttt{R} actually returns a chi-squared value. Because it actually does a chi-square test it can in fact be used to test more than two proportions at the same time.
+Note that \texttt{R} actually returns a Chi-squared value. Because it actually does a Chi-squared test it can in fact be used to test more than two proportions at the same time.
 }
 
 \clearpage % Page break

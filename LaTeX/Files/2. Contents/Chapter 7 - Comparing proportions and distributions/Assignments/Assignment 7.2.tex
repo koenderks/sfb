@@ -3,12 +3,12 @@
 \setcounter{question}{0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Assignment 7.2: Chi-square testing in R
+% Assignment 7.2: Chi-squared testing in R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\rassignment{Chi-square testing in R}
+\rassignment{Chi-squared testing in R}
 
-A gift company in the Netherlands wants to apply statistics to gain insight into their sales activity. This gift company normally generates most of its revenue in the period before summer and on Christmas holidays. Recently they opened a new store in a different country. The gift company wants to check, using a \concept{Chi-square} ($X^2$) test, whether the new store has a different seasonal pattern than the stores in the Netherlands. \\
+A gift company in the Netherlands wants to apply statistics to gain insight into their sales activity. This gift company normally generates most of its revenue in the period before summer and on Christmas holidays. Recently they opened a new store in a different country. The gift company wants to check, using a \concept{Chi-squared} ($X^2$) test, whether the new store has a different seasonal pattern than the stores in the Netherlands. \\
 
 Run the following code in \texttt{R} to create the data set and store it in an object named \rcode{sales}. \\
 
@@ -41,12 +41,12 @@ legend(\textquotesingle topleft\textquotesingle, bty = \textquotesingle n\textqu
        \hspace*{40pt}legend = c(\textquotesingle Historical\textquotesingle, \textquotesingle New store\textquotesingle), \\
        \hspace*{40pt}fill = c(\textquotesingle aquamarine3\textquotesingle,\textquotesingle coral\textquotesingle))}
        
-The company wants to perform a \concept{Chi-square test}, with 90\% confidence, on these data using the historical sales as the baseline values and the new store sales as the observed values.
+The company wants to perform a \concept{Chi-squared test}, with 90\% confidence, on these data using the historical sales as the baseline values and the new store sales as the observed values.
 
 \clearpage % Page break
 
 \question{
-    Looking at the graph and considering the values in each month, can you perform a \context{Chi-square test} on these data? 
+    Looking at the graph and considering the values in each month, can you perform a \context{Chi-squared test} on these data? 
 }
 
 \twolineanswerbox
@@ -62,9 +62,9 @@ The company wants to perform a \concept{Chi-square test}, with 90\% confidence, 
 }
 
 \question{
-    Perform a \concept{Chi-square test} in \texttt{R} using these data and draw the conclusion for the hypotheses. Include the following elements:
+    Perform a \concept{Chi-squared test} in \texttt{R} using these data and draw the conclusion for the hypotheses. Include the following elements:
                 \begin{itemize}
-        \item[$\square$] Show how the calculated \concept{Chi-square value} relates to the \concept{critical value}.
+        \item[$\square$] Show how the calculated \concept{Chi-squared value} relates to the \concept{critical value}.
     \item[$\square$] Discuss whether $H_0$ is rejected or not.
     \item[$\square$] Describe what this tells us about the historical and the new \concept{distribution}.
     \item[$\square$] Describe what type of error is relevant \textit{(type-I or type-II)}.

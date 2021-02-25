@@ -4,10 +4,10 @@
 \setcounter{hint}{0} % Only for first assignment in chapter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Assignment 7.1: Chi-square testing by hand
+% Assignment 7.1: Chi-squared testing by hand
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\handassignment{Chi-square testing by hand}
+\handassignment{Chi-squared testing by hand}
 
 A small bed and breakfast wants to know if the \concept{distribution} of the number of guests is changing. They compare their historical \concept{distribution} with the number of guests in 2019 and want to show, with 95\% confidence, that the shape of the  2019 \concept{distribution} has changed with respect to the past years. \\
 
@@ -51,27 +51,27 @@ The table below shows the historical \concept{distribution} of the bed and break
 \clearpage % Page break
 
 \question{
-    Are you allowed to do a \concept{chi-square test} using these data? Explain why.
+    Are you allowed to do a \concept{Chi-squared test} using these data? Explain why.
 }
 
-\hint{Take into account the assumptions of a \concept{chi-square test}.}
+\hint{Take into account the assumptions of a \concept{Chi-squared test}.}
 
 \twolineanswerbox
 
 \question{
-    Fill in the rest of the table to calculate the \concept{chi-square value} ($X^2$) for this sample.
+    Fill in the rest of the table to calculate the \concept{Chi-squared value} ($X^2$) for this sample.
 }
 
 \emptyanswerbox{
     $X^2$: \shortanswerline
 }
 
-The critical \concept{chi-square value} using a confidence of 95\% and 3 \concept{degrees of freedom} is $X^2_{0.05}[df = 3] = 7.815$. \\
+The critical \concept{Chi-squared value} using a confidence of 95\% and 3 \concept{degrees of freedom} is $X^2_{0.05}[df = 3] = 7.815$. \\
 
 \question{
     What is your conclusion on the basis of these results? Include the following elements:
             \begin{itemize}
-        \item[$\square$] Show how the calculated \concept{Chi-square value} relates to the \concept{critical Chi-square value}.
+        \item[$\square$] Show how the calculated \concept{Chi-squared value} relates to the \concept{critical Chi-squared value}.
     \item[$\square$] Discuss whether $H_0$ is rejected or not.
     \item[$\square$] Describe what this tells us about the historical \concept{distribution} and the 2019 \concept{distribution}.
     \item[$\square$] Describe what type of error is relevant \textit{(type-I or type-II)}.
@@ -104,7 +104,7 @@ Historical <- c(0.39, 0.25, 0.13, 0.23) \\
 Expected <- c(60.918, 39.05, 20.306, 35.926)}
 
 \question{
-    Calculate the \concept{Chi-square value} for these data using \texttt{R}.
+    Calculate the \concept{Chi-squared value} for these data using \texttt{R}.
 }
 
 \rcodeanswertiny
@@ -113,12 +113,12 @@ Expected <- c(60.918, 39.05, 20.306, 35.926)}
     $X^2$: \shortanswerline
 }
 
-Run the following code in \texttt{R} to find out the \concept{critical Chi-square value}: \\
+Run the following code in \texttt{R} to find out the \concept{critical Chi-squared value}: \\
 
 \codeblock{qchisq(p = 0.95, df = 3)}
 
 \question{
-    Does your conclusion hold up when you recalculate the \concept{Chi-square value} in \texttt{R}?
+    Does your conclusion hold up when you recalculate the \concept{Chi-squared value} in \texttt{R}?
 }
 
 \emptyanswerbox{
@@ -128,9 +128,9 @@ Run the following code in \texttt{R} to find out the \concept{critical Chi-squar
     \end{center}
 }
 
-Use the following code in \texttt{R} to perform a \concept{Chi-square test}: \\
+Use the following code in \texttt{R} to perform a \concept{Chi-squared test}: \\
 
-\codeblock{{\color{dataset}\# chi-square test: x = observations p = model distribution}\\ 
+\codeblock{{\color{dataset}\# Chi-squared test: x = observations p = model distribution}\\ 
 {\color{dataset}\# rescale makes sure the model distribution adds up to 100\%}\\
 chisq.test(x = Observed, p = Historical, rescale.p = TRUE)}
 
