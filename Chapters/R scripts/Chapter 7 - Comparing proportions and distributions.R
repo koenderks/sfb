@@ -4,11 +4,11 @@
 
 ## 7.1g ######################
 
-Observed <- c(37, 27, 12, 8)
-Historical <- c(0.3, 0.4, 0.15, 0.15)
-Expected <- c(25.2, 33.6, 12.6, 12.6)
+Observed <- c(29, 45, 49.4, 32.8)
+Historical <- c(0.39, 0.25, 0.13, 0.23)
+Expected <- c(60.918, 39.05, 20.306, 35.926)
 
-chi <- sum((Observed - Expected)^2 / Expected) # 8.5298
+chi <- sum((Observed - Expected)^2 / Expected) # 59.587
 
 ## 7.1h ######################
 
@@ -20,8 +20,8 @@ qchisq(p = 0.95, df = 3) # 7.185
 # rescale makes sure the model distribution adds up to 100%
 chisq.test(x = Observed, p = Historical, rescale.p = TRUE)
 
-# Chi-squared value: 8.5298
-# p-value: 0.0362
+# Chi-squared value: 59.587
+# p-value: 7.201e-13
 
 ## 7.1j ######################
 
