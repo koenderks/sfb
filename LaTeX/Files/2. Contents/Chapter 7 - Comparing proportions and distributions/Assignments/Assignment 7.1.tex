@@ -28,15 +28,15 @@ The table below shows the historical \concept{distribution} of the bed and break
     \cline{2-6} 
     \multicolumn{1}{c|}{} & Historical & Observed ($O$) & Expected ($E$) & $O - E$ & $\frac{(O - E)^2}{E}$ \tstrut\bstrut\\
     \hline
-    Spring & 4.87 & 2.90 & & &  \tstrut\bstrut\\
+    Spring & 48.7 & 29.0 & & &  \tstrut\bstrut\\
     \hline
-    Summer & 3.04 & 4.50 & & &  \tstrut\bstrut\\
+    Summer & 30.4 & 45.0 & & &  \tstrut\bstrut\\
     \hline
-    Fall & 1.65 & 4.94 & & &  \tstrut\bstrut\\
+    Fall & 16.5 & 49.4 & & &  \tstrut\bstrut\\
     \hline
-    Winter & 2.88 & 3.28 & & &  \tstrut\bstrut\\
+    Winter & 28.8 & 32.8 & & &  \tstrut\bstrut\\
     \noalign{\hrule height 2pt}
-    Total & 2.31 & 4.73 & & &  \tstrut\bstrut\\
+    Total & 124.4 & 156.2 & & &  \tstrut\bstrut\\
     \cline{1-4} \cline{6-6}
     \end{tabular}
 \end{center}
@@ -99,9 +99,9 @@ Run the following code in \texttt{R} to import the data: \\
 \end{minipage}
 \vspace*{.1cm}
 
-\codeblock{Observed   <- c(37, 27, 12, 8)\\
-Historical <- c(0.3, 0.4, 0.15, 0.15)\\
-Expected   <- c(25.2, 33.6, 12.6, 12.6)}
+\codeblock{Observed <- c(29, 45, 49.4, 32.8) \\
+Historical <- c(0.39, 0.25, 0.13, 0.23) \\
+Expected <- c(60.918, 39.05, 20.306, 35.926)}
 
 \question{
     Calculate the \concept{Chi-square value} for these data using \texttt{R}.
@@ -144,7 +144,7 @@ chisq.test(x = Observed, p = Historical, rescale.p = TRUE)}
 
 As it turns out the function \rcode{chisq.test()} will always calculate the \concept{expected values} by itself. You therefore do not need to make sure your total amounts sum to one. Therefore, in the code after \rcode{p =} you can supply a distribution that adds up to one (and set \rcode{rescale.p = FALSE}), or expected amounts that \texttt{R} will recalculate into a distribution anyway. If you do not supply the \rcode{p} argument, \texttt{R} will test against the \concept{uniform distribution}. \\
 
-Run the following code in \texttt{R} to store the results of the \concept{Chi-square test} in an object called \rcode{chisq}: \\
+Run the following code in \texttt{R} to store the results of the \concept{Chi-squared test} in an object called \rcode{chisq}: \\
 
 \codeblock{chisq <- chisq.test(x = Observed, p = Historical)}
 

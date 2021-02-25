@@ -16,15 +16,15 @@ Expected number = Historical \% $\times$ Observed number
     \cline{2-6} 
     \multicolumn{1}{c|}{} & Historical & Observed ($O$) & Expected ($E$) & $O - E$ & $\frac{(O - E)^2}{E}$ \tstrut\bstrut\\
     \hline
-    Spring & 4.87 (30\%) & 2.90 & 25.2 & 11.8 & 5.525 \tstrut\bstrut\\
+    Spring & 48.7 (39\%) & 29.0 & 60.918 & -31.918 & 16.72 \tstrut\bstrut\\
     \hline
-    Summer & 3.04 (40\%) & 4.50 & 33.6 & -6.6 & 1.296 \tstrut\bstrut\\
+    Summer & 30.4 (25\%) & 45.0 & 39.05 & 5.95 & 0.907 \tstrut\bstrut\\
     \hline
-    Fall & 1.65 (15\%) & 4.94 & 12.6 & -0.6 & 0.029 \tstrut\bstrut\\
+    Fall & 16.5 (13\%) & 49.4 & 20.306 & 29.094 & 41.69 \tstrut\bstrut\\
     \hline
-    Winter & 2.88 (15\%) & 3.28 & 12.6 & -4.6 & 1.679 \tstrut\bstrut\\
+    Winter & 28.8 (23\%) & 32.8 & 35.926 & -3.126 & 0.272 \tstrut\bstrut\\
     \noalign{\hrule height 2pt}
-    Total & 2.31 (100\%) & 4.73 & 84 &  & 8.530 \tstrut\bstrut\\
+    Total & 124.4 (100\%) & 156.2 & 119.67 &  & 59.587 \tstrut\bstrut\\
     \cline{1-4} \cline{6-6}
     \end{tabular}
 \end{center}
@@ -35,11 +35,11 @@ Expected number = Historical \% $\times$ Observed number
 }
 
 \answer{
-    $X^2 = 8.530$
+    $X^2 = 59.587$
 }
 
 \answer{
-    The calculated chi-square value of 8.530 is higher than the critical chi-square value of 7.8. $H_0$ is rejected. The 2019 distribution is significantly different from the historical distribution. There is a 5\% risk of a type-I error.
+    The calculated chi-square value of 59.587 is higher than the critical chi-square value of 7.8. $H_0$ is rejected. The 2019 distribution is significantly different from the historical distribution. There is a 5\% risk of a type-I error.
 }
 
 \answer{
@@ -47,13 +47,13 @@ Expected number = Historical \% $\times$ Observed number
 }
 
 \answer{
-    $X^2 = 8.530$ \\
+    $X^2 = 59.587$ \\
     \\
-    \answercode{Observed <- c(37, 27, 12, 8) \\
-Historical <- c(0.3, 0.4, 0.15, 0.15) \\
-Expected <- c(25.2, 33.6, 12.6, 12.6) \\
+    \answercode{Observed <- c(29, 45, 49.4, 32.8) \\
+Historical <- c(0.39, 0.25, 0.13, 0.23) \\
+Expected <- c(60.918, 39.05, 20.306, 35.926) \\
  \\
-chi <- sum((Observed - Expected)\textrm{\textasciicircum}2 / Expected) {\color{dataset}\# 8.530}}
+chi <- sum((Observed - Expected)\textrm{\textasciicircum}2 / Expected) {\color{dataset}\# 59.587}}
 }
 
 \answer{
@@ -65,22 +65,22 @@ chi <- sum((Observed - Expected)\textrm{\textasciicircum}2 / Expected) {\color{d
 \clearpage % Page break
 
 \answer{
-    \texttt{R} returns the same chi-squared as calculated, so the answer was correct. It also shows a p-value of below 0.05, as expected. \\
+    \texttt{R} returns the same Chi-squared as calculated, so the answer was correct. It also shows a p-value of below 0.05, as expected. \\
     \\
     \answercode{{\color{dataset}\# chi-square test: x = observations p = model distribution} \\
 {\color{dataset}\# rescale makes sure the model distribution adds up to 100\%} \\
 chisq.test(x = Observed, p = Historical, rescale.p = TRUE) \\
  \\
-{\color{dataset}\# Chi-squared value: 8.5298} \\
-{\color{dataset}\# p-value: 0.0362}}
+{\color{dataset}\# Chi-squared value: 59.587} \\
+{\color{dataset}\# p-value: 7.201e-13}}
 }
 
 \answer{
-    The expected values are 25.2, 33.6, 12.6, and 12.6. \texttt{R} shows the same expected values.\\
+    The expected values are 60.918, 39.05, 20.306, and 35.926. \texttt{R} shows the same expected values.\\
     \\
     \answercode{chisq <- chisq.test(x = Observed, p = Historical) \\
 chisq\$expected   {\color{dataset}\# Extract expected values with \$expected} \\
-{\color{dataset}\# 25.2 33.6 12.6 12.6}}
+{\color{dataset}\# 60.918 39.050 20.306 35.926}}
 }
 
 \answerbreakline \setcounter{section}{2} \setcounter{answer}{0}
