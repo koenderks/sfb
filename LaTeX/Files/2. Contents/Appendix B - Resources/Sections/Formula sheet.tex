@@ -57,8 +57,11 @@ Confidence interval \hfill $p \pm t_\alpha \times \sqrt{\frac{p(1 - p)}{n}}$ \\
 z-score \hfill $z = \frac{x - \mu}{\sigma}$\\
 {\scriptsize (for a value $x$ in a normal distribution)} \\
 \\
+z-score \hfill $z = \frac{\bar{x} - \mu}{\nicefrac{\sigma}{\sqrt{n}}}$\\
+{\scriptsize (for a test of a population mean based on a sample, $\sigma$ known)} \\
+\\
 z-score \hfill $z = \frac{\bar{x} - \mu}{\nicefrac{s}{\sqrt{n}}}$\\
-{\scriptsize (for a test of a population mean based on a sample)} \\
+{\scriptsize (for a test of a population mean based on a sample $n \geq 30$)} \\
 \begin{center}
     \textbf{Tests based on the t-distribution}
 \end{center}
@@ -99,14 +102,14 @@ Correlation \hfill $r_{xy} = \frac{s_{xy}}{s_x \times s_y}$ \\
 Sampling distribution: \hfill $z_r = \frac{1}{2} \times log_e (\frac{1 + r}{1 - r})$\\
 {\scriptsize (for the population correlation)} \\
 \\
-Standard error: \hfill $SE_r = \frac{1}{\sqrt{n - 3}}$\\
-{\scriptsize (of the population correlation)} \\
-\\
 \end{minipage}
 
 \clearpage % Page break
 
 \begin{minipage}[t]{.45\textwidth}
+Standard error: \hfill $SE_r = \frac{1}{\sqrt{n - 3}}$\\
+{\scriptsize (of the population correlation)} \\
+\\
 z-score: \hfill $z_{xy} = \frac{z_r}{SE_r}$\\
 {\scriptsize (for the test of a correlation against any value)} \\
 \\

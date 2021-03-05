@@ -1,10 +1,14 @@
 # Statistics for Business with Applications in R and RStudio
 
-Download the complete course workbook (version 0.1.0) [here](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Statistics%20for%20Business%20with%20applications%20in%20R%20and%20RStudio.pdf) or download one of the chapters via the links below.
+Download the complete course workbook (version 1.1.0) [here](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Statistics%20for%20Business%20with%20applications%20in%20R%20and%20RStudio.pdf) or download one of the chapters via the links below.
 
 <p align="center">
 	<img src="sampleFrontPage.png" alt="cover" width="50%">
 </p>
+
+## Full book
+
+* [Statistics for Business with Applications in R and RStudio](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Statistics%20for%20Business%20with%20applications%20in%20R%20and%20RStudio.pdf)
 
 ## Content
 
@@ -36,7 +40,7 @@ Download the complete course workbook (version 0.1.0) [here](https://github.com/
 
 ### Data sets
 
-The links below redirect you to the raw scripts. You can `right click` + `save as` to save these files as `.csv` files to your computer.
+The links below redirect you to the raw data files. You can `right click` + `save as` to save these files as `.csv` files to your computer.
 
 * [bloodPressure.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/bloodPressure.csv)
 * [populations.csv](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/LaTeX/Files/Online%20resources/populations.csv)
@@ -57,7 +61,7 @@ The links below redirect you to the raw scripts. You can `right click` + `save a
 
 ### R scripts
 
-The links below redirect you to the raw data files. You can `right click` + `save link as` to save these files as `.R` files to your computer.
+The links below redirect you to the raw code. You can `right click` + `save link as` to save these files as `.R` files to your computer.
 
 * [Chapter 1 - Descriptive statistics](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/Chapters/R%20scripts/Chapter%201%20-%20Descriptive%20statistics.R)
 * [Chapter 2 - Data visualization](https://raw.githubusercontent.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/master/Chapters/R%20scripts/Chapter%202%20-%20Data%20visualization.R)
