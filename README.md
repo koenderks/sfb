@@ -14,12 +14,12 @@ Download the complete course workbook (version 0.1.0) [here](https://github.com/
 ## Chapters
 
 * [Chapter 1 - Descriptive statistics](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%201%20-%20Descriptive%20statistics.pdf)
-* [Chapter 2 - Creating graphs from data](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%202%20-%20Creating%20graphs%20from%20data.pdf)
+* [Chapter 2 - Data visualization](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%202%20-%20Data%20visualization.pdf)
 * [Chapter 3 - Confidence intervals and hypothesis testing](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%203%20-%20Confidence%20intervals%20and%20hypothesis%20testing.pdf)
-* [Chapter 4 - Correlation and regression](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%204%20-%20Correlation%20and%20regression.pdf)
-* [Chapter 5 - Comparing one or two means](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%205%20-%20Comparing%20one%20or%20two%20means.pdf)
-* [Chapter 6 - Comparing more than two means](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%206%20-%20Comparing%20more%20than%20two%20means.pdf)
-* [Chapter 7 - Comparing proportions and distributions](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%207%20-%20Comparing%20proportions%20and%20distributions.pdf)
+* [Chapter 4 - Testing a linear relationship](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%204%20-%20Testing%20a%20linear%20relationship.pdf)
+* [Chapter 5 - Testing one or two means](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%205%20-%20Testing%20one%20or%20two%20means.pdf)
+* [Chapter 6 - Testing more than two means](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%206%20-%20Testing%20more%20than%20two%20means.pdf)
+* [Chapter 7 - Testing proportions and distributions](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%207%20-%20Testing%20proportions%20and%20distributions.pdf)
 * [Chapter 8 - Bayesian statistics](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Chapters/Chapter%208%20-%20Bayesian%20statistics.pdf)
 
 ## Appendices

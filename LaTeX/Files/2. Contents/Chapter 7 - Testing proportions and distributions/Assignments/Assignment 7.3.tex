@@ -1,0 +1,110 @@
+\setcounter{chapter}{7}
+\setcounter{section}{3}
+\setcounter{question}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 7.3: Proportion testing by hand and in R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\handassignment{Proportion testing by hand and in R}
+
+The P.H.O.N.E. company sells subscriptions to magazines by phone. The commercial director wants to know what \concept{proportion} of calls actually lead to a subscription and whether that depends on the time of day. He therefore takes two samples ($n_1$ and $n_2$), one in the afternoon shift and one in the evening shift, and records the number of calls that lead to a subscription ($k_1$ and $k_2$):
+
+\vspace*{0.5cm}
+\begin{center}
+    Afternoon: $n_1 = 71,  k_1 = 8$ \hspace{3cm} Evening: $n_2 = 111,  k_2 = 16$
+\end{center}
+\vspace*{0.5cm}
+
+\question{
+    What is the best estimate for the \concept{population proportions} $\pi_1$ and $\pi_2$?
+}
+
+\emptyanswerbox{
+    $\pi_1$: \shortanswerline \hspace*{2cm} $\pi_2$: \shortanswerline
+}
+
+\question{
+    Calculate the two-sided 95\% \concept{confidence interval} for the population proportion $\pi$ for both samples.
+}
+
+\hint{You can find the formula for a \concept{confidence interval} for a \concept{proportion} in the formula sheet on page~\pageref{formulasheet}. Use z = 1.960 (see also Table 4 on page~\pageref{table4}).}
+
+\emptyanswerbox{
+    Confidence interval sample 1: \rule{.5\textwidth}{0.4pt}
+    \answerskip
+    Confidence interval sample 2: \rule{.5\textwidth}{0.4pt}
+}
+
+The success rate appears to be higher in the evening than in the afternoon. Unfortunately you cannot deduce from these estimated intervals for the population proportions whether this difference is significant. However, you can do this using a two-sample \concept{z-test} for a \concept{proportion}. \\
+
+\question{
+    Write down the \concept{null hypothesis} $H_0$ and \concept{alternative hypothesis} $H_1$ for a test to find out of the evening success rate is higher than the afternoon success rate.
+}
+
+\hypothesesbox
+
+\clearpage % Page break
+
+\question{
+    Calculate the \concept{combined success probability} for both samples together.
+}
+
+\hint{You can find the formulas for the following assignments in the formula sheet on page~\pageref{formulasheet}.}
+
+\emptyanswerbox{
+    Combined success probability: \rule{.5\textwidth}{0.4pt}
+}
+
+\question{
+    Calculate the \concept{combined standard error} for the two proportion z-test.
+}
+
+\emptyanswerbox{
+    Combined standard error: \rule{.5\textwidth}{0.4pt}
+}
+
+\question{
+    Calculate the \concept{z-score} for the two proportion z-test.
+}
+
+\emptyanswerbox{
+    z-score: \rule{.5\textwidth}{0.4pt}
+}
+
+\question{
+    Drawn the conclusion based on the \concept{z-score} using a \concept{critical z-value} of 1.645 for a one-sided proportion test with 95\% confidence. Include the following four elements:
+                \begin{itemize}
+        \item[$\square$] Show how the calculated \concept{z-value} relates to the \concept{critical z-value}.
+    \item[$\square$] Discuss whether $H_0$ is rejected or not.
+    \item[$\square$] Describe what this tells us about $\pi_1$ and $\pi_2$.
+    \item[$\square$] Describe what type of error is relevant \textit{(type-I or type-II)}.
+\end{itemize}
+}
+
+\sixlineanswerbox
+
+\clearpage % Page break
+
+\begin{minipage}{0.8\textwidth}
+The commercial director does not believe your result and wants you to recalculate it in \texttt{R}. \\
+
+Run the following code in \texttt{R}: \\
+\end{minipage}%
+\hfill%
+\begin{minipage}{0.1\textwidth}
+\includegraphics[width=\linewidth]{Files/Images/displaycode.pdf}
+\end{minipage}
+\vspace*{.1cm}
+
+\codeblock{n <- c(71, 111)\\
+k <- c(8, 16)\\
+prop.test(x = k, n = n)}
+
+\question{
+    Interpret the results and compare the outcome with your answer for assignment 7.3g. Do your results match?
+}
+
+\twolineanswerbox
+
+\clearpage % Page break

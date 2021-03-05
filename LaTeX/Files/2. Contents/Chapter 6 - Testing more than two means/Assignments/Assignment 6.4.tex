@@ -1,0 +1,89 @@
+\setcounter{chapter}{6}
+\setcounter{section}{4}
+\setcounter{question}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Assignment 6.4: Introducing a covariate in ANCOVA in R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rassignment{Introducing a covariate in ANCOVA in R}
+
+There might be other determinants that influence people’s ratings of your brand that you have not captured by varying the eye color in the advertisements. An example of this might be people’s initial rating of your brand. These kinds of variables are called \concept{covariates} and you can incorporate them in our \concept{ANOVA}, very smoothly resulting in an \concept{ANCOVA}. In our scenario, we want to incorporate the \concept{covariate} for the initial score that our raters gave by adding the \rcode{initialScore} variable to our \concept{linear model}. \\
+
+\question{
+    Create a \concept{linear model} in \texttt{R} where you predict the (outcome) variable \rcode{Score} using the (predictor) variables \rcode{dummyBrown}, \rcode{dummyGreen}, \rcode{dummyBlue}, and the variable \rcode{initialScore}. Store the fitted model in an object called \rcode{ancovaReg}.
+}
+
+\rcodeanswersmall
+
+\question{
+    Use the \rcode{summary()} function to inspect the results of the \concept{linear model} stored in \rcode{ancovaReg}. What is the \concept{F-value} of the model? What is the \concept{p-value} of this model?
+}
+
+\rcodeanswertiny
+
+\emptyanswerbox{
+    F-value: \shortanswerline \hspace*{3cm} p-value: \shortanswerline
+}
+
+\question{
+    What is your conclusion on the basis of these results? Include the following elements:
+        \begin{itemize}
+        \item[$\square$] Discuss what the \concept{p-value} is for this test.
+    \item[$\square$] Discuss whether $H_0$ is rejected or not.
+    \item[$\square$] Describe what this tells us about $\mu_{Blue}$, $\mu_{Brown}$, $\mu_{Green}$, and $\mu_{Down}$, given the covariate.  
+    \item[$\square$] Describe what type of error is relevant \textit{(type-I or type-II)}.
+\end{itemize}
+}
+
+\threelineanswerbox
+
+\clearpage % Page break
+
+\question{
+    Can you tell whether \rcode{initialScore} is a good predictor of the \rcode{Score}? On what value can you base your conclusion?
+}
+
+\hint{First consider which results you would expect if $\beta_3 \neq 0$.}
+
+\twolineanswerbox
+
+To find out whether adding this \concept{covariate} is an improvement over the \concept{linear model} in assignment 6.3, we can compare the two \concept{linear models} \rcode{anovaReg} (without \rcode{initialScore}) and \rcode{ancovaReg} (with \rcode{initialScore}) with respect to their proportion of \concept{explained variance} (their $R^2$).  \\
+
+\question{
+    What is the (multiple) $R^2$ of the \rcode{anovaReg} \concept{model}? What is the (multiple) $R^2$ of the \rcode{ancovaReg} \concept{model}? Which \concept{model} explains more variation in the outcome variable \rcode{Score}?
+}
+    
+\emptyanswerbox{
+    $R^2$ \rcode{anovaReg}: \shortanswerline \hspace*{1cm} $R^2$ \rcode{ancovaReg}: \shortanswerline
+    \answerskip
+    The \rcode{anovaReg} / \rcode{ancovaReg} regression model explains more variation in the outcome variable score.
+}
+
+\question{
+    Interpret the $R^2$ for the best model.
+}
+
+\twolineanswerbox
+
+The $R^2$ statistic will always increase when you add more (predictor) variables to our \concept{model}, since you are adding more information. To reliably compare our two \concept{models}, you have to look at a measure that penalizes a \concept{model} for including more (predictor) variables. You can use the \concept{AIC} value for that. The rule of thumb for the \concept{AIC} value is that the \concept{model} with the lower \concept{AIC} value is the preferred model. \\
+
+\clearpage % Page break
+
+\question{
+    Use the \rcode{AIC()} function to calculate the \concept{AIC} value of the \rcode{anovaReg} and the \rcode{ancovaReg} models.
+}
+
+\rcodeanswersmall
+    
+\emptyanswerbox{
+    AIC \rcode{anovaReg}: \shortanswerline \hspace*{.5cm} AIC \rcode{ancovaReg}: \shortanswerline
+}
+
+\question{
+    What is the preferred model? How can you use the \concept{AIC} statistic to validate you answer in assignment 6.4d?
+}
+
+\twolineanswerbox
+
+\clearpage % Page break
