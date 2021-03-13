@@ -73,23 +73,31 @@ t-score: \hfill $t = \frac{\bar{x} - \mu}{\nicefrac{s}{\sqrt{n}}}$\\
 Degrees of freedom: \hfill $df = n - 1$\\
 {\scriptsize (for the t-distribution in a one sample t-test)} \\
 \\
-t-score: \hfill $t = \frac{(\bar{x_1} - \bar{x_2}) - \mu_0}
+t-score: \hfill $t = \frac{\bar{x_1} - \bar{x_2}}
 {\sqrt{s^2_p (\frac{1}{n_1} + \frac{1}{n_2})}}$\\
-{\scriptsize (for an independent samples t-test)} \\
+{\scriptsize (for an independent samples t-test, equal $\sigma^2$ assumed)} \\
 \\
 Standard error: \hfill $s^2_p = \frac{(n_1 - 1) s^2_1 + (n_2 - 1) s^2_2}{n_1 + n_2 - 2}$\\
-{\scriptsize (for an independent samples t-test)} \\
+{\scriptsize (for an independent samples t-test, equal $\sigma^2$ assumed)} \\
+\\
+t-score: \hfill $t = \frac{\bar{x_1} - \bar{x_2}}
+{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$\\
+{\scriptsize (for an independent samples t-test, equal $\sigma^2$ not assumed)} \\
 \\
 Degrees of freedom: \hfill $df = n_1 + n_2 - 2$\\
-{\scriptsize (for an independent samples t-test)} \\
+{\scriptsize (for the t-distribution in an independent samples t-test)} \\
 \\
-t-score: \hfill $t = \frac{\bar{D} - \mu_0}
-{\nicefrac{s_D}{\sqrt{n}}}$\\
+t-score: \hfill $t = \frac{\bar{d}}
+{\nicefrac{s_d}{\sqrt{n}}}$\\
 {\scriptsize (for a dependent samples t-test)} \\
 \\
 Degrees of freedom: \hfill $df =n - 1$\\
-{\scriptsize (for a dependent samples t-test)} \\
-\\
+{\scriptsize (for the t-distribution in an dependent samples t-test)} \\
+\end{minipage}
+
+\clearpage % Page break
+
+\begin{minipage}[t]{.45\textwidth}
 \begin{center}
     \textbf{Correlation}
 \end{center}
@@ -102,11 +110,6 @@ Correlation \hfill $r_{xy} = \frac{s_{xy}}{s_x \times s_y}$ \\
 Sampling distribution: \hfill $z_r = \frac{1}{2} \times log_e (\frac{1 + r}{1 - r})$\\
 {\scriptsize (for the population correlation)} \\
 \\
-\end{minipage}
-
-\clearpage % Page break
-
-\begin{minipage}[t]{.45\textwidth}
 Standard error: \hfill $SE_r = \frac{1}{\sqrt{n - 3}}$\\
 {\scriptsize (of the population correlation)} \\
 \\
