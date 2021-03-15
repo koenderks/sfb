@@ -9,15 +9,15 @@
 \answerskip
 Mean \hfill $\bar{x} = \frac{\sum^n_{i = 1} x_i}{n}$ \\
 \\
-Median ($Q_2$) \hfill $\frac{(n + 1)}{2}th \, number$ \\
+Median ($Q_2$) \hfill $\frac{(n + 1)}{2}^{\text{th}} \, \text{number}$ \\
 \\
-Lower quartile ($Q_1$) \hfill $\frac{(n + 1)}{4}th \, number$ \\
+Lower quartile ($Q_1$) \hfill $\frac{(n + 1)}{4}^{\text{th}} \, \text{number}$ \\
 \\
-Upper quartile ($Q_3$) \hfill $\frac{(n + 1)}{4} \times 3\, th \, number$ \\
-\\
-Range \hfill $max_x - min_x$ \\
+Upper quartile ($Q_3$) \hfill $\frac{(n + 1)}{4} \times 3^{\text{th}} \, \text{number}$ \\
 \\
 Interquartile range \hfill $Q_3 - Q_1$ \\
+\\
+Range \hfill $\text{max}_x - \text{min}_x$ \\
 \\
 \begin{center}
     \textbf{Dispersion}
@@ -26,9 +26,9 @@ Interquartile range \hfill $Q_3 - Q_1$ \\
 \answerskip
 Variance \hfill $s^2 = \frac{\sum^n_{i = 1} (x_i - \bar{x})^2}{n - 1}$ \\
 \\
-Standard deviation \hfill $s = \sqrt{s^2}$ \\
+Standard deviation \hfill $s = \sqrt{\frac{\sum^n_{i = 1} (x_i - \bar{x})^2}{n - 1}}$ \\
 \\
-Hartley's F \hfill $F = \frac{var_{max}}{var_{min}} = \frac{s^2_{max}}{s^2_{min}}$\\
+Hartley's $F$ \hfill $F = \frac{var_{max}}{var_{min}} = \frac{s^2_{max}}{s^2_{min}}$\\
 \\
 \begin{center}
     \textbf{Confidence intervals}
@@ -36,16 +36,19 @@ Hartley's F \hfill $F = \frac{var_{max}}{var_{min}} = \frac{s^2_{max}}{s^2_{min}
 \hline
 \answerskip
 Standard error \hfill $SE_\mu = \frac{s}{\sqrt{n}}$ \\
-{\scriptsize (of the sample mean)}\\
+{\scriptsize (of the population mean $\mu$)}\\
 \\
-Confidence interval \hfill $\bar{x} \pm z_\alpha \times SE_\mu$ \\
-{\scriptsize (for the population mean with $n \geq 30$)}\\
+Confidence interval \hfill $\bar{x} \pm z_\alpha \times \frac{s}{\sqrt{n}}$ \\
+{\scriptsize (for the population mean $\mu$ with $n \geq 30$)}\\
 \\
-Confidence interval \hfill $\bar{x} \pm t_\alpha \times SE_\mu$ \\
-{\scriptsize (for the population mean with $n < 30$)}\\
+Confidence interval \hfill $\bar{x} \pm t_\alpha \times \frac{s}{\sqrt{n}}$ \\
+{\scriptsize (for the population mean $\mu$ with $n < 30$)}\\
 \\
-Confidence interval \hfill $p \pm t_\alpha \times \sqrt{\frac{p(1 - p)}{n}}$ \\
-{\scriptsize (for the population proportion)}\\
+Standard error \hfill $SE_\pi = \sqrt{\frac{p(1 - p)}{n}}$ \\
+{\scriptsize (of the population proportion $\pi$)}\\
+\\
+Confidence interval \hfill $p \pm z_\alpha \times \sqrt{\frac{p(1 - p)}{n}}$ \\
+{\scriptsize (for the population proportion $\pi$)}\\
 \end{minipage}
 \hfill\vline\hfill
 \begin{minipage}[t]{.45\textwidth}
@@ -54,45 +57,45 @@ Confidence interval \hfill $p \pm t_\alpha \times \sqrt{\frac{p(1 - p)}{n}}$ \\
 \end{center}
 \hline
 \answerskip
-z-score \hfill $z = \frac{x - \mu}{\sigma}$\\
+$z$ - value \hfill $z = \frac{x - \mu}{\sigma}$\\
 {\scriptsize (for a value $x$ in a normal distribution)} \\
 \\
-z-score \hfill $z = \frac{\bar{x} - \mu}{\nicefrac{\sigma}{\sqrt{n}}}$\\
+$z$ - value \hfill $z = \frac{\bar{x} - \mu}{\nicefrac{\sigma}{\sqrt{n}}}$\\
 {\scriptsize (for a test of a population mean based on a sample, $\sigma$ known)} \\
 \\
-z-score \hfill $z = \frac{\bar{x} - \mu}{\nicefrac{s}{\sqrt{n}}}$\\
+$z$ - value \hfill $z = \frac{\bar{x} - \mu}{\nicefrac{s}{\sqrt{n}}}$\\
 {\scriptsize (for a test of a population mean based on a sample $n \geq 30$)} \\
 \begin{center}
     \textbf{Tests based on the t-distribution}
 \end{center}
 \hline
 \answerskip
-t-score: \hfill $t = \frac{\bar{x} - \mu}{\nicefrac{s}{\sqrt{n}}}$\\
+$t$ - value \hfill $t = \frac{\bar{x} - \mu}{\nicefrac{s}{\sqrt{n}}}$\\
 {\scriptsize (for a test of a population mean based on sample $n < 30$)} \\
 \\
-Degrees of freedom: \hfill $df = n - 1$\\
-{\scriptsize (for the t-distribution in a one sample t-test)} \\
+Degrees of freedom \hfill $df = n - 1$\\
+{\scriptsize (for the $t$-distribution in a one sample $t$-test)} \\
 \\
-t-score: \hfill $t = \frac{\bar{x_1} - \bar{x_2}}
+$t$ - value \hfill $t = \frac{\bar{x_1} - \bar{x_2}}
 {\sqrt{s^2_p (\frac{1}{n_1} + \frac{1}{n_2})}}$\\
-{\scriptsize (for an independent samples t-test, equal $\sigma^2$ assumed)} \\
+{\scriptsize (for an independent samples $t$-test, equal $\sigma^2$ assumed)} \\
 \\
-Standard error: \hfill $s^2_p = \frac{(n_1 - 1) s^2_1 + (n_2 - 1) s^2_2}{n_1 + n_2 - 2}$\\
-{\scriptsize (for an independent samples t-test, equal $\sigma^2$ assumed)} \\
+Standard error \hfill $s^2_p = \frac{(n_1 - 1) s^2_1 + (n_2 - 1) s^2_2}{n_1 + n_2 - 2}$\\
+{\scriptsize (for an independent samples $t$-test, equal $\sigma^2$ assumed)} \\
 \\
-t-score: \hfill $t = \frac{\bar{x_1} - \bar{x_2}}
+$t$ - value \hfill $t = \frac{\bar{x_1} - \bar{x_2}}
 {\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$\\
-{\scriptsize (for an independent samples t-test, equal $\sigma^2$ not assumed)} \\
+{\scriptsize (for an independent samples $t$-test, equal $\sigma^2$ not assumed)} \\
 \\
-Degrees of freedom: \hfill $df = n_1 + n_2 - 2$\\
-{\scriptsize (for the t-distribution in an independent samples t-test)} \\
+Degrees of freedom \hfill $df = n_1 + n_2 - 2$\\
+{\scriptsize (for the $t$-distribution in an independent samples $t$-test)} \\
 \\
-t-score: \hfill $t = \frac{\bar{d}}
+$t$ - value \hfill $t = \frac{\bar{d}}
 {\nicefrac{s_d}{\sqrt{n}}}$\\
-{\scriptsize (for a dependent samples t-test)} \\
+{\scriptsize (for a dependent samples $t$-test of the difference $d$)} \\
 \\
-Degrees of freedom: \hfill $df =n - 1$\\
-{\scriptsize (for the t-distribution in an dependent samples t-test)} \\
+Degrees of freedom \hfill $df =n - 1$\\
+{\scriptsize (for the $t$-distribution in a dependent samples $t$-test)} \\
 \end{minipage}
 
 \clearpage % Page break
@@ -107,43 +110,43 @@ Covariance \hfill $s_{xy} = \frac{\sum^n_{i = 1} (x_i - \bar{x})(y_i - \bar{y})}
 \\
 Correlation \hfill $r_{xy} = \frac{s_{xy}}{s_x \times s_y}$ \\
 \\
-Sampling distribution: \hfill $z_r = \frac{1}{2} \times log_e (\frac{1 + r}{1 - r})$\\
-{\scriptsize (for the population correlation)} \\
+Sampling distribution \hfill $z_r = \frac{1}{2} \times \text{log}_e (\frac{1 + r}{1 - r})$\\
+{\scriptsize (for the population correlation $\rho$)} \\
 \\
-Standard error: \hfill $SE_r = \frac{1}{\sqrt{n - 3}}$\\
-{\scriptsize (of the population correlation)} \\
+Standard error \hfill $SE_{\rho} = \frac{1}{\sqrt{n - 3}}$\\
+{\scriptsize (of the population correlation $\rho$)} \\
 \\
-z-score: \hfill $z_{xy} = \frac{z_r}{SE_r}$\\
-{\scriptsize (for the test of a correlation against any value)} \\
+$z$ - value \hfill $z = \frac{z_r}{SE_{\rho}}$\\
+{\scriptsize (for the test of a population correlation $\rho$)} \\
 \\
-Degrees of freedom: \hfill $df = n - 2$\\
-{\scriptsize (for the t-distribution in correlation test against zero)} \\
+$t$ - value \hfill $t = \frac{r \sqrt{n - 2}}{\sqrt{1 - r^2}}$\\
+{\scriptsize (for the test of a population correlation $\rho$ against 0)} \\
 \\
-t-score: \hfill $t_{xy} = \frac{r \sqrt{n - 2}}{\sqrt{1 - r^2}}$\\
-{\scriptsize (for the test of a correlation against zero)} \\
+Degrees of freedom \hfill $df = n - 2$\\
+{\scriptsize (for the $t$-distribution in a correlation test against 0)} \\
 \\
 \begin{center}
     \textbf{Regression and AN(C)OVA}
 \end{center}
 \hline
 \answerskip
-R-squared \hfill $R^2 = \frac{SS_M}{SS_T}$ \\
+Explained variance \hfill $R^2 = \frac{SS_M}{SS_T}$ \\
 {\scriptsize (of a regression or AN(C)OVA)} \\
 \\
-F-score \hfill $F = \frac{MS_M}{MS_R}$ \\
+$F$ - value \hfill $F = \frac{MS_M}{MS_R}$ \\
 {\scriptsize (of a regression or AN(C)OVA)} \\
-\\
-Degrees of freedom \hfill $df_M = k - 1$ \\
-{\scriptsize (for the AN(C)OVA model)} \\
-\\
-Degrees of freedom \hfill $df_R = n - k$ \\
-{\scriptsize (for the AN(C)OVA residuals)} \\
 \\
 Mean squared error \hfill $MS_M = \frac{SS_M}{df_M}$ \\
-{\scriptsize (for the AN(C)OVA model)} \\
+{\scriptsize (of the AN(C)OVA model)} \\
+\\
+Degrees of freedom \hfill $df_M = k - 1$ \\
+{\scriptsize (for the AN(C)OVA model comparing $k$ means)} \\
 \\
 Mean squared error \hfill $MS_R = \frac{SS_R}{df_R}$ \\
-{\scriptsize (for the AN(C)OVA residuals)} \\
+{\scriptsize (of the AN(C)OVA residuals)} \\
+\\
+Degrees of freedom \hfill $df_R = n - k$ \\
+{\scriptsize (for the AN(C)OVA residuals comparing $k$ means)} \\
 \\
 \end{minipage}
 \hfill\vline\hfill
@@ -154,18 +157,18 @@ Mean squared error \hfill $MS_R = \frac{SS_R}{df_R}$ \\
 \hline
 \answerskip
 Combined success probability \hfill $p^* = \frac{k_1 + k_2}{n_1 + n_2}$ \\
-{\scriptsize (for the outcomes of two samples)} \\
+{\scriptsize (of the proportions in two samples)} \\
 \\
 Standard error \hfill $s_p = \sqrt{p^*(1 - p^*) (\frac{1}{n_1} + \frac{1}{n_2})}$ \\
-{\scriptsize (for the proportion of two samples)} \\
+{\scriptsize (of the population proportions in two samples)} \\
 \\
-z-score \hfill $z = \frac{p_1 - p_2}{s_p}$ \\
+$z$ - value \hfill $z = \frac{p_1 - p_2}{s_p}$ \\
 {\scriptsize (for a test comparing two proportions)} \\
 \\
-Expected value \hfill $E = p \times n$ \\
-{\scriptsize (for a proportion)} \\
+Expected count \hfill $E = p \times n$ \\
+{\scriptsize (for a theoretical proportion $p$)} \\
 \\
-Chi-square score \hfill $X^2 = \sum_{i=1}^k \frac{(O - E)^2}{E}$ \\
+Chi-squared value \hfill $X^2 = \sum_{i=1}^k \frac{(O - E)^2}{E}$ \\
 {\scriptsize (for a test comparing $k$ proportions)} \\
 \\
 \end{minipage}
