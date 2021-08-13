@@ -1,6 +1,6 @@
 # Statistics for Business with Applications in R and RStudio
 
-Download the complete course workbook (version 1.1.0) [here](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Statistics%20for%20Business%20with%20applications%20in%20R%20and%20RStudio.pdf) or download one of the chapters via the links below.
+Download the complete course workbook via this [link](https://github.com/koenderks/Statistics-for-Business-with-applications-in-R-and-RStudio/raw/master/Statistics%20for%20Business%20with%20applications%20in%20R%20and%20RStudio.pdf) or download one of the chapters via the links below.
 
 <p align="center">
 	<img src="sampleFrontPage.png" alt="cover" width="50%">
