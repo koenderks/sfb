@@ -15,8 +15,6 @@ Many of the statistical tests that we have seen are actually equivalent to a spe
     Read in the file \dataset{eyeColor.csv} and store the data in an object called \rcode{dataset8}.
 }
 
-\rcodeanswertiny
-
 Note that this data set contains all four groups (\rcode{Blue}, \rcode{Brown}, \rcode{Green}, \rcode{Down}). Run the following \texttt{R} code to isolate the scores of the groups that were shown advertisements with \rcode{Blue} and \rcode{Brown} eyes and store them in the new \rcode{ttestData} object. \\
 
 \codeblock{ttestData  <- subset(dataset8,\\ 
@@ -29,15 +27,13 @@ Note that this data set contains all four groups (\rcode{Blue}, \rcode{Brown}, \
 
 \hypothesesbox
 
-\clearpage % Page break
-
 \question{
     Use the \rcode{t.test()} function to test the equality of the two means.
 }
 
 \hint{Make sure to specify \rcode{var.equal = TRUE} to perform a \concept{two-sample t-test} instead of the non-parametric \concept{Welch’s t-test}.}
 
-\rcodeanswertiny
+\clearpage % Page break
 
 \question{
     What is your conclusion on the basis of these results? Include the following elements:
@@ -49,7 +45,7 @@ Note that this data set contains all four groups (\rcode{Blue}, \rcode{Brown}, \
 \end{itemize}
 }
 
-\sixlineanswerbox
+\fourlineanswerbox
 
 Now, instead of using the \rcode{t.test()} function to test the equality of the two \concept{means}, you can test the equality of the two \concept{means} using a \concept{regression model}. Therefore, you need to add a variable to our data that says whether a participant saw one of the two groups (e.g., only the people that were shown \rcode{Brown} eyed models). \\
 
@@ -58,26 +54,20 @@ Run the following code in R: \\
 \codeblock{dummyBrown <- as.numeric(ttestData\$Group == \textquotesingle Brown\textquotesingle)\\
 ttestData <- cbind(ttestData, dummyBrown)}
 
-\clearpage % Page break
-
 \question{
     What are the contents of \rcode{dummyBrown}? What do we call this kind of variable?
 }
 
-\twolineanswerbox
+\onelineanswerbox
 
 \question{
     Create a \concept{linear model} in \texttt{R} where you predict the (outcome) variable \rcode{Score} using only the (predictor) variable \rcode{dummyBrown}. Store the fitted model in an object called \rcode{ttestreg}.
 }
 
-\rcodeanswersmall
-
 \question{
     Use the \rcode{summary()} function to inspect the results of the \rcode{ttestreg} model. How does this output correspond to the \concept{t-test} that you performed in assignment 6.1c? Where do you find the \concept{p-value} that you calculated using the \rcode{t.test()} function?
 }
 
-\rcodeanswersmall
-
-\twolineanswerbox
+\onelineanswerbox
 
 \clearpage % Page break

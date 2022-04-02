@@ -78,13 +78,13 @@ The critical \concept{Chi-squared value} using a confidence of 95\% and 3 \conce
 \end{itemize}
 }
 
-\sixlineanswerbox
-
-\clearpage % Page break
+\fourlineanswerbox
 
 \question{
     Taking into account the confidence of our analysis, explain in what range the \concept{p-value} of this test must be.
 }
+
+\clearpage % Page break
 
 \twolineanswerbox
 
@@ -106,8 +106,6 @@ Expected <- c(60.918, 39.05, 20.306, 35.926)}
 \question{
     Calculate the \concept{Chi-squared value} for these data using \texttt{R}.
 }
-
-\rcodeanswertiny
 
 \emptyanswerbox{
     $X^2$: \shortanswerline
@@ -134,13 +132,13 @@ Use the following code in \texttt{R} to perform a \concept{Chi-squared test}: \\
 {\color{dataset}\# rescale makes sure the model distribution adds up to 100\%}\\
 chisq.test(x = Observed, p = Historical, rescale.p = TRUE)}
 
-\clearpage % Page break
-
 \question{
     Is the result what you expected?
 }
 
-\twolineanswerbox
+\onelineanswerbox
+
+\clearpage % Page break
 
 As it turns out the function \rcode{chisq.test()} will always calculate the \concept{expected values} by itself. You therefore do not need to make sure your total amounts sum to one. Therefore, in the code after \rcode{p =} you can supply a distribution that adds up to one (and set \rcode{rescale.p = FALSE}), or expected amounts that \texttt{R} will recalculate into a distribution anyway. If you do not supply the \rcode{p} argument, \texttt{R} will test against the \concept{uniform distribution}. \\
 
@@ -151,8 +149,6 @@ Run the following code in \texttt{R} to store the results of the \concept{Chi-sq
 \question{
     Find out how to extract the \concept{expected values} from the \rcode{chisq} object. Do they match the \concept{expected values} you wrote down in the table above?
 }
-
-\rcodeanswertiny
 
 \twolineanswerbox
 

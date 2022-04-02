@@ -42,8 +42,6 @@ You monitor the algorithm for 30 trades, and each time mark a trade as a success
 
 \hint{The \rcode{curve()} function has an argument \rcode{add} that controls whether to add a line to an already existing plot.}
 
-\rcodeanswertiny
-
 In this scenario, the \concept{Bayes factor} is intuitively to calculate by only looking at the posterior distribution for $H_1$. The \concept{Bayes factor} $BF_{10}$ tells you how much more likely the \concept{alternative hypothesis} $H_1$ is in comparison with to the point \concept{null hypothesis} $H_0$. The \concept{Bayes factor} $BF_{10}$ in favor of the unrestricted \concept{alternative hypothesis} $H_1: \theta \neq 0.5$ is simply the height of the \concept{posterior distribution} at the point $\theta = 0.5$ divided by the height of the \concept{prior distribution} at the point $\theta = 0.5$. \\
 
 Please note that this is a trick that only works for \concept{nested} hypotheses and models, in which only one of the \concept{parameters} is fixed to a specific value. \\
@@ -54,13 +52,7 @@ Please note that this is a trick that only works for \concept{nested} hypotheses
 
 \question{Use the \rcode{dbeta()} function to find out the height of your \concept{prior distribution} at the point $\theta = 0.5$ and store it in an object called \rcode{heightPrior}.}
 
-\rcodeanswertiny
-
 \question{Use the \rcode{dbeta()} function to find out the height of your \concept{posterior distribution} at the point $\theta = 0.5$ and store it in an object called \rcode{heightPosterior}.}
-
-\rcodeanswertiny
-
-\clearpage % Page break
 
 Run the following code in \texttt{R} to compute the \concept{Bayes factor} in favor of the \concept{alternative hypothesis} $H_1$. \\
 \\
@@ -68,7 +60,9 @@ Run the following code in \texttt{R} to compute the \concept{Bayes factor} in fa
 
 \question{What is the value of the \concept{Bayes factor} \rcode{BF10}? Interpret this \concept{Bayes factor} with respect to the alternative hypothesis $H_1$.}
 
-\twolineanswerbox
+\onelineanswerbox
+
+\clearpage % Page break
 
 To make interpretation of the \concept{Bayes factor} more simple, the labels in the table below have been proposed. Please note that you shout not get too hung up on the specific labels and breakpoints in this table, since what constitutes convincing evidence should be different in every situation. \\
 

@@ -29,10 +29,6 @@ This method of importing data can be a lot of work if there are many files or if
 
 \twolineanswerbox 
 
-\rcodeanswersmall
-
-\clearpage % Page break
-
 The functions you used for descriptive statistics on the small data sets in assignment 1.1 can also be applied to the data set that is currently stored in \rcode{dataset3}. \\
 
 \question{
@@ -41,7 +37,8 @@ The functions you used for descriptive statistics on the small data sets in assi
 
 \hint{First find out how to extract (index) a specific column in a data frame using the \rcode{\$} sign.}
 
-\rcodeanswermedium
+\clearpage % Page break
+
 \fourlineanswerbox
 
 For large data sets, it becomes a lot of work finding the \concept{mode} in a frequency table each time. It is possible to import a package into the \texttt{R} session that contains a function for calculating the \concept{mode} automatically. However, it is also possible to create a function that calculates the \concept{mode} ourselves. \\
@@ -56,23 +53,17 @@ Run the following lines of \texttt{R} code together: \\
 
 You have now created your first \texttt{R} function and you will see it displayed separately in the \texttt{R} environment. This function will give you the \concept{mode} for any \textbf{numeric} vector or column. It works by first extracting all unique values, counting their frequency, and then selecting the value with the highest frequency. Note that you can use this function, but will not be required to understand or make functions like this. However, for the interested reader, part III of the R help contains more information on how to create your own functions. \\
 
-\clearpage % Page break
-
 \question{
     Use the new \rcode{getMode()} function to determine the \concept{mode} for column \rcode{Age} in \rcode{dataset3} and check if it is consistent with your answer for assignment 1.3c.
 }
-
-\rcodeanswertiny
 
 \emptyanswerbox{
     Mode: \shortanswerline
 }
 
 \question{
-    Find the \concept{mean}, \concept{mode}, \concept{median}, \concept{range}, and \concept{quartiles} for the column \rcode{BloodPressure} in \rcode{dataset3}. Also use the new \rcode{getMode()} function.
+    Find the \concept{mean}, \concept{mode}, \concept{median}, \concept{range}, and \concept{quartiles} for the column \rcode{BloodPressure} in \rcode{dataset3}.
 }
-
-\rcodeanswermedium
 
 \emptyanswerbox{
     Mean: \quad \shortanswerline \hspace{.5cm} \quad Range: \qquad \qquad \qquad \qquad \shortanswerline
@@ -81,6 +72,8 @@ You have now created your first \texttt{R} function and you will see it displaye
             \answerbreak
             Median: \shortanswerline \hspace{.4cm} \quad Upper quartile: \qquad \quad \shortanswerline
 }
+
+\clearpage % Page break
 
 \question{
     Is the distribution of the values in the \rcode{BloodPressure} column \concept{positively skewed} or \concept{negatively skewed}? Explain your answer using the relation between the \concept{mean}, \concept{median}, and \concept{mode}.
@@ -94,17 +87,11 @@ You have now created your first \texttt{R} function and you will see it displaye
     \rule{\textwidth}{0.4pt}
     \answerbreak
     \rule{\textwidth}{0.4pt}
-    \answerbreak
-    \rule{\textwidth}{0.4pt}
 }
-
-\clearpage % Page break
 
 \question{
     Determine the \concept{variance} and \concept{standard deviation} for the column \rcode{Cholesterol} in \rcode{dataset3}.
 }
-
-\rcodeanswersmall
 
 \emptyanswerbox{
     Variance: \qquad \qquad \qquad \shortanswerline
@@ -115,7 +102,5 @@ You have now created your first \texttt{R} function and you will see it displaye
 \question{
     Validate the relation between the \concept{variance} and the \concept{standard deviation} by performing a calculation in \texttt{R}.
 }
-
-\rcodeanswertiny
 
 \clearpage % Page break

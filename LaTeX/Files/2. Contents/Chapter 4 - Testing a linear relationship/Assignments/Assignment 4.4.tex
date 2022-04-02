@@ -18,13 +18,9 @@ For this assignment, you need the data file \dataset{nationalSupermarket.csv}, w
     Use the \rcode{read.csv()} function (and \rcode{setwd()} function if you prefer) to import the data set into a data frame called \rcode{dataset7}.
 }
 
-\rcodeanswertiny
-
 \question{
     Create a scatter plot of the data. Put the price per milk carton (\rcode{Price}) on the \textit{x-axis} and the average number of milk cartons that was thrown away (\rcode{AvgWasted}) on the \textit{y-axis}.
 }
-
-\rcodeanswersmall
 
 The \rcode{lm()} function is used to fit a linear model (linear regression) in \texttt{R}. It requires that you specify a \rcode{formula} that tells the function what the \concept{regression equation} is. If you want to fit a \concept{model} where you predict an outcome variable \rcode{Y} on the basis of one predictor variable \rcode{X}, the formula is as follows: \\
 
@@ -42,8 +38,6 @@ The \rcode{lm()} function is used to fit a linear model (linear regression) in \
     AvgWasted = \longanswerline
 }
 
-\clearpage % Page break
-
 A linear \concept{model} with these variables can be fitted in \texttt{R} by calling the \rcode{lm()} function with the \rcode{formula} and the \rcode{dataset} (see the \texttt{R} code below). The variables \rcode{X} and \rcode{Y} should correspond to the names of the corresponding variables in your \rcode{dataset}. \\
 
 \codeblock{lm(formula = Y {\raise.17ex\hbox{$\scriptstyle\sim$}} 1 + X, data = dataset)}
@@ -52,7 +46,7 @@ A linear \concept{model} with these variables can be fitted in \texttt{R} by cal
     Fit a linear \concept{model} where you use the data in \rcode{dataset7} to predict the average number of thrown away milk cartons per day (\rcode{AvgWasted}) on the basis of the price per milk carton (\rcode{Price}). Store this \concept{model} in an object called \rcode{lmfit}.
 }
 
-\rcodeanswertiny
+\clearpage % Page break
 
 Now run the following code in \texttt{R}: \\
 
@@ -70,8 +64,6 @@ Now run the following code in \texttt{R}: \\
     Using the \rcode{abline()} function, paste the \concept{regression equation} line into your scatter plot from assignment 4.4b.
 }
 
-\rcodeanswertiny
-
 \question{
     What is the $R^2$ of the \rcode{lmfit} regression \concept{model}? What is the interpretation of this value?
 }
@@ -86,8 +78,6 @@ Now run the following code in \texttt{R}: \\
     \rule{\textwidth}{0.4pt}
 }
 
-\clearpage % Page break
-
 From the regression line, the manager observes that there is indeed a positive \concept{relationship} between the price of a carton of milk and the average number of milk cartons thrown away per day. To be sure she wants to test the hypothesis that, with 95\% confidence, the price of milk is a good predictor of the average number of milk cartons that are thrown away per day, and that this \concept{relationship} is truly positive. \\
 
 \question{
@@ -95,6 +85,8 @@ From the regression line, the manager observes that there is indeed a positive \
 }
 
 \hypothesesbox
+
+\clearpage % Page break
 
 \question{
     Use the \rcode{summary} in \texttt{R} to draw the conclusion for the manager. Include the following four elements:

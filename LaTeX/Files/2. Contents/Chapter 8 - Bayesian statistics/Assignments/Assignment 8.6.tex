@@ -14,8 +14,6 @@ Suppose you work as an analyst for an insurance firm. Your firm wants to assess 
     Use the \rcode{read.csv()} function (and \rcode{setwd()} function if you prefer) to import the data set into an object named \rcode{insurance}.
 }
 
-\rcodeanswertiny
-
 \question{
     Write down the regression equation for a \concept{linear model} where you predict the variable \rcode{charges} on the basis of the predictor variables \rcode{age}, \rcode{bmi}, and \rcode{neighbors}.
 }
@@ -24,9 +22,7 @@ Suppose you work as an analyst for an insurance firm. Your firm wants to assess 
     charges = \longanswerline
 }
 
-Run the following code in \texttt{R} to create a \texttt{Stan} model $M_1$ that corresponds to this linear model with all \concept{coefficients}. Note that you do not specify \concept{prior distributions} (under the \rcode{model} section) for the $\beta_0$, $\beta_1$, and $\beta_2$ parameters. That is because, when you do not specify the prior distributions in \rcode{Stan}, the posterior distributions will be estimated solely from the data. \\
-
-\clearpage % Page break
+Run the following code in \texttt{R} to create a \texttt{Stan} model $M_1$ that corresponds to this linear model with all \concept{coefficients}. \\
 
 \codeblock{regmodelcode <- {\color{dataset}\textquotesingle} \\
 {\color{dataset}data \{} \\
@@ -51,6 +47,10 @@ Run the following code in \texttt{R} to create a \texttt{Stan} model $M_1$ that 
 {\color{dataset}\# Note: The following line can take a while to execute}\\
 regressionModel <- stan\_model(model\_code = regmodelcode, model\_name = \textquotesingle Regression\textquotesingle) }
 
+\clearpage % page break
+
+Note that you do not specify \concept{prior distributions} (under the \rcode{model} section) for the $\beta_0$, $\beta_1$, and $\beta_2$ parameters. That is because, when you do not specify the prior distributions in \rcode{Stan}, the posterior distributions will be estimated solely from the data. \\
+
 \question{
     Use the \rcode{sampling()} function to sample from the \rcode{regressionModel} model and store the samples in an object named \rcode{regressionSamples}. Next, use the \rcode{summary()} function to find out the \concept{posterior means} of the $\beta_0$, $\beta_1$, $\beta_2$, and $\beta_3$ coefficients. 
 }
@@ -60,13 +60,7 @@ regressionModel <- stan\_model(model\_code = regmodelcode, model\_name = \textqu
     $\beta_0$: \tinyanswerline \hspace*{1cm} $\beta_1$: \tinyanswerline \hspace*{1cm} $\beta_2$: \tinyanswerline \hspace*{1cm} $\beta_3$: \tinyanswerline
 }
 
-\rcodeanswersmall
-
 \question{Use the \rcode{lm()} function to fit a regular \concept{linear model} to the data. Use the \rcode{summary()} function to find out the estimates of the coefficients when done this way. Do they match the \concept{posterior means} from assignment 8.6b?}
-
-\rcodeanswertiny
-
-\clearpage % Page break
 
 \emptyanswerbox{
     \vspace*{-15pt}
@@ -84,13 +78,9 @@ Run the following code in \texttt{R} to create a figure of the posterior distrib
     Also create figures of the posterior distributions for $\beta_0$, $\beta_2$, and $\beta_3$.
 }
 
-\rcodeanswersmall
-
 \question{Find out the probability that the average increase in \rcode{charges} as a function of 1 point on the \rcode{bmi} scale is higher than 200 dollars.}
 
 \hint{Use the approach that you applied in assignment 8.3d and assignment 8.3e.}
-
-\rcodeanswertiny
 
 \emptyanswerbox{
     Probability: \shortanswerline
@@ -99,8 +89,6 @@ Run the following code in \texttt{R} to create a figure of the posterior distrib
 \question{
     Find out the probability that the value of $\beta_1$ is lower than 250.
 }
-
-\rcodeanswertiny
 
 \emptyanswerbox{
     Probability: \shortanswerline
@@ -112,8 +100,6 @@ Run the following code in \texttt{R} to create a figure of the posterior distrib
     Find out between which values of $\beta_3$ 90 percent of the \concept{posterior samples} lie. 
 }
 
-\rcodeanswertiny
-
 \emptyanswerbox{
     Lower bound: \shortanswerline \hspace*{1cm} Upper bound: \shortanswerline
 }
@@ -124,15 +110,9 @@ As you can see, the posterior distribution for the $\beta_3$ coefficient centers
     Write code for a new \texttt{Stan} model $M_2$ where you remove the predictor variable \rcode{neighbors}.
 }
 
-\rcodeanswerlarge
-
 \question{
     Using the procedure in assignment 8.5, calculate the \concept{Bayes factor} $BF_{12}$ in favor of $M_1$ (the model that includes $\beta_3$) over $M_2$ (the model that excludes $\beta_3$). 
 }
-
-\rcodeanswermedium
-
-\clearpage % Page break
 
 \question{What is the value of $BF_{12}$. Interpret this \concept{Bayes factor} with respect to the coefficient $\beta_0$. Incorporate the strength of the evidence in your answer.}
 

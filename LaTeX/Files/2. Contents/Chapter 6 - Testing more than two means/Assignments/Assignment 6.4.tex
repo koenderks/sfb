@@ -14,13 +14,9 @@ There might be other determinants that influence people’s ratings of your bran
     Create a \concept{linear model} in \texttt{R} where you predict the (outcome) variable \rcode{Score} using the (predictor) variables \rcode{dummyBrown}, \rcode{dummyGreen}, \rcode{dummyBlue}, and the variable \rcode{initialScore}. Store the fitted model in an object called \rcode{ancovaReg}.
 }
 
-\rcodeanswersmall
-
 \question{
     Use the \rcode{summary()} function to inspect the results of the \concept{linear model} stored in \rcode{ancovaReg}. What is the \concept{F-value} of the model? What is the \concept{p-value} of this model?
 }
-
-\rcodeanswertiny
 
 \emptyanswerbox{
     F-value: \shortanswerline \hspace*{3cm} p-value: \shortanswerline
@@ -36,9 +32,7 @@ There might be other determinants that influence people’s ratings of your bran
 \end{itemize}
 }
 
-\threelineanswerbox
-
-\clearpage % Page break
+\twolineanswerbox
 
 \question{
     Can you tell whether \rcode{initialScore} is a good predictor of the \rcode{Score}? On what value can you base your conclusion?
@@ -46,7 +40,9 @@ There might be other determinants that influence people’s ratings of your bran
 
 \hint{First consider which results you would expect if $\beta_3 \neq 0$.}
 
-\twolineanswerbox
+\onelineanswerbox
+
+\clearpage % Page break
 
 To find out whether adding this \concept{covariate} is an improvement over the \concept{linear model} in assignment 6.3, we can compare the two \concept{linear models} \rcode{anovaReg} (without \rcode{initialScore}) and \rcode{ancovaReg} (with \rcode{initialScore}) with respect to their proportion of \concept{explained variance} (their $R^2$).  \\
 
@@ -64,17 +60,13 @@ To find out whether adding this \concept{covariate} is an improvement over the \
     Interpret the $R^2$ for the best model.
 }
 
-\twolineanswerbox
+\onelineanswerbox
 
 The $R^2$ statistic will always increase when you add more (predictor) variables to our \concept{model}, since you are adding more information. To reliably compare our two \concept{models}, you have to look at a measure that penalizes a \concept{model} for including more (predictor) variables. You can use the \concept{AIC} value for that. The rule of thumb for the \concept{AIC} value is that the \concept{model} with the lower \concept{AIC} value is the preferred model. \\
-
-\clearpage % Page break
 
 \question{
     Use the \rcode{AIC()} function to calculate the \concept{AIC} value of the \rcode{anovaReg} and the \rcode{ancovaReg} models.
 }
-
-\rcodeanswersmall
     
 \emptyanswerbox{
     AIC \rcode{anovaReg}: \shortanswerline \hspace*{.5cm} AIC \rcode{ancovaReg}: \shortanswerline
@@ -84,6 +76,6 @@ The $R^2$ statistic will always increase when you add more (predictor) variables
     What is the preferred model? How can you use the \concept{AIC} statistic to validate you answer in assignment 6.4d?
 }
 
-\twolineanswerbox
+\onelineanswerbox
 
 \clearpage % Page break

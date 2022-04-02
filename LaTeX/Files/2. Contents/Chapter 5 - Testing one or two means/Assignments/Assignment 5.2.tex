@@ -87,8 +87,6 @@ Run the following code in R: \\
 
 \hint{For the picture on the right keep in mind that the \rcode{qt()} function by default returns the value for the left tail of the distribution.}
 
-\rcodeanswermedium
-
 \emptyanswerbox{
     t$_1$: \shortanswerline \hspace*{3cm} t$_2$: \shortanswerline
     \answerskip
@@ -99,19 +97,17 @@ Run the following code in R: \\
     \includegraphics[width=\textwidth]{Files/Images/tdistributions3.jpg}
 \end{center}
 
-\clearpage % Page break
-
 \question{
     For the situation where there are 11 \concept{degrees of freedom}, use the \rcode{pt()} function to get the probabilities p$_1$, p$_2$, and p$_3$ (area under the curve) for the three situations shown in the figures above.
 }
 
 \hint{For the picture in the middle and the right keep in mind that the \rcode{pt()} function by default uses the left tail and the total area under the curve is 1.}
 
-\rcodeanswermedium
-
 \emptyanswerbox{
     p$_1$: \tinyanswerline \hspace*{2cm} p$_2$: \tinyanswerline \hspace*{2cm} p$_3$: \tinyanswerline
 }
+
+\clearpage % Page break
 
 When you test a value for a \concept{population mean}, there exist three types of tests: \\
 
@@ -141,8 +137,6 @@ $H_1: \mu < \mu_0$
 
 \hint{Use the \rcode{qt()} function in \texttt{R}.}
 
-\rcodeanswermedium
-
 \emptyanswerbox{
     Two-tailed inequality test: \shortanswerline 
     \answerskip
@@ -150,8 +144,6 @@ $H_1: \mu < \mu_0$
     \answerskip
     One-tailed left sided test: \shortanswerline 
 }
-
-\clearpage % Page break
 
 Three $n = 29$ \concept{samples} were done on three different populations and the \concept{t-score} based on these \concept{samples} was calculated: \\
 
@@ -190,17 +182,9 @@ $t = -1.6$
 \emptyanswerbox{
     Two-tailed inequality test: \hspace*{1.5cm} \textbf{$H_0$ rejected} / \textbf{$H_0$ not rejected}
     \answerbreak
-    Explanation: \rule{.75\textwidth}{0.4pt}
-    \answerskip
-    \answerskip
     One-tailed right sided test: \hspace*{-5pt}\hspace*{1.5cm} \textbf{$H_0$ rejected} / \textbf{$H_0$ not rejected}
     \answerbreak
-    Explanation: \rule{.75\textwidth}{0.4pt}
-    \answerskip
-    \answerskip
     One-tailed left sided test: \hspace*{1.5cm} \textbf{$H_0$ rejected} / \textbf{$H_0$ not rejected}
-    \answerbreak
-    Explanation: \rule{.75\textwidth}{0.4pt}    
 }
 
 \clearpage % Page break

@@ -50,8 +50,6 @@ model1 <- stan\_model(model\_code = model1code, model\_name = \textquotesingle m
 
 \hint{First find out what elements were added to the code since assignment 8.3.}
 
-\rcodeanswerlarge
-
 \question{Locate and describe the \concept{prior distributions} for $\theta$ in $M_1$ and $M_2$.}
 
 \twolineanswerbox
@@ -60,13 +58,7 @@ Now you start collecting data again. Suppose that you monitor your algorithm for
 
 \question{Use the \rcode{sampling()} function to sample for the \concept{models} $M_1$ and $M_2$ using these data. Store the fitted \texttt{Stan} models in objects named \rcode{stanFitM1} and \rcode{stanFitM2}.}
 
-\rcodeanswersmall
-
 \question{Use the \rcode{bridge\_sampler()} function to calculate the \concept{marginal likelihoods} of the models $M_1$ and $M_2$ and store them in \rcode{mLike1} and \rcode{mLike2}.}
-
-\rcodeanswersmall
-
-\clearpage % Page break
 
 \question{Use the \rcode{bf()} function to calculate the \concept{Bayes factor} $BF_{21}$ in favor of model $M_2$ over model $M_1$ and store it in an object called \rcode{BF21}.}
 
@@ -74,10 +66,10 @@ Now you start collecting data again. Suppose that you monitor your algorithm for
 
 \question{What is the value of \rcode{BF21}? Interpret this \concept{Bayes factor} with respect to the model that restricts $\theta$ to be higher than 0.75.}
 
-\threelineanswerbox
+\onelineanswerbox
 
 \question{What is the strength of evidence associated with this \concept{Bayes factor}? Are you convinced by this evidence?}
 
-\threelineanswerbox
+\onelineanswerbox
 
 \clearpage % Page break

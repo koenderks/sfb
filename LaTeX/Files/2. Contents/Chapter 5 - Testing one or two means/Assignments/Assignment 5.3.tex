@@ -81,9 +81,7 @@ The \concept{critical t-value} for 16 \concept{degrees of freedom} $(n_1 + n_2 -
 \end{itemize}
 }
 
-\sixlineanswerbox
-
-\clearpage % Page break
+\fourlineanswerbox
 
 \begin{minipage}{0.8\textwidth}
 Now you will learn how to do the same independent t-test in \texttt{R}. \\
@@ -100,11 +98,11 @@ Run the following code in \texttt{R}: \\
 placebo <- c(97, 106, 120, 104, 96, 100, 93, 96, 99)\\
 caffeine <- c(97, 92, 95, 100, 95, 88, 85, 106, 89)}
 
+\clearpage % Page break
+
 \question{
     Calculate the \concept{mean} and \concept{standard deviation} for the \rcode{placebo} and \rcode{caffeine} variables, confirm that your results match with the previous assignment.
 }
-
-\rcodeanswermedium
 
 \emptyanswerbox{
     \rcode{placebo} \hspace*{6cm} \rcode{caffeine}
@@ -123,24 +121,20 @@ Run the following code in \texttt{R}: \\
     Interpret the \texttt{R} code above and check if the results match your conclusion for assignment 5.3e.
 }
 
-\twolineanswerbox
+\onelineanswerbox
 
 The \concept{t-test} assumes equal \concept{variances}. In this case the \concept{standard deviations} are actually a bit different. \\
-
-\clearpage % Page break
 
 \question{
     Change the \rcode{var.equal} argument in the \texttt{R} code above to do a \concept{Welch t-test} to account for unequal \concept{variances}. Check whether the results differ.
 }
 
-\rcodeanswertiny
-
-\twolineanswerbox
+\onelineanswerbox
 
 \question{
     How can you check if you need to do a \concept{Welch t-test} instead of a normal \concept{t-test}?
 }
 
-\twolineanswerbox
+\onelineanswerbox
 
 \clearpage % Page break

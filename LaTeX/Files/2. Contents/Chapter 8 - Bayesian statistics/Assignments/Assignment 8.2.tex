@@ -24,13 +24,9 @@ Suppose you are the manager of a small store and want to estimate what proportio
 
 \question{Use the \rcode{curve()} function to create a figure of your \concept{prior distribution} in \texttt{R}.}
 
-\rcodeanswertiny
-
 By updating the $Beta(\alpha,\, \beta)$ prior distribution with information that you have collected, you create a \concept{posterior distribution}, which contains both the prior information and the information from the sample. Having observed $k$ successes in a sample of $n$ observations, the \concept{prior parameters} $\alpha$ and $\beta$ are updated to the \concept{posterior parameters} $\alpha = \alpha + k$ and $\beta = \beta + n - k$. \\
 
 In your sample of $n = 40$ questioned customers, $k = 33$ said they felt satisfied when leaving the store. \\
-
-\clearpage % Page break
 
 \question{Write down the $\alpha$ and $\beta$ \concept{parameters} of your \concept{posterior distribution}.}
 
@@ -39,6 +35,8 @@ In your sample of $n = 40$ questioned customers, $k = 33$ said they felt satisfi
 }
 
 Run the following code in \texttt{R} to create a figure of the \concept{posterior distribution}. Fill in your own values of \rcode{alpha} and \rcode{beta} from assignment 8.2b. \\
+
+\clearpage % Page break
 
 \codeblock{alpha <- 7\\
 beta <- 5\\
@@ -54,8 +52,6 @@ curve(dbeta(x, alpha + k, beta + n - k), \\
 
 \hint{Use the \rcode{qbeta()} function to find the cumulative probability under a beta distribution.}
 
-\rcodeanswertiny
-
 \emptyanswerbox{
     \vspace*{-5pt}
     Probability: \shortanswerline
@@ -65,18 +61,12 @@ curve(dbeta(x, alpha + k, beta + n - k), \\
     Find out the \concept{posterior probability} that the percentage of customers that left the store feeling satisfied, given your prior information and the information from the sample, lies between 70 and 90 percent.
 }
 
-\rcodeanswertiny
-
 \emptyanswerbox{
     \vspace*{-5pt}
     Probability: \shortanswerline
 }
 
-\clearpage % Page break
-
 \question{Change your values of \rcode{alpha} and \rcode{beta} in the code above so that you have a different \concept{prior distribution} and run the code again. Describe how robust the \concept{posterior distribution} is to changes in the prior distribution.}
-
-\rcodeanswersmall
 
 \threelineanswerbox
 

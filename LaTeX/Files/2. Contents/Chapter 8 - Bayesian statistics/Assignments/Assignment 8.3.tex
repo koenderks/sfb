@@ -45,15 +45,11 @@ stanFit <- sampling(compiledModel, data = list(n = 40, k = 33), \\
 
 \question{Extract the samples of the \concept{posterior distribution} on $\theta$ from the \rcode{stanFit} object using the \rcode{extract()} function and store them in an object called \rcode{samples}.}
 
-\rcodeanswertiny
-
 \question{Create a histogram of the \rcode{samples}. Next, run the following code in \texttt{R} to plot the analytical \concept{posterior distribution} over the histogram. Do the samples of the \concept{posterior distribution} resemble the actual \concept{posterior distribution} in any way?}
 
 \codeblock{curve(dbeta(x, shape1 = 40, shape2 = 12), add = TRUE)}
 
 \hint{Be sure to specify a larger value for the \rcode{breaks} argument since you have many samples. Also set \rcode{probability = TRUE} in the \rcode{hist()} function.}
-
-\rcodeanswersmall
 
 \twolineanswerbox
 
@@ -63,26 +59,20 @@ As you have seen in assignment 8.2, the \concept{posterior distribution} you jus
 
 \hint{The line \rcode{theta {\raise.17ex\hbox{$\scriptstyle\sim$}} beta(7, 5)} specifies the prior distribution.}
 
-\clearpage % Page break
-
-\rcodeanswermedium
-
 \question{Again, find out the \concept{posterior probability} that more than 60 percent of your customers left the store feeling satisfied, given the prior information and the information from the sample.}
 
 \hint{Do \underline{not} use the \rcode{quantile()} function or the \rcode{pbeta()} function.}
-
-\rcodeanswertiny
 
 \emptyanswerbox{
     \vspace*{-5pt}
     Probability: \shortanswerline
 }
 
+\clearpage % Page break
+
 \question{
     Find out the \concept{posterior probability} that the percentage of customers that left the store feeling satisfied, given the prior information and the information from the sample, lies between 70 and 90 percent.
 }
-
-\rcodeanswertiny
 
 \emptyanswerbox{
     \vspace*{-5pt}

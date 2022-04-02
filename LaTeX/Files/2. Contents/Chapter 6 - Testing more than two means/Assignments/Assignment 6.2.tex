@@ -16,13 +16,11 @@ Now let’s extend the analysis from assignment 6.1 by comparing all four groups
 
 \hypothesesbox
 
-The \concept{ANOVA} uses the \concept{F-distribution} to test for a significant difference between all four \concept{means}. Using the (two types of) \concept{degrees of freedom} of this \concept{F-distribution}, you can calculate the \concept{critical F-value} that is required to reject the \concept{null hypothesis} that the \concept{means} of the four groups are equal. Table 5 on page~\pageref{table5} contains the \concept{critical F-values} for a confidence of 95\%.
+The \concept{ANOVA} uses the \concept{F-distribution} to test for a significant difference between all four \concept{means}. Using the (two types of) \concept{degrees of freedom} of this \concept{F-distribution}, you can calculate the \concept{critical F-value} that is required to reject the \concept{null hypothesis} that the \concept{means} of the four groups are equal. Table 5 on page~\pageref{table5} contains the \concept{critical F-values} ($\alpha$ = 0.05).
 \vspace*{.5cm}
 \begin{center}
-    \includegraphics[width=.9\textwidth]{Files/Images/fdistributions.jpg}
+    \includegraphics[width=.75\textwidth]{Files/Images/fdistributions.jpg}
 \end{center}
-
-\clearpage % Page break
 
 \question{
     Calculate the \concept{degrees of freedom} $df_M$ and $df_R$ of the \concept{F-distribution} for the data in \rcode{dataset8}.
@@ -38,8 +36,6 @@ The \concept{ANOVA} uses the \concept{F-distribution} to test for a significant 
     Using the \rcode{qf()} function, calculate the \concept{critical F-value} that is required to reject the \concept{null hypothesis} $H_0$ for these data with 95\% confidence.
 }
 
-\rcodeanswertiny
-
 \emptyanswerbox{
     Critical F-value: \shortanswerline
 }
@@ -47,20 +43,14 @@ The \concept{ANOVA} uses the \concept{F-distribution} to test for a significant 
 The \rcode{aov()} function in \texttt{R} is a wrapper for the \rcode{lm()} function. The difference between these two functions is that the \rcode{lm()} function can only handle \concept{categorical} predictors with two levels (e.g., a \concept{dummy variable}). The \rcode{aov()} function can handle \concept{categorical} predictor variables with more than two levels, since it automatically rewrites the \rcode{formula} to include the \concept{dummy variables}. \\ 
 
 \question{
-    Use the \rcode{aov()} function to perform an \concept{ANOVA} with the dependent (outcome) variable \rcode{Score} and the independent (predictor) variable \rcode{Group} and store the result in an object named \rcode{anovaResult}.
+    Use the \rcode{aov()} function to perform an \concept{ANOVA} with the dependent (outcome) variable \rcode{Score} and the independent (predictor) variable \rcode{Group} and store the result in \rcode{anovaResult}.
 }
 
 \hint{You can check more information on the \rcode{aov()} function with \rcode{?aov}.}
 
-\rcodeanswersmall
-
-\clearpage % Page break
-
 \question{
     Use the \rcode{summary()} function to inspect the results of the \concept{ANOVA} in \rcode{anovaResult}. What is the \concept{F-value} that is calculated from the \concept{sample}? What is the \concept{p-value} calculated from the \concept{sample}?
 }
-
-\rcodeanswertiny
 
 \emptyanswerbox{
     F-value: \shortanswerline \hspace*{3cm} p-value: \shortanswerline
@@ -76,6 +66,6 @@ The \rcode{aov()} function in \texttt{R} is a wrapper for the \rcode{lm()} funct
 \end{itemize}
 }
 
-\sixlineanswerbox
+\fourlineanswerbox
 
 \clearpage % Page break

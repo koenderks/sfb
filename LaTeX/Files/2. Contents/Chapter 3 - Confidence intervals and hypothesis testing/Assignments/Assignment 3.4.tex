@@ -24,15 +24,11 @@ This assignment assumes you have done assignment 3.3 and therefore have four $n 
     Create a histogram for each sample in \rcode{sample1} - \rcode{sample4}.
 }
 
-\rcodeanswermedium
-
 \question{ 
     Which samples look like they could have been taken from a \concept{normal distribution}?
 }
 
-\threelineanswerbox
-
-\clearpage % Page break
+\onelineanswerbox
 
 \question{
     Use this \texttt{R} code (from the \rcode{car} package) to create four \concept{qq-plots} for the four \concept{samples}. 
@@ -40,13 +36,13 @@ This assignment assumes you have done assignment 3.3 and therefore have four $n 
 
 \codeblock{qqPlot(sample1, distribution = \textquotesingle norm\textquotesingle) {\color{dataset}\# qqPlot for sample 1}}
 
-\rcodeanswermedium
-
 \question{
     Evaluate each \concept{qq-plot} and explain the deviations from the diagonal by referencing features of the histograms. Do the \concept{qq-plots} confirm your answer for question 3.4b?
 }
 
-\fourlineanswerbox
+\twolineanswerbox
+
+\clearpage % Page break
 
 \question{
     Formulate the \concept{null hypothesis} $H_0$  and \concept{alternative hypothesis} $H_1$ for a test of normality in these samples.
@@ -61,10 +57,6 @@ This assignment assumes you have done assignment 3.3 and therefore have four $n 
 \codeblock{shapiro.test(sample1) {\color{dataset}\# Normality test for sample 1}}
 
 \hint{First think about what \concept{p-values} lead to rejecting the \concept{null hypothesis} $H_0$.}
-
-\clearpage % Page break
-
-\rcodeanswersmall
 
 \fourlineanswerbox
 
@@ -81,8 +73,6 @@ Now you found out that most of these \concept{samples} are actually not normally
     \answerskip
     Explanation:
     \answerskip
-    \rule{\textwidth}{0.4pt}
-    \answerbreak
     \rule{\textwidth}{0.4pt}
     \answerbreak
     \rule{\textwidth}{0.4pt}
